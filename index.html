@@ -966,6 +966,43 @@
         .section.active .card:nth-child(1) { animation-delay: 0.1s; }
         .section.active .card:nth-child(2) { animation-delay: 0.2s; }
         .section.active .card:nth-child(3) { animation-delay: 0.3s; }
+
+
+        /* Educational Resources Section */
+        .resource-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .resource-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.85rem 1rem;
+            background: rgba(79, 70, 229, 0.06);
+            color: var(--primary);
+            border: 1px solid rgba(79, 70, 229, 0.14);
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .resource-link::after {
+            content: '↗';
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .resource-link:hover {
+            background: var(--gradient);
+            color: white;
+            transform: translateX(6px);
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.22);
+        }
+
     </style>
 </head>
 <body>
@@ -1004,6 +1041,9 @@
                 </li>
                 <li>                        <a href="#courses" class="nav-link" onclick="showSection('courses')">
                     📚 Courses
+                </a></li>
+                <li><a href="#educational" class="nav-link" onclick="showSection('educational')">
+                    🌐 Educational
                 </a></li>
                 <li><a href="#blog" class="nav-link" onclick="showSection('blog')">
                     📝 Blog
@@ -1059,6 +1099,9 @@
             </a></li>
             <li><a href="#courses" class="nav-link" onclick="showSection('courses'); closeMobile()">
                 📚 Courses
+            </a></li>
+            <li><a href="#educational" class="nav-link" onclick="showSection('educational'); closeMobile()">
+                🌐 Educational
             </a></li>
             <li><a href="#blog" class="nav-link" onclick="showSection('blog'); closeMobile()">
                 📝 Blog
@@ -1950,6 +1993,122 @@
                             " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 24px rgba(240, 147, 251, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px rgba(240, 147, 251, 0.3)'">
                                 Course Details & Registration
                             </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Educational Section -->
+        <section id="educational" class="section" style="
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+            position: relative;
+            overflow: hidden;
+        ">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <div style="
+                        width: 90px;
+                        height: 90px;
+                        border-radius: 50%;
+                        background: var(--gradient);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto 1.5rem;
+                        box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
+                    ">
+                        <span style="font-size: 2.8rem;">🌐</span>
+                    </div>
+                    <h2 class="section-title">Educational Resources</h2>
+                    <p style="
+                        max-width: 850px;
+                        margin: 0 auto;
+                        font-size: 1.15rem;
+                        color: var(--gray);
+                        line-height: 1.8;
+                    ">
+                        A curated collection of useful learning websites, chemistry tools, biology resources, AI platforms, literature databases, and productivity tools for students, teachers, researchers, and science enthusiasts.
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">🧪</div>
+                        <h3>Chemistry & Drug Discovery</h3>
+                        <p>Useful tools for chemical structures, molecules, proteins, and drug discovery research.</p>
+                        <div class="resource-links">
+                            <a href="https://pubchem.ncbi.nlm.nih.gov/" target="_blank" class="resource-link">🔬 PubChem</a>
+                            <a href="https://www.chemspider.com/" target="_blank" class="resource-link">⚗️ ChemSpider</a>
+                            <a href="https://molview.org/" target="_blank" class="resource-link">🧬 MolView</a>
+                            <a href="https://www.rcsb.org/" target="_blank" class="resource-link">🧫 Protein Data Bank</a>
+                            <a href="https://go.drugbank.com/" target="_blank" class="resource-link">💊 DrugBank</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🧬</div>
+                        <h3>Molecular Biology & Bioinformatics</h3>
+                        <p>Reliable biological databases for genes, proteins, sequences, and structures.</p>
+                        <div class="resource-links">
+                            <a href="https://blast.ncbi.nlm.nih.gov/" target="_blank" class="resource-link">🧬 NCBI BLAST</a>
+                            <a href="https://www.uniprot.org/" target="_blank" class="resource-link">🧪 UniProt</a>
+                            <a href="https://alphafold.ebi.ac.uk/" target="_blank" class="resource-link">🤖 AlphaFold DB</a>
+                            <a href="https://www.genecards.org/" target="_blank" class="resource-link">🧫 GeneCards</a>
+                            <a href="https://www.ebi.ac.uk/" target="_blank" class="resource-link">🔍 EMBL-EBI</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">📚</div>
+                        <h3>Learning Platforms</h3>
+                        <p>High-quality online platforms for structured learning and self-study.</p>
+                        <div class="resource-links">
+                            <a href="https://www.coursera.org/" target="_blank" class="resource-link">🎓 Coursera</a>
+                            <a href="https://www.edx.org/" target="_blank" class="resource-link">🏛️ edX</a>
+                            <a href="https://ocw.mit.edu/" target="_blank" class="resource-link">📖 MIT OpenCourseWare</a>
+                            <a href="https://www.khanacademy.org/" target="_blank" class="resource-link">📘 Khan Academy</a>
+                            <a href="https://www.youtube.com/education" target="_blank" class="resource-link">▶️ YouTube Learning</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🤖</div>
+                        <h3>AI & Scientific Tools</h3>
+                        <p>AI-assisted platforms for learning, writing, coding, and research productivity.</p>
+                        <div class="resource-links">
+                            <a href="https://chat.openai.com/" target="_blank" class="resource-link">💡 ChatGPT</a>
+                            <a href="https://www.perplexity.ai/" target="_blank" class="resource-link">🔎 Perplexity AI</a>
+                            <a href="https://notebooklm.google.com/" target="_blank" class="resource-link">📓 NotebookLM</a>
+                            <a href="https://colab.research.google.com/" target="_blank" class="resource-link">💻 Google Colab</a>
+                            <a href="https://huggingface.co/" target="_blank" class="resource-link">🤗 Hugging Face</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">📄</div>
+                        <h3>Scientific Literature</h3>
+                        <p>Search engines and publication platforms for scientific papers and references.</p>
+                        <div class="resource-links">
+                            <a href="https://scholar.google.com/" target="_blank" class="resource-link">📚 Google Scholar</a>
+                            <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" class="resource-link">🧫 PubMed</a>
+                            <a href="https://pubs.acs.org/" target="_blank" class="resource-link">⚗️ ACS Publications</a>
+                            <a href="https://www.nature.com/" target="_blank" class="resource-link">🌍 Nature</a>
+                            <a href="https://www.science.org/" target="_blank" class="resource-link">🔬 Science</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🚀</div>
+                        <h3>Productivity & Scientific Writing</h3>
+                        <p>Helpful tools for writing, reference management, design, and scientific communication.</p>
+                        <div class="resource-links">
+                            <a href="https://www.overleaf.com/" target="_blank" class="resource-link">📝 Overleaf</a>
+                            <a href="https://www.zotero.org/" target="_blank" class="resource-link">📑 Zotero</a>
+                            <a href="https://www.notion.so/" target="_blank" class="resource-link">📋 Notion</a>
+                            <a href="https://www.canva.com/" target="_blank" class="resource-link">🎨 Canva</a>
+                            <a href="https://www.biorender.com/" target="_blank" class="resource-link">🧫 BioRender</a>
                         </div>
                     </div>
                 </div>
