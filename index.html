@@ -1036,7 +1036,363 @@
             .blog-card .btn { width: 100%; justify-content: center; }
         }
 
-    </style>
+    
+
+        /* =========================================================
+           Mobile Polish Update: navbar, menu, older sections, courses
+           Added to improve phone responsiveness without restructuring.
+           ========================================================= */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            transform: translateY(0) !important;
+            opacity: 1 !important;
+        }
+
+        .navbar.visible {
+            transform: translateY(0) !important;
+            opacity: 1 !important;
+        }
+
+        .nav-menu {
+            gap: 1rem;
+        }
+
+        .nav-container {
+            min-height: 72px;
+        }
+
+        .mobile-toggle {
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .nav-container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            .nav-menu {
+                gap: 0.4rem;
+            }
+
+            .nav-link {
+                padding: 0.45rem 0.7rem;
+                font-size: 0.88rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding-top: 76px !important;
+            }
+
+            .navbar {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                transform: translateY(0) !important;
+                opacity: 1 !important;
+                background: rgba(255,255,255,0.98) !important;
+                box-shadow: 0 2px 18px rgba(0,0,0,0.08) !important;
+            }
+
+            .nav-container {
+                height: 76px !important;
+                padding: 0 1rem !important;
+                justify-content: flex-end !important;
+            }
+
+            .mobile-toggle {
+                display: flex !important;
+                position: fixed !important;
+                top: 14px !important;
+                right: 14px !important;
+                width: 50px !important;
+                height: 50px !important;
+                z-index: 3001 !important;
+                border: 3px solid rgba(255,255,255,0.92);
+            }
+
+            .mobile-menu {
+                display: block !important;
+                width: min(88vw, 340px) !important;
+                padding: 6.25rem 1.1rem 2rem !important;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.14) !important;
+                z-index: 2500 !important;
+            }
+
+            .mobile-menu .nav-link {
+                font-size: 1rem !important;
+                padding: 0.95rem 1rem !important;
+                margin-bottom: 0.35rem !important;
+                line-height: 1.25 !important;
+                transform: none !important;
+            }
+
+            .mobile-menu .nav-link:hover {
+                transform: translateX(4px) !important;
+            }
+
+            .section {
+                min-height: auto !important;
+                padding: 2.75rem 1rem !important;
+            }
+
+            .container {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .hero {
+                grid-template-columns: 1fr !important;
+                min-height: calc(100vh - 76px) !important;
+                gap: 1.5rem !important;
+                text-align: center !important;
+                padding: 2rem 0 !important;
+            }
+
+            .hero-content h1 {
+                white-space: normal !important;
+                font-size: clamp(2rem, 10vw, 2.8rem) !important;
+                line-height: 1.12 !important;
+                margin-bottom: 0.85rem !important;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.12rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .hero-content p,
+            .description {
+                font-size: 1rem !important;
+                line-height: 1.65 !important;
+                max-width: 95% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            .hero-profile-img,
+            .profile-img {
+                width: 160px !important;
+                height: 160px !important;
+            }
+
+            .section-title {
+                font-size: clamp(1.85rem, 8vw, 2.25rem) !important;
+                line-height: 1.18 !important;
+                margin-bottom: 1.75rem !important;
+            }
+
+            .cards-grid,
+            .skills-grid,
+            .contact-info {
+                grid-template-columns: 1fr !important;
+                gap: 1.35rem !important;
+            }
+
+            .card,
+            .skill-category,
+            .contact-item,
+            .contact-form {
+                padding: 1.35rem !important;
+                border-radius: 18px !important;
+            }
+
+            .card:hover,
+            .skill-category:hover,
+            .contact-item:hover,
+            .blog-card:hover {
+                transform: translateY(-4px) !important;
+            }
+
+            #about {
+                background-attachment: scroll !important;
+            }
+
+            #about .container > div,
+            #professional .container > div,
+            #education .container > div,
+            #skills .container > div,
+            #publications .container > div,
+            #presentations .container > div,
+            #courses .container > div,
+            #educational .container > div,
+            #blog .container > div,
+            #contact .container > div {
+                max-width: 100% !important;
+            }
+
+            #about p {
+                text-align: left !important;
+                font-size: 1rem !important;
+                line-height: 1.7 !important;
+            }
+
+            #about div[style*="padding: 3rem"] {
+                padding: 1.4rem !important;
+            }
+
+            .timeline {
+                padding: 1rem 0 !important;
+            }
+
+            .timeline::before {
+                left: 16px !important;
+                transform: none !important;
+            }
+
+            .timeline-dot {
+                left: 16px !important;
+                width: 18px !important;
+                height: 18px !important;
+            }
+
+            .timeline-content {
+                width: calc(100% - 48px) !important;
+                margin-left: 48px !important;
+                margin-right: 0 !important;
+                text-align: left !important;
+                padding: 1.25rem !important;
+                border-radius: 16px !important;
+            }
+
+            .timeline-item {
+                margin-bottom: 2rem !important;
+                align-items: flex-start !important;
+            }
+
+            .timeline-title {
+                font-size: 1.1rem !important;
+                line-height: 1.35 !important;
+            }
+
+            .btn {
+                justify-content: center !important;
+                text-align: center !important;
+                padding: 0.85rem 1.2rem !important;
+                line-height: 1.25 !important;
+            }
+
+            /* Course section phone fixes: overrides heavy inline grids safely */
+            #courses {
+                background-attachment: scroll !important;
+            }
+
+            #courses div[style*="grid-template-columns: repeat(auto-fit, minmax(450px, 1fr))"],
+            #courses div[style*="grid-template-columns: repeat(auto-fit,minmax(450px,1fr))"] {
+                grid-template-columns: 1fr !important;
+                gap: 1.35rem !important;
+                margin: 1.5rem 0 !important;
+            }
+
+            #courses div[style*="grid-template-columns: 1fr 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 0.75rem !important;
+            }
+
+            #courses div[style*="minmax(450px"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            #courses div[style*="padding: 2.5rem 2rem 1.5rem"] {
+                padding: 1.5rem 1.25rem 1rem !important;
+            }
+
+            #courses div[style*="padding: 2rem"] {
+                padding: 1.25rem !important;
+            }
+
+            #courses h3 {
+                font-size: 1.18rem !important;
+                line-height: 1.35 !important;
+            }
+
+            #courses p {
+                font-size: 0.98rem !important;
+                line-height: 1.65 !important;
+            }
+
+            #courses .btn,
+            #courses a.btn,
+            #courses button.btn {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .resource-links {
+                gap: 0.65rem !important;
+            }
+
+            .resource-link {
+                padding: 0.85rem 0.9rem !important;
+                font-size: 0.95rem !important;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.25rem !important;
+            }
+
+            .blog-card .btn {
+                width: 100% !important;
+            }
+
+            .modal-content {
+                width: 94% !important;
+                margin: 5.5rem auto 1.5rem !important;
+                padding: 1.25rem !important;
+                max-height: calc(100vh - 7rem) !important;
+            }
+
+            video {
+                opacity: 0.18 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: 2.25rem 0.85rem !important;
+            }
+
+            .hero-content h1 {
+                white-space: normal !important;
+                font-size: 2.05rem !important;
+            }
+
+            .hero-profile-img,
+            .profile-img {
+                width: 145px !important;
+                height: 145px !important;
+            }
+
+            .mobile-menu {
+                width: 90vw !important;
+            }
+
+            .mobile-toggle {
+                top: 12px !important;
+                right: 12px !important;
+            }
+
+            .card,
+            .skill-category,
+            .contact-item,
+            .contact-form,
+            .timeline-content {
+                padding: 1.1rem !important;
+            }
+
+            #courses div[style*="padding"] {
+                max-width: 100% !important;
+            }
+        }
+</style>
 </head>
 <body>
     <!-- Navigation -->
@@ -4168,6 +4524,10 @@
 
         // Simplified initialization without video debugging
         document.addEventListener('DOMContentLoaded', function() {
+            // Keep navbar visible from page load
+            const navbar = document.querySelector('.navbar');
+            if (navbar) navbar.classList.add('visible');
+
             // Contact form
             const contactForm = document.getElementById('contactForm');
             if (contactForm) {
@@ -4199,32 +4559,20 @@
             });
         });
 
-        // Dynamic navbar on scroll
-        let lastScrollTop = 0;
+        // Smooth fixed navbar: stays visible, only changes shadow while scrolling
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // Show navbar when scrolling down after 100px, hide when scrolling up or at top
-            if (currentScroll > 100 && currentScroll > lastScrollTop) {
-                // Scrolling down
-                navbar.classList.add('visible');
-            } else if (currentScroll < lastScrollTop || currentScroll <= 50) {
-                // Scrolling up or near top
-                navbar.classList.remove('visible');
-            }
-            
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
-            
-            // Original navbar effect for when it's visible
-            if (navbar.classList.contains('visible')) {
-                if (currentScroll > 50) {
-                    navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                    navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-                } else {
-                    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                    navbar.style.boxShadow = '0 1px 10px rgba(0,0,0,0.1)';
-                }
+            if (!navbar) return;
+
+            navbar.classList.add('visible');
+
+            if (currentScroll > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.10)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.96)';
+                navbar.style.boxShadow = '0 1px 12px rgba(0,0,0,0.08)';
             }
         });
     </script>
