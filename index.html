@@ -1003,6 +1003,39 @@
             box-shadow: 0 8px 20px rgba(79, 70, 229, 0.22);
         }
 
+
+
+        /* Modern Blog Section */
+        .blog-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 50%, #fdf2f8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .blog-intro { text-align: center; margin-bottom: 3rem; }
+        .blog-intro p { font-size: 1.15rem; color: var(--gray); max-width: 760px; margin: 0 auto; line-height: 1.8; }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .blog-card { background: rgba(255, 255, 255, 0.96); border-radius: 24px; overflow: hidden; box-shadow: 0 12px 30px rgba(31, 41, 55, 0.08); border: 1px solid rgba(79, 70, 229, 0.12); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
+        .blog-card:hover { transform: translateY(-8px); box-shadow: 0 22px 50px rgba(31, 41, 55, 0.14); }
+        .blog-visual { height: 180px; position: relative; display: flex; align-items: center; justify-content: center; color: white; font-size: 3.4rem; background: var(--gradient); overflow: hidden; }
+        .blog-visual::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.28), transparent 30%), radial-gradient(circle at 80% 30%, rgba(255,255,255,0.18), transparent 28%), linear-gradient(45deg, rgba(255,255,255,0.08) 25%, transparent 25%); background-size: auto, auto, 34px 34px; }
+        .blog-visual span { position: relative; z-index: 2; }
+        .blog-content { padding: 1.8rem; display: flex; flex-direction: column; flex: 1; }
+        .blog-meta { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .blog-category { background: rgba(79, 70, 229, 0.10); color: var(--primary); padding: 0.35rem 0.75rem; border-radius: 999px; font-size: 0.8rem; font-weight: 700; }
+        .blog-date { color: var(--gray); font-size: 0.85rem; font-weight: 500; }
+        .blog-card h3 { font-size: 1.35rem; color: var(--dark); line-height: 1.35; margin-bottom: 0.9rem; }
+        .blog-card p { color: var(--gray); line-height: 1.7; margin-bottom: 1.5rem; flex: 1; }
+        .blog-card .btn { align-self: flex-start; padding: 0.85rem 1.35rem; font-size: 0.92rem; }
+        .blog-actions { text-align: center; margin-top: 2rem; }
+        @media (max-width: 768px) {
+            .blog-grid { grid-template-columns: 1fr !important; gap: 1.5rem; }
+            .blog-card { border-radius: 18px; }
+            .blog-visual { height: 145px; font-size: 2.8rem; }
+            .blog-content { padding: 1.35rem; }
+            .blog-card h3 { font-size: 1.15rem; }
+            .blog-card .btn { width: 100%; justify-content: center; }
+        }
+
     </style>
 </head>
 <body>
@@ -1047,9 +1080,6 @@
                 </a></li>
                 <li><a href="#blog" class="nav-link" onclick="showSection('blog')">
                     📝 Blog
-                </a></li>
-                <li><a href="https://rauful-alam.blogspot.com/" class="nav-link" target="_blank">
-                    🌐 Full Blog
                 </a></li>
                 <li><a href="#contact" class="nav-link" onclick="showSection('contact')">
                     ✉️ Contact
@@ -1108,9 +1138,6 @@
             </a></li>
             <li><a href="#contact" class="nav-link" onclick="showSection('contact'); closeMobile()">
                 ✉️ Contact
-            </a></li>
-            <li><a href="https://rauful-alam.blogspot.com/" class="nav-link" target="_blank">
-                🌐 Full Blog
             </a></li>
         </ul>
     </div>
@@ -2117,420 +2144,61 @@
         </section>
 
         <!-- Blog Section -->
-        <section id="blog" class="section">
+        <section id="blog" class="section blog-section">
             <div class="container">
                 <div style="text-align: center; margin-bottom: 2rem;">
-                    <div style="
-                        width: 80px; 
-                        height: 80px; 
-                        border-radius: 50%; 
-                        background: var(--gradient); 
-                        display: flex; 
-                        align-items: center; 
-                        justify-content: center; 
-                        margin: 0 auto 1rem; 
-                        box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
-                    ">
+                    <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);">
                         <span style="font-size: 2.5rem;">📝</span>
                     </div>
                 </div>
+
                 <h2 class="section-title">Latest Blog Posts</h2>
-                
-                <div style="text-align: center; margin-bottom: 3rem;">
-                    <p style="font-size: 1.2rem; color: var(--gray); max-width: 600px; margin: 0 auto; line-height: 1.7;">
-                        Insights on science, education, research culture, and the journey of discovery in chemistry and beyond.
-                    </p>
+
+                <div class="blog-intro">
+                    <p>Short, useful, and research-informed articles on organic chemistry, medicinal chemistry, drug discovery, education, AI-assisted research, and science communication.</p>
                 </div>
 
-                <!-- Blog Cards -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; margin: 3rem 0;">
-                    
-                    <!-- Blog Card 1 -->
-                    <article style="
-                        background: white;
-                        border-radius: 20px;
-                        overflow: hidden;
-                        box-shadow: var(--shadow);
-                        transition: all 0.3s ease;
-                        border-top: 4px solid;
-                        border-image: var(--gradient) 1;
-                        position: relative;
-                    " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow)'">
-                        
-                        <!-- Featured Image -->
-                        <div style="
-                            height: 200px;
-                            background: linear-gradient(135deg, var(--primary), var(--secondary));
-                            position: relative;
-                            overflow: hidden;
-                        ">
-                            <div style="
-                                position: absolute;
-                                inset: 0;
-                                background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%), 
-                                           linear-gradient(-45deg, rgba(255,255,255,0.1) 25%, transparent 25%);
-                                background-size: 30px 30px;
-                                animation: shimmer 3s ease-in-out infinite;
-                            "></div>
-                            <div style="
-                                position: absolute;
-                                bottom: 1rem;
-                                right: 1rem;
-                                background: rgba(255,255,255,0.9);
-                                padding: 0.5rem 1rem;
-                                border-radius: 20px;
-                                font-size: 0.85rem;
-                                font-weight: 600;
-                                color: var(--primary);
-                            ">
-                                Research & Education
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-visual"><span>💊</span></div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Drug Discovery</span>
+                                <span class="blog-date">Featured</span>
                             </div>
-                        </div>
-                        
-                        <!-- Content -->
-                        <div style="padding: 2rem;">
-                            <!-- Meta Info -->
-                            <div style="
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                margin-bottom: 1rem;
-                                flex-wrap: wrap;
-                                gap: 0.5rem;
-                            ">
-                                <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-                                    <span style="
-                                        color: var(--primary);
-                                        font-size: 0.9rem;
-                                        font-weight: 600;
-                                        display: flex;
-                                        align-items: center;
-                                        gap: 0.3rem;
-                                    ">
-                                        <span style="width: 6px; height: 6px; background: var(--primary); border-radius: 50%;"></span>
-                                        Dr. Rauful Alam
-                                    </span>
-                                    <span style="color: var(--gray); font-size: 0.85rem;">March 15, 2024</span>
-                                </div>
-                                <span style="
-                                    background: rgba(79, 70, 229, 0.1);
-                                    color: var(--primary);
-                                    padding: 0.3rem 0.8rem;
-                                    border-radius: 15px;
-                                    font-size: 0.8rem;
-                                    font-weight: 500;
-                                ">
-                                    5 min read
-                                </span>
-                            </div>
-                            
-                            <!-- Title -->
-                            <h3 style="
-                                font-size: 1.5rem;
-                                font-weight: 700;
-                                color: var(--dark);
-                                margin-bottom: 1rem;
-                                line-height: 1.3;
-                                cursor: pointer;
-                            " onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--dark)'">
-                                The Future of Drug Discovery: Bridging Chemistry and AI
-                            </h3>
-                            
-                            <!-- Excerpt -->
-                            <p style="
-                                color: var(--gray);
-                                line-height: 1.6;
-                                margin-bottom: 1.5rem;
-                                font-size: 1rem;
-                            ">
-                                Exploring how artificial intelligence is revolutionizing medicinal chemistry, from target identification to lead optimization. A deep dive into the intersection of computational power and chemical intuition.
-                            </p>
-                            
-                            <!-- Read More Button -->
-                            <a href="https://rauful-alam.blogspot.com/" target="_blank" style="
-                                display: inline-flex;
-                                align-items: center;
-                                gap: 0.5rem;
-                                background: var(--gradient);
-                                color: white;
-                                padding: 0.8rem 1.5rem;
-                                border-radius: 50px;
-                                text-decoration: none;
-                                font-weight: 600;
-                                font-size: 0.9rem;
-                                transition: all 0.3s ease;
-                                box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
-                            " onmouseover="this.style.transform='translateX(5px)'; this.style.boxShadow='0 6px 20px rgba(79, 70, 229, 0.4)'" onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='0 4px 15px rgba(79, 70, 229, 0.3)'">
-                                Read More
-                                <span style="transition: transform 0.3s ease;">→</span>
-                            </a>
+                            <h3>The Future of Drug Discovery: Bridging Chemistry and AI</h3>
+                            <p>A perspective on how artificial intelligence can support medicinal chemistry, from molecular design and virtual screening to better scientific decision-making.</p>
+                            <span class="btn btn-outline" style="cursor: default; opacity: 0.75;">Coming Soon</span>
                         </div>
                     </article>
 
-                  <!-- Blog Card 2 -->
-                    <article style="
-                        background: white;
-                        border-radius: 20px;
-                        overflow: hidden;
-                        box-shadow: var(--shadow);
-                        transition: all 0.3s ease;
-                        border-top: 4px solid;
-                        border-image: var(--gradient) 1;
-                        position: relative;
-                    " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow)'">
-                        
-                        <!-- Featured Image -->
-                        <div style="
-                            height: 200px;
-                            background: linear-gradient(135deg, var(--primary), var(--secondary));
-                            position: relative;
-                            overflow: hidden;
-                        ">
-                            <div style="
-                                position: absolute;
-                                inset: 0;
-                                background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%), 
-                                           linear-gradient(-45deg, rgba(255,255,255,0.1) 25%, transparent 25%);
-                                background-size: 30px 30px;
-                                animation: shimmer 3s ease-in-out infinite;
-                            "></div>
-                            <div style="
-                                position: absolute;
-                                bottom: 1rem;
-                                right: 1rem;
-                                background: rgba(255,255,255,0.9);
-                                padding: 0.5rem 1rem;
-                                border-radius: 20px;
-                                font-size: 0.85rem;
-                                font-weight: 600;
-                                color: var(--primary);
-                            ">
-                                Research & Education
+                    <article class="blog-card">
+                        <div class="blog-visual"><span>🧪</span></div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Chemistry</span>
+                                <span class="blog-date">New Article</span>
                             </div>
-                        </div>
-                        
-                        <!-- Content -->
-                        <div style="padding: 2rem;">
-                            <!-- Meta Info -->
-                            <div style="
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                margin-bottom: 1rem;
-                                flex-wrap: wrap;
-                                gap: 0.5rem;
-                            ">
-                                <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-                                    <span style="
-                                        color: var(--primary);
-                                        font-size: 0.9rem;
-                                        font-weight: 600;
-                                        display: flex;
-                                        align-items: center;
-                                        gap: 0.3rem;
-                                    ">
-                                        <span style="width: 6px; height: 6px; background: var(--primary); border-radius: 50%;"></span>
-                                        Dr. Rauful Alam
-                                    </span>
-                                    <span style="color: var(--gray); font-size: 0.85rem;">March 15, 2024</span>
-                                </div>
-                                <span style="
-                                    background: rgba(79, 70, 229, 0.1);
-                                    color: var(--primary);
-                                    padding: 0.3rem 0.8rem;
-                                    border-radius: 15px;
-                                    font-size: 0.8rem;
-                                    font-weight: 500;
-                                ">
-                                    5 min read
-                                </span>
-                            </div>
-                            
-                            <!-- Title -->
-                            <h3 style="
-                                font-size: 1.5rem;
-                                font-weight: 700;
-                                color: var(--dark);
-                                margin-bottom: 1rem;
-                                line-height: 1.3;
-                                cursor: pointer;
-                            " onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--dark)'">
-                                The Future of Drug Discovery: Bridging Chemistry and AI
-                            </h3>
-                            
-                            <!-- Excerpt -->
-                            <p style="
-                                color: var(--gray);
-                                line-height: 1.6;
-                                margin-bottom: 1.5rem;
-                                font-size: 1rem;
-                            ">
-                                Exploring how artificial intelligence is revolutionizing medicinal chemistry, from target identification to lead optimization. A deep dive into the intersection of computational power and chemical intuition.
-                            </p>
-                            
-                            <!-- Read More Button -->
-                            <a href="Blog/blog1.html" class="btn btn-primary">
-                          Read Article
-                            </a>
-                                display: inline-flex;
-                                align-items: center;
-                                gap: 0.5rem;
-                                background: var(--gradient);
-                                color: white;
-                                padding: 0.8rem 1.5rem;
-                                border-radius: 50px;
-                                text-decoration: none;
-                                font-weight: 600;
-                                font-size: 0.9rem;
-                                transition: all 0.3s ease;
-                                box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
-                            " onmouseover="this.style.transform='translateX(5px)'; this.style.boxShadow='0 6px 20px rgba(79, 70, 229, 0.4)'" onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='0 4px 15px rgba(79, 70, 229, 0.3)'">
-                                Read More
-                                <span style="transition: transform 0.3s ease;">→</span>
-                            </a>
+                            <h3>My First Scientific Blog</h3>
+                            <p>A short introductory article connecting chemistry, education, research culture, and the habit of writing regularly for students and science learners.</p>
+                            <a href="blog/first-blog.html" class="btn btn-primary">Read Article →</a>
                         </div>
                     </article>
 
-                    <!-- Blog Card 2 -->
-                    <article style="
-                        background: white;
-                        border-radius: 20px;
-                        overflow: hidden;
-                        box-shadow: var(--shadow);
-                        transition: all 0.3s ease;
-                        border-top: 4px solid;
-                        border-image: var(--gradient) 1;
-                        position: relative;
-                    " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow)'">
-                        
-                        <!-- Featured Image -->
-                        <div style="
-                            height: 200px;
-                            background: linear-gradient(135deg, var(--secondary), var(--accent));
-                            position: relative;
-                            overflow: hidden;
-                        ">
-                            <div style="
-                                position: absolute;
-                                inset: 0;
-                                background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.2) 20%, transparent 70%);
-                            "></div>
-                            <div style="
-                                position: absolute;
-                                bottom: 1rem;
-                                right: 1rem;
-                                background: rgba(255,255,255,0.9);
-                                padding: 0.5rem 1rem;
-                                border-radius: 20px;
-                                font-size: 0.85rem;
-                                font-weight: 600;
-                                color: var(--secondary);
-                            ">
-                                Science Education
+                    <article class="blog-card">
+                        <div class="blog-visual"><span>🌱</span></div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Education</span>
+                                <span class="blog-date">Science & Society</span>
                             </div>
-                        </div>
-                        
-                        <!-- Content -->
-                        <div style="padding: 2rem;">
-                            <!-- Meta Info -->
-                            <div style="
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                margin-bottom: 1rem;
-                                flex-wrap: wrap;
-                                gap: 0.5rem;
-                            ">
-                                <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-                                    <span style="
-                                        color: var(--secondary);
-                                        font-size: 0.9rem;
-                                        font-weight: 600;
-                                        display: flex;
-                                        align-items: center;
-                                        gap: 0.3rem;
-                                    ">
-                                        <span style="width: 6px; height: 6px; background: var(--secondary); border-radius: 50%;"></span>
-                                        Dr. Rauful Alam
-                                    </span>
-                                    <span style="color: var(--gray); font-size: 0.85rem;">February 28, 2024</span>
-                                </div>
-                                <span style="
-                                    background: rgba(6, 182, 212, 0.1);
-                                    color: var(--secondary);
-                                    padding: 0.3rem 0.8rem;
-                                    border-radius: 15px;
-                                    font-size: 0.8rem;
-                                    font-weight: 500;
-                                ">
-                                    8 min read
-                                </span>
-                            </div>
-                            
-                            <!-- Title -->
-                            <h3 style="
-                                font-size: 1.5rem;
-                                font-weight: 700;
-                                color: var(--dark);
-                                margin-bottom: 1rem;
-                                line-height: 1.3;
-                                cursor: pointer;
-                            " onmouseover="this.style.color='var(--secondary)'" onmouseout="this.style.color='var(--dark)'">
-                                Building STEM Education in Rural Bangladesh: A Vision for Change
-                            </h3>
-                            
-                            <!-- Excerpt -->
-                            <p style="
-                                color: var(--gray);
-                                line-height: 1.6;
-                                margin-bottom: 1.5rem;
-                                font-size: 1rem;
-                            ">
-                                From muddy village roads to international laboratories - how we can transform rural education and inspire the next generation of scientists. Practical strategies for expanding STEM access.
-                            </p>
-                            
-                            <!-- Read More Button -->
-                            <a href="https://rauful-alam.blogspot.com/" target="_blank" style="
-                                display: inline-flex;
-                                align-items: center;
-                                gap: 0.5rem;
-                                background: linear-gradient(135deg, var(--secondary), var(--accent));
-                                color: white;
-                                padding: 0.8rem 1.5rem;
-                                border-radius: 50px;
-                                text-decoration: none;
-                                font-weight: 600;
-                                font-size: 0.9rem;
-                                transition: all 0.3s ease;
-                                box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
-                            " onmouseover="this.style.transform='translateX(5px)'; this.style.boxShadow='0 6px 20px rgba(6, 182, 212, 0.4)'" onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='0 4px 15px rgba(6, 182, 212, 0.3)'">
-                                Read More
-                                <span style="transition: transform 0.3s ease;">→</span>
-                            </a>
+                            <h3>Building Scientific Curiosity Through Education</h3>
+                            <p>Reflections on teaching, mentorship, and how better science communication can inspire students to think deeply rather than memorize superficially.</p>
+                            <span class="btn btn-outline" style="cursor: default; opacity: 0.75;">Coming Soon</span>
                         </div>
                     </article>
-
                 </div>
 
-                <!-- View All Blogs Button -->
-                <div style="text-align: center; margin-top: 3rem;">
-                    <a href="https://rauful-alam.blogspot.com/" target="_blank" style="
-                        display: inline-flex;
-                        align-items: center;
-                        gap: 0.75rem;
-                        background: transparent;
-                        color: var(--primary);
-                        border: 2px solid var(--primary);
-                        padding: 1rem 2rem;
-                        border-radius: 50px;
-                        text-decoration: none;
-                        font-weight: 600;
-                        transition: all 0.3s ease;
-                    " onmouseover="this.style.background='var(--primary)'; this.style.color='white'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='transparent'; this.style.color='var(--primary)'; this.style.transform='translateY(0)'">
-                        Visit Full Blog
-                        <span>→</span>
-                    </a>
-                </div>
             </div>
         </section>
 
@@ -2618,7 +2286,7 @@
                         </p>
                         <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; margin-top: 1rem;">
                             <!-- LinkedIn -->
-                            <a href="#" target="_blank" style="
+                            <a href="https://www.linkedin.com/in/rauful-alam-phd-12536365/" target="_blank" aria-label="LinkedIn profile" style="
                                 width: 60px;
                                 height: 60px;
                                 border-radius: 50%;
@@ -2630,11 +2298,11 @@
                                 transition: all 0.3s ease;
                                 box-shadow: 0 4px 15px rgba(0, 119, 181, 0.3);
                             " onmouseover="this.style.transform='translateY(-3px) scale(1.1)'; this.style.boxShadow='0 8px 25px rgba(0, 119, 181, 0.5)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 15px rgba(0, 119, 181, 0.3)'">
-                                <span style="color: white; font-size: 1.5rem; font-weight: bold; font-family: Arial, sans-serif;">in</span>
+                                <i class="fab fa-linkedin-in" style="color: white; font-size: 1.6rem;"></i>
                             </a>
                             
                             <!-- Facebook -->
-                            <a href="#" target="_blank" style="
+                            <a href="https://www.facebook.com/share/1BxCrHwnoJ/?mibextid=wwXIfr" target="_blank" aria-label="Facebook page" style="
                                 width: 60px;
                                 height: 60px;
                                 border-radius: 50%;
@@ -2646,11 +2314,11 @@
                                 transition: all 0.3s ease;
                                 box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
                             " onmouseover="this.style.transform='translateY(-3px) scale(1.1)'; this.style.boxShadow='0 8px 25px rgba(24, 119, 242, 0.5)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 15px rgba(24, 119, 242, 0.3)'">
-                                <span style="color: white; font-size: 1.8rem; font-weight: bold; font-family: Arial, sans-serif;">f</span>
+                                <i class="fab fa-facebook-f" style="color: white; font-size: 1.6rem;"></i>
                             </a>
                             
                             <!-- YouTube -->
-                            <a href="#" target="_blank" style="
+                            <a href="https://www.youtube.com/@raufulalam9197" target="_blank" aria-label="YouTube channel" style="
                                 width: 60px;
                                 height: 60px;
                                 border-radius: 50%;
@@ -2666,7 +2334,7 @@
                             </a>
                             
                             <!-- Google Scholar -->
-                            <a href="#" target="_blank" style="
+                            <a href="https://scholar.google.com/citations?hl=en&user=PrrE9dQAAAAJ" target="_blank" aria-label="Google Scholar profile" style="
                                 width: 60px;
                                 height: 60px;
                                 border-radius: 50%;
