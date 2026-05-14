@@ -1392,6 +1392,287 @@
                 max-width: 100% !important;
             }
         }
+
+
+        /* =========================================================
+           Visual Nav + Mobile Hero + Contact Icon Refinement
+           Added for a more attractive navbar, stable mobile hero,
+           and non-stretched contact icons on phone screens.
+           ========================================================= */
+        .navbar {
+            background: rgba(255, 255, 255, 0.82) !important;
+            backdrop-filter: blur(18px) saturate(150%) !important;
+            -webkit-backdrop-filter: blur(18px) saturate(150%) !important;
+            border-bottom: 1px solid rgba(79, 70, 229, 0.14) !important;
+            box-shadow: 0 10px 30px rgba(31, 41, 55, 0.08) !important;
+        }
+
+        .nav-container {
+            position: relative;
+            gap: 1rem;
+        }
+
+        .nav-container::before {
+            content: 'Dr. Rauful Alam';
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            font-size: 1.05rem;
+            padding: 0.62rem 1rem;
+            border-radius: 999px;
+            color: white;
+            background: linear-gradient(135deg, #4f46e5, #06b6d4, #ec4899);
+            box-shadow: 0 10px 24px rgba(79, 70, 229, 0.24);
+            white-space: nowrap;
+        }
+
+        .nav-menu {
+            background: rgba(255, 255, 255, 0.72);
+            padding: 0.45rem;
+            border-radius: 999px;
+            border: 1px solid rgba(79, 70, 229, 0.10);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+        }
+
+        .nav-link {
+            border: 1px solid transparent;
+        }
+
+        .nav-link:hover {
+            background: linear-gradient(135deg, #4f46e5, #06b6d4) !important;
+            color: white !important;
+            border-color: rgba(255,255,255,0.25);
+            box-shadow: 0 10px 24px rgba(79, 70, 229, 0.24) !important;
+        }
+
+        .dropdown-menu {
+            background: rgba(255,255,255,0.98) !important;
+            border: 1px solid rgba(79, 70, 229, 0.12) !important;
+            box-shadow: 0 18px 45px rgba(31, 41, 55, 0.16) !important;
+        }
+
+        .mobile-toggle {
+            background: linear-gradient(135deg, #4f46e5, #06b6d4, #ec4899) !important;
+            box-shadow: 0 12px 28px rgba(79, 70, 229, 0.28) !important;
+        }
+
+        .mobile-toggle span {
+            width: 21px !important;
+            height: 2.5px !important;
+        }
+
+        .mobile-menu {
+            background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.98)) !important;
+            border-left: 1px solid rgba(79, 70, 229, 0.12);
+        }
+
+        .mobile-menu .nav-link {
+            background: rgba(79, 70, 229, 0.045);
+            border: 1px solid rgba(79, 70, 229, 0.08);
+        }
+
+        .mobile-menu .nav-link:hover {
+            background: linear-gradient(135deg, #4f46e5, #06b6d4) !important;
+            color: white !important;
+        }
+
+        #home {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 38%, #0891b2 100%);
+        }
+
+        #home::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 18% 22%, rgba(255,255,255,0.16), transparent 25%),
+                radial-gradient(circle at 78% 28%, rgba(236,72,153,0.18), transparent 26%),
+                radial-gradient(circle at 48% 78%, rgba(6,182,212,0.18), transparent 30%);
+            opacity: 0.95;
+        }
+
+        #home .container {
+            position: relative;
+            z-index: 3 !important;
+        }
+
+        #contact a[aria-label] {
+            width: 60px !important;
+            height: 60px !important;
+            min-width: 60px !important;
+            max-width: 60px !important;
+            flex: 0 0 60px !important;
+            aspect-ratio: 1 / 1 !important;
+            border-radius: 50% !important;
+            overflow: hidden !important;
+        }
+
+        #contact a[aria-label] i,
+        #contact a[aria-label] span {
+            line-height: 1 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        #contact div[style*="display: flex"][style*="gap: 1.5rem"][style*="justify-content: center"] {
+            flex-wrap: wrap !important;
+            gap: 1rem !important;
+        }
+
+        @media (max-width: 900px) {
+            .nav-container::before {
+                font-size: 0.95rem;
+                padding: 0.56rem 0.85rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding-top: 78px !important;
+            }
+
+            .navbar {
+                min-height: 76px !important;
+                background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(238,242,255,0.96)) !important;
+                box-shadow: 0 8px 28px rgba(31, 41, 55, 0.12) !important;
+            }
+
+            .nav-container {
+                height: 76px !important;
+                justify-content: space-between !important;
+                padding: 0 4.6rem 0 0.9rem !important;
+            }
+
+            .nav-container::before {
+                content: 'Rauful Alam';
+                font-size: 0.92rem;
+                padding: 0.58rem 0.82rem;
+                max-width: calc(100vw - 6.4rem);
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .mobile-toggle {
+                top: 13px !important;
+                right: 12px !important;
+                width: 52px !important;
+                height: 52px !important;
+                border: 3px solid rgba(255,255,255,0.95) !important;
+            }
+
+            .mobile-menu {
+                width: min(86vw, 330px) !important;
+                padding-top: 6.2rem !important;
+                border-top-left-radius: 22px;
+                border-bottom-left-radius: 22px;
+            }
+
+            #home {
+                min-height: calc(100vh - 76px) !important;
+                background:
+                    linear-gradient(135deg, rgba(79,70,229,0.52), rgba(6,182,212,0.42)),
+                    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.32), transparent 30%),
+                    radial-gradient(circle at 82% 12%, rgba(236,72,153,0.24), transparent 28%),
+                    radial-gradient(circle at 50% 86%, rgba(6,182,212,0.28), transparent 34%),
+                    linear-gradient(135deg, #eef2ff, #e0f7ff) !important;
+            }
+
+            #home video {
+                display: none !important;
+            }
+
+            #home > div[style*="background: linear-gradient"] {
+                background: linear-gradient(135deg, rgba(79,70,229,0.22), rgba(6,182,212,0.18)) !important;
+            }
+
+            #home .hero {
+                min-height: calc(100vh - 120px) !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+                padding: 2.5rem 0 2rem !important;
+            }
+
+            #home .hero-content {
+                width: 100% !important;
+                max-width: 520px !important;
+                margin: 0 auto !important;
+            }
+
+            #home .hero-profile-img {
+                width: 150px !important;
+                height: 150px !important;
+                box-shadow: 0 18px 42px rgba(0,0,0,0.32) !important;
+            }
+
+            #home .hero-content h1 {
+                font-size: clamp(2.1rem, 9vw, 3.0rem) !important;
+                white-space: normal !important;
+                line-height: 1.08 !important;
+                margin-top: 1rem !important;
+            }
+
+            #home .hero-content .subtitle {
+                font-size: 1.1rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            #home .hero-content p {
+                font-size: 0.98rem !important;
+                line-height: 1.65 !important;
+                max-width: 92vw !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            #home .hero-content h1 {
+                color: #ffffff !important;
+                text-shadow: 0 3px 12px rgba(0,0,0,0.50), 0 0 22px rgba(79,70,229,0.28) !important;
+            }
+
+            #home .hero-content .subtitle,
+            #home .hero-content .description {
+                color: rgba(255,255,255,0.94) !important;
+                text-shadow: 0 2px 7px rgba(0,0,0,0.34) !important;
+            }
+
+            #contact div[style*="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))"] {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+                max-width: 100% !important;
+            }
+
+            #contact div[style*="padding: 3rem 2rem"] {
+                padding: 2rem 1.25rem !important;
+            }
+
+            #contact a[aria-label] {
+                width: 54px !important;
+                height: 54px !important;
+                min-width: 54px !important;
+                max-width: 54px !important;
+                flex-basis: 54px !important;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .nav-container::before {
+                content: 'Rauful';
+                padding: 0.55rem 0.75rem;
+            }
+
+            #contact a[aria-label] {
+                width: 50px !important;
+                height: 50px !important;
+                min-width: 50px !important;
+                max-width: 50px !important;
+                flex-basis: 50px !important;
+            }
+        }
+
 </style>
 </head>
 <body>
@@ -1525,7 +1806,7 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: linear-gradient(135deg, rgba(79, 70, 229, 0.6), rgba(6, 182, 212, 0.5));
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(79, 70, 229, 0.18), rgba(6, 182, 212, 0.14));
                 z-index: 1;
             "></div>
             
@@ -1544,9 +1825,20 @@
                             ">
                         </div>
                         
-                        <h1 style="color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Dr. Rauful Alam</h1>
-                        <div class="subtitle" style="color: rgba(255, 255, 255, 0.95); text-shadow: 0 1px 5px rgba(0,0,0,0.3);">Scientist | Teacher | Author</div>
-                        <p class="description" style="color: rgba(255, 255, 255, 0.9); text-shadow: 0 1px 5px rgba(0,0,0,0.3);">An expert medicinal chemist with a Ph.D. in Organic Chemistry, driving pre-clinical drug discovery research. Passionately advocating for the advancement of education and research culture in Bangladesh.</p>
+                        <h1 style="
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+    background: none !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+">Dr. Rauful Alam</h1>
+                        <div class="subtitle" style="
+                            color: rgba(248, 250, 252, 0.98);
+                            text-shadow: 0 2px 5px rgba(15, 23, 42, 0.38);
+                        ">Scientist | Teacher | Author</div>
+                        <p class="description" style="
+                            color: rgba(255, 255, 255, 0.94);
+                            text-shadow: 0 2px 5px rgba(15, 23, 42, 0.34);
+                        ">An expert medicinal chemist with a Ph.D. in Organic Chemistry, driving pre-clinical drug discovery research. Passionately advocating for the advancement of education and research culture in Bangladesh.</p>
                     </div>
                 </div>
             </div>
