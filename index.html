@@ -1,17 +1,9 @@
-<!-- Registration Section -->
-                <div style="
-                    background: var(--light);
-                    border-radius: 12px;
-                    padding: 2rem;
-                    margin-top: 1.5rem;
-                ">
-                    <h4 style="
-                        color: var(--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Rauful Alam - Medicinal Chemist</title>
+    <title>Rauful Alam - Medicinal Chemist</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1413,7 +1405,7 @@
         }
 
         .nav-container::before {
-            content: 'Dr. Rauful Alam';
+            content: 'Rauful Alam';
             font-weight: 800;
             letter-spacing: -0.03em;
             font-size: 1.05rem;
@@ -1673,6 +1665,149 @@
             }
         }
 
+
+        /* Published Books Section */
+        .books-section {
+            background: linear-gradient(135deg, rgba(248,250,252,0.98), rgba(238,242,255,0.95));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .books-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(79,70,229,0.10), transparent 28%),
+                        radial-gradient(circle at 80% 10%, rgba(6,182,212,0.10), transparent 28%);
+            pointer-events: none;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .book-card {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 14px 35px rgba(31, 41, 55, 0.10);
+            border: 1px solid rgba(79, 70, 229, 0.10);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 55px rgba(79, 70, 229, 0.18);
+        }
+
+        .book-cover-wrap {
+            background: linear-gradient(135deg, rgba(79,70,229,0.10), rgba(6,182,212,0.12));
+            padding: 1.5rem;
+            min-height: 330px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .book-cover {
+            width: 100%;
+            max-width: 215px;
+            aspect-ratio: 2 / 3;
+            object-fit: cover;
+            border-radius: 14px;
+            box-shadow: 0 16px 35px rgba(0,0,0,0.18);
+            background: #eef2ff;
+        }
+
+        .book-content {
+            padding: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            flex: 1;
+        }
+
+        .book-content h3 {
+            color: var(--dark);
+            font-size: 1.25rem;
+            line-height: 1.35;
+            margin: 0;
+        }
+
+        .book-meta {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.92rem;
+        }
+
+        .book-content p {
+            color: var(--gray);
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        .book-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            padding-top: 0.75rem;
+        }
+
+        .btn-book {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.78rem 1.1rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.92rem;
+            background: var(--gradient);
+            color: white;
+            box-shadow: 0 8px 20px rgba(79,70,229,0.25);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .btn-book:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(79,70,229,0.35);
+        }
+
+        .book-note {
+            max-width: 820px;
+            margin: 0 auto;
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.08rem;
+            line-height: 1.75;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .books-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .book-cover-wrap {
+                min-height: 285px;
+            }
+
+            .book-cover {
+                max-width: 185px;
+            }
+        }
+
 </style>
 </head>
 <body>
@@ -1711,6 +1846,9 @@
                 </li>
                 <li>                        <a href="#courses" class="nav-link" onclick="showSection('courses')">
                     📚 Courses
+                </a></li>
+                <li><a href="#books" class="nav-link" onclick="showSection('books')">
+                    📖 Books
                 </a></li>
                 <li><a href="#educational" class="nav-link" onclick="showSection('educational')">
                     🌐 Educational
@@ -1767,6 +1905,9 @@
             <li><a href="#courses" class="nav-link" onclick="showSection('courses'); closeMobile()">
                 📚 Courses
             </a></li>
+            <li><a href="#books" class="nav-link" onclick="showSection('books'); closeMobile()">
+                📖 Books
+            </a></li>
             <li><a href="#educational" class="nav-link" onclick="showSection('educational'); closeMobile()">
                 🌐 Educational
             </a></li>
@@ -1815,7 +1956,7 @@
                     <div class="hero-content">
                         <!-- Profile Image -->
                         <div class="hero-profile">
-                            <img src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/main/images/Photo_RA.jpg" alt="Dr. Rauful Alam" class="hero-profile-img" style="
+                            <img src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/main/images/Photo_RA.jpg" alt="Rauful Alam" class="hero-profile-img" style="
                                 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
                                 border: 4px solid rgba(255, 255, 255, 0.8);
                                 width: 250px;
@@ -1830,7 +1971,7 @@
     -webkit-text-fill-color: white !important;
     background: none !important;
     text-shadow: 0 2px 10px rgba(0,0,0,0.35);
-">Dr. Rauful Alam</h1>
+">Rauful Alam</h1>
                         <div class="subtitle" style="
                             color: rgba(248, 250, 252, 0.98);
                             text-shadow: 0 2px 5px rgba(15, 23, 42, 0.38);
@@ -2675,180 +2816,71 @@
         </section>
 
 
-        <!-- Educational Section -->
-        <section id="educational" class="section" style="
-            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
-            position: relative;
-            overflow: hidden;
-        ">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: 3rem;">
+
+        <!-- Published Books Section -->
+        <section id="books" class="section books-section">
+            <div class="container" style="position: relative; z-index: 1;">
+                <div style="text-align: center; margin-bottom: 2rem;">
                     <div style="
-                        width: 90px;
-                        height: 90px;
+                        width: 80px;
+                        height: 80px;
                         border-radius: 50%;
                         background: var(--gradient);
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        margin: 0 auto 1.5rem;
-                        box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
+                        margin: 0 auto 1rem;
+                        box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
                     ">
-                        <span style="font-size: 2.8rem;">🌐</span>
+                        <span style="font-size: 2.5rem;">📖</span>
                     </div>
-                    <h2 class="section-title">Educational Resources</h2>
-                    <p style="
-                        max-width: 850px;
-                        margin: 0 auto;
-                        font-size: 1.15rem;
-                        color: var(--gray);
-                        line-height: 1.8;
-                    ">
-                        A curated collection of useful learning websites, chemistry tools, biology resources, AI platforms, literature databases, and productivity tools for students, teachers, researchers, and science enthusiasts.
-                    </p>
                 </div>
 
-                <div class="cards-grid">
-                    <div class="card">
-                        <div class="card-icon">🧪</div>
-                        <h3>Chemistry & Drug Discovery</h3>
-                        <p>Useful tools for chemical structures, molecules, proteins, and drug discovery research.</p>
-                        <div class="resource-links">
-                            <a href="https://pubchem.ncbi.nlm.nih.gov/" target="_blank" class="resource-link">🔬 PubChem</a>
-                            <a href="https://www.chemspider.com/" target="_blank" class="resource-link">⚗️ ChemSpider</a>
-                            <a href="https://molview.org/" target="_blank" class="resource-link">🧬 MolView</a>
-                            <a href="https://www.rcsb.org/" target="_blank" class="resource-link">🧫 Protein Data Bank</a>
-                            <a href="https://go.drugbank.com/" target="_blank" class="resource-link">💊 DrugBank</a>
-                            <a href="https://www.rowansci.com/" target="_blank" class="resource-link">⚛️ RowanSci</a>
-                    </div>
-                
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">🧬</div>
-                        <h3>Molecular Biology & Bioinformatics</h3>
-                        <p>Reliable biological databases for genes, proteins, sequences, and structures.</p>
-                        <div class="resource-links">
-                            <a href="https://blast.ncbi.nlm.nih.gov/" target="_blank" class="resource-link">🧬 NCBI BLAST</a>
-                            <a href="https://www.uniprot.org/" target="_blank" class="resource-link">🧪 UniProt</a>
-                            <a href="https://alphafold.ebi.ac.uk/" target="_blank" class="resource-link">🤖 AlphaFold DB</a>
-                            <a href="https://www.genecards.org/" target="_blank" class="resource-link">🧫 GeneCards</a>
-                            <a href="https://www.ebi.ac.uk/" target="_blank" class="resource-link">🔍 EMBL-EBI</a>
-                        </div>
-                    </div>
+                <h2 class="section-title">Published Books</h2>
+                <p class="book-note">
+                    A collection of my published books written for curious readers, students, teachers, and lifelong learners. These books aim to make science engaging, accessible, and intellectually rewarding.
+                </p>
 
-                    <div class="card">
-                        <div class="card-icon">📚</div>
-                        <h3>Learning Platforms</h3>
-                        <p>High-quality online platforms for structured learning and self-study.</p>
-                        <div class="resource-links">
-                            <a href="https://www.coursera.org/" target="_blank" class="resource-link">🎓 Coursera</a>
-                            <a href="https://www.edx.org/" target="_blank" class="resource-link">🏛️ edX</a>
-                            <a href="https://ocw.mit.edu/" target="_blank" class="resource-link">📖 MIT OpenCourseWare</a>
-                            <a href="https://www.khanacademy.org/" target="_blank" class="resource-link">📘 Khan Academy</a>
-                            <a href="https://www.youtube.com/education" target="_blank" class="resource-link">▶️ YouTube Learning</a>
+                <div class="books-grid">
+                    <article class="book-card">
+                        <div class="book-cover-wrap">
+                            <img class="book-cover" src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/7861a315f7c0a046e29d1071b9c296346f5a33e0/images/%E0%A6%A8%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%A4%E0%A7%8D%E0%A6%B0%E0%A6%AC%E0%A7%80%E0%A6%A5%E0%A6%BF%E0%A6%B0-%E0%A6%97%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%87-2.webp" alt="Book cover: নক্ষত্রবীথির গহিনে">
                         </div>
-                    </div>
+                        <div class="book-content">
+                            <h3 lang="bn">নক্ষত্রবীথির গহিনে</h3>
+                            <div class="book-meta">Author: Rauful Alam</div>
+                            <p>
+                                A popular science book that explores the mysteries of the universe in a simple, engaging, and accessible way. It introduces fascinating ideas about space, stars, galaxies, and the cosmos for readers who are curious about the beauty and wonder of the universe.
+                            </p>
+                            <div class="book-actions">
+                                <a class="btn-book" href="https://www.rokomari.com/book/author/70785/rouful-alam" target="_blank" rel="noopener">
+                                    <i class="fas fa-shopping-cart"></i> Purchase Book
+                                </a>
+                            </div>
+                        </div>
+                    </article>
 
-                    <div class="card">
-                        <div class="card-icon">🤖</div>
-                        <h3>AI & Scientific Tools</h3>
-                        <p>AI-assisted platforms for learning, writing, coding, and research productivity.</p>
-                        <div class="resource-links">
-                            <a href="https://chat.openai.com/" target="_blank" class="resource-link">💡 ChatGPT</a>
-                            <a href="https://www.perplexity.ai/" target="_blank" class="resource-link">🔎 Perplexity AI</a>
-                            <a href="https://notebooklm.google.com/" target="_blank" class="resource-link">📓 NotebookLM</a>
-                            <a href="https://colab.research.google.com/" target="_blank" class="resource-link">💻 Google Colab</a>
-                            <a href="https://huggingface.co/" target="_blank" class="resource-link">🤗 Hugging Face</a>
+                    <article class="book-card">
+                        <div class="book-cover-wrap">
+                            <img class="book-cover" src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/7861a315f7c0a046e29d1071b9c296346f5a33e0/images/%E0%A6%B8%E0%A6%AB%E0%A6%B2%20%E0%A6%AE%E0%A6%A8%E0%A7%8D%E0%A6%A4%E0%A7%8D%E0%A6%B0.jpg" alt="Book cover: সফল মন্ত্র">
                         </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-icon">📄</div>
-                        <h3>Scientific Literature</h3>
-                        <p>Search engines and publication platforms for scientific papers and references.</p>
-                        <div class="resource-links">
-                            <a href="https://scholar.google.com/" target="_blank" class="resource-link">📚 Google Scholar</a>
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" class="resource-link">🧫 PubMed</a>
-                            <a href="https://pubs.acs.org/" target="_blank" class="resource-link">⚗️ ACS Publications</a>
-                            <a href="https://www.nature.com/" target="_blank" class="resource-link">🌍 Nature</a>
-                            <a href="https://www.science.org/" target="_blank" class="resource-link">🔬 Science</a>
+                        <div class="book-content">
+                            <h3 lang="bn">সফল মন্ত্র</h3>
+                            <div class="book-meta">Author: Rauful Alam</div>
+                            <p>
+                                A thoughtful book on life philosophy that encourages readers to look beyond material success and social expectations. It emphasizes the deeper meaning of life, personal growth, inner fulfillment, and the value of the journey itself rather than defining success only through money, status, or conventional achievements.
+                            </p>
+                            <div class="book-actions">
+                                <a class="btn-book" href="https://www.rokomari.com/book/author/70785/rouful-alam" target="_blank" rel="noopener">
+                                    <i class="fas fa-shopping-cart"></i> Purchase Book
+                                </a>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-icon">🚀</div>
-                        <h3>Productivity & Scientific Writing</h3>
-                        <p>Helpful tools for writing, reference management, design, and scientific communication.</p>
-                        <div class="resource-links">
-                            <a href="https://www.overleaf.com/" target="_blank" class="resource-link">📝 Overleaf</a>
-                            <a href="https://www.zotero.org/" target="_blank" class="resource-link">📑 Zotero</a>
-                            <a href="https://www.notion.so/" target="_blank" class="resource-link">📋 Notion</a>
-                            <a href="https://www.canva.com/" target="_blank" class="resource-link">🎨 Canva</a>
-                            <a href="https://www.biorender.com/" target="_blank" class="resource-link">🧫 BioRender</a>
-                        </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Blog Section -->
-        <section id="blog" class="section blog-section">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: 2rem;">
-                    <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);">
-                        <span style="font-size: 2.5rem;">📝</span>
-                    </div>
-                </div>
-
-                <h2 class="section-title">Latest Blog Posts</h2>
-
-                <div class="blog-intro">
-                    <p>Short, useful, and research-informed articles on organic chemistry, medicinal chemistry, drug discovery, education, AI-assisted research, and science communication.</p>
-                </div>
-
-                <div class="blog-grid">
-                    <article class="blog-card">
-                        <div class="blog-visual"><span>💊</span></div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span class="blog-category">Drug Discovery</span>
-                                <span class="blog-date">Featured</span>
-                            </div>
-                            <h3>The Future of Drug Discovery: Bridging Chemistry and AI</h3>
-                            <p>A perspective on how artificial intelligence can support medicinal chemistry, from molecular design and virtual screening to better scientific decision-making.</p>
-                            <span class="btn btn-outline" style="cursor: default; opacity: 0.75;">Coming Soon</span>
-                        </div>
-                    </article>
-
-                    <article class="blog-card">
-                        <div class="blog-visual"><span>🧪</span></div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span class="blog-category">Chemistry</span>
-                                <span class="blog-date">New Article</span>
-                            </div>
-                            <h3>My First Scientific Blog</h3>
-                            <p>A short introductory article connecting chemistry, education, research culture, and the habit of writing regularly for students and science learners.</p>
-                            <a href="blog/first-blog.html" class="btn btn-primary">Read Article →</a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card">
-                        <div class="blog-visual"><span>🌱</span></div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span class="blog-category">Education</span>
-                                <span class="blog-date">Science & Society</span>
-                            </div>
-                            <h3>Building Scientific Curiosity Through Education</h3>
-                            <p>Reflections on teaching, mentorship, and how better science communication can inspire students to think deeply rather than memorize superficially.</p>
-                            <span class="btn btn-outline" style="cursor: default; opacity: 0.75;">Coming Soon</span>
-                        </div>
-                    </article>
-                </div>
-
-            </div>
-        </section>
 
         <!-- Contact Section -->
         <section id="contact" class="section">
