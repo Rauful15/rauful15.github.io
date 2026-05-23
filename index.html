@@ -1572,7 +1572,7 @@
             }
 
             #home video {
-                display: none !important;
+                display: block !important;
             }
 
             #home > div[style*="background: linear-gradient"] {
@@ -1809,6 +1809,205 @@
             }
         }
 
+
+
+        /* =========================================================
+           FINAL MOBILE HOME UPGRADE: visible video + social icons +
+           homepage action tabs for Published Books and Offered Courses
+           ========================================================= */
+        .home-social-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.85rem;
+            margin: 1.25rem 0 1.15rem;
+            position: relative;
+            z-index: 5;
+        }
+
+        .home-social-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.22rem;
+            box-shadow: 0 14px 30px rgba(0,0,0,0.22);
+            border: 1px solid rgba(255,255,255,0.45);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .home-social-icon:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.30);
+        }
+
+        .home-social-icon.facebook { background: #1877F2; }
+        .home-social-icon.linkedin { background: #0077B5; }
+        .home-social-icon.gmail { background: linear-gradient(135deg, #ea4335, #fbbc05); }
+
+        .home-action-tabs {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.1rem auto 0;
+            max-width: 620px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .home-action-tab {
+            min-width: 210px;
+            flex: 1 1 210px;
+            max-width: 285px;
+            padding: 1rem 1.1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            background: rgba(255,255,255,0.14);
+            border: 1px solid rgba(255,255,255,0.35);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 18px 42px rgba(0,0,0,0.22);
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            text-align: left;
+            transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+            cursor: pointer;
+        }
+
+        .home-action-tab:hover {
+            transform: translateY(-4px);
+            background: rgba(255,255,255,0.22);
+            box-shadow: 0 24px 52px rgba(0,0,0,0.30);
+        }
+
+        .home-action-tab .tab-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.20);
+            font-size: 1.35rem;
+            flex: 0 0 42px;
+        }
+
+        .home-action-tab .tab-text strong {
+            display: block;
+            font-size: 1rem;
+            line-height: 1.2;
+        }
+
+        .home-action-tab .tab-text span {
+            display: block;
+            color: rgba(255,255,255,0.82);
+            font-size: 0.78rem;
+            margin-top: 0.16rem;
+            line-height: 1.25;
+        }
+
+        @media (max-width: 768px) {
+            #home video {
+                display: block !important;
+                opacity: 0.26 !important;
+                visibility: visible !important;
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+            }
+
+            #home {
+                overflow: hidden !important;
+                min-height: calc(100vh - 76px) !important;
+            }
+
+            #home .hero {
+                padding: 1.25rem 0 1.7rem !important;
+                min-height: calc(100vh - 100px) !important;
+            }
+
+            #home .hero-profile-img {
+                width: 138px !important;
+                height: 138px !important;
+                border-width: 3px !important;
+            }
+
+            #home .hero-content h1 {
+                margin-top: 0.75rem !important;
+                margin-bottom: 0.45rem !important;
+                font-size: clamp(2.05rem, 9vw, 2.75rem) !important;
+            }
+
+            #home .hero-content .subtitle {
+                margin-bottom: 0.55rem !important;
+            }
+
+            #home .hero-content p.description {
+                font-size: 0.94rem !important;
+                line-height: 1.55 !important;
+                max-width: 94vw !important;
+                margin-bottom: 0.8rem !important;
+            }
+
+            .home-social-row {
+                gap: 0.7rem;
+                margin: 0.85rem 0 0.95rem;
+            }
+
+            .home-social-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.15rem;
+            }
+
+            .home-action-tabs {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 0.75rem;
+                width: min(94vw, 420px);
+                margin-top: 0.85rem;
+            }
+
+            .home-action-tab {
+                min-width: 0;
+                max-width: none;
+                flex: none;
+                padding: 0.85rem 0.75rem;
+                border-radius: 18px;
+                gap: 0.6rem;
+            }
+
+            .home-action-tab .tab-icon {
+                width: 34px;
+                height: 34px;
+                border-radius: 12px;
+                font-size: 1.05rem;
+                flex-basis: 34px;
+            }
+
+            .home-action-tab .tab-text strong {
+                font-size: 0.88rem;
+            }
+
+            .home-action-tab .tab-text span {
+                font-size: 0.68rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .home-action-tabs {
+                grid-template-columns: 1fr;
+            }
+        }
+
 </style>
 </head>
 <body>
@@ -1981,6 +2180,35 @@
                             color: rgba(255, 255, 255, 0.94);
                             text-shadow: 0 2px 5px rgba(15, 23, 42, 0.34);
                         ">An expert medicinal chemist with a Ph.D. in Organic Chemistry, driving pre-clinical drug discovery research. Passionately advocating for the advancement of education and research culture in Bangladesh.</p>
+
+                        <div class="home-social-row" aria-label="Social links">
+                            <a class="home-social-icon facebook" href="https://www.facebook.com/share/1BxCrHwnoJ/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="home-social-icon linkedin" href="https://www.linkedin.com/in/rauful-alam-phd-12536365/" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a class="home-social-icon gmail" href="mailto:rauful.alam15@gmail.com" aria-label="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+
+                        <div class="home-action-tabs" aria-label="Homepage quick links">
+                            <a href="#books" onclick="showSection('books')" class="home-action-tab">
+                                <span class="tab-icon">📖</span>
+                                <span class="tab-text">
+                                    <strong>Published Books</strong>
+                                    <span>Explore my books</span>
+                                </span>
+                            </a>
+                            <a href="#courses" onclick="showSection('courses')" class="home-action-tab">
+                                <span class="tab-icon">📚</span>
+                                <span class="tab-text">
+                                    <strong>Offered Courses</strong>
+                                    <span>Training and teaching</span>
+                                </span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
