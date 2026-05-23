@@ -1666,6 +1666,7 @@
         }
 
 
+
         /* Published Books Section */
         .books-section {
             background: linear-gradient(135deg, rgba(248,250,252,0.98), rgba(238,242,255,0.95));
@@ -1710,7 +1711,7 @@
         .book-cover-wrap {
             background: linear-gradient(135deg, rgba(79,70,229,0.10), rgba(6,182,212,0.12));
             padding: 1.5rem;
-            min-height: 330px;
+            min-height: 360px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1718,9 +1719,9 @@
 
         .book-cover {
             width: 100%;
-            max-width: 215px;
+            max-width: 230px;
             aspect-ratio: 2 / 3;
-            object-fit: cover;
+            object-fit: contain;
             border-radius: 14px;
             box-shadow: 0 16px 35px rgba(0,0,0,0.18);
             background: #eef2ff;
@@ -1800,11 +1801,11 @@
             }
 
             .book-cover-wrap {
-                min-height: 285px;
+                min-height: 320px;
             }
 
             .book-cover {
-                max-width: 185px;
+                max-width: 205px;
             }
         }
 
@@ -1847,11 +1848,11 @@
                 <li>                        <a href="#courses" class="nav-link" onclick="showSection('courses')">
                     📚 Courses
                 </a></li>
-                <li><a href="#books" class="nav-link" onclick="showSection('books')">
-                    📖 Books
-                </a></li>
                 <li><a href="#educational" class="nav-link" onclick="showSection('educational')">
                     🌐 Educational
+                </a></li>
+                <li><a href="#books" class="nav-link" onclick="showSection('books')">
+                    📖 Books
                 </a></li>
                 <li><a href="#blog" class="nav-link" onclick="showSection('blog')">
                     📝 Blog
@@ -1905,11 +1906,11 @@
             <li><a href="#courses" class="nav-link" onclick="showSection('courses'); closeMobile()">
                 📚 Courses
             </a></li>
-            <li><a href="#books" class="nav-link" onclick="showSection('books'); closeMobile()">
-                📖 Books
-            </a></li>
             <li><a href="#educational" class="nav-link" onclick="showSection('educational'); closeMobile()">
                 🌐 Educational
+            </a></li>
+            <li><a href="#books" class="nav-link" onclick="showSection('books'); closeMobile()">
+                📖 Books
             </a></li>
             <li><a href="#blog" class="nav-link" onclick="showSection('blog'); closeMobile()">
                 📝 Blog
@@ -2816,6 +2817,123 @@
         </section>
 
 
+        <!-- Educational Section -->
+        <section id="educational" class="section" style="
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+            position: relative;
+            overflow: hidden;
+        ">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <div style="
+                        width: 90px;
+                        height: 90px;
+                        border-radius: 50%;
+                        background: var(--gradient);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto 1.5rem;
+                        box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
+                    ">
+                        <span style="font-size: 2.8rem;">🌐</span>
+                    </div>
+                    <h2 class="section-title">Educational Resources</h2>
+                    <p style="
+                        max-width: 850px;
+                        margin: 0 auto;
+                        font-size: 1.15rem;
+                        color: var(--gray);
+                        line-height: 1.8;
+                    ">
+                        A curated collection of useful learning websites, chemistry tools, biology resources, AI platforms, literature databases, and productivity tools for students, teachers, researchers, and science enthusiasts.
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">🧪</div>
+                        <h3>Chemistry & Drug Discovery</h3>
+                        <p>Useful tools for chemical structures, molecules, proteins, and drug discovery research.</p>
+                        <div class="resource-links">
+                            <a href="https://pubchem.ncbi.nlm.nih.gov/" target="_blank" class="resource-link">🔬 PubChem</a>
+                            <a href="https://www.chemspider.com/" target="_blank" class="resource-link">⚗️ ChemSpider</a>
+                            <a href="https://molview.org/" target="_blank" class="resource-link">🧬 MolView</a>
+                            <a href="https://www.rcsb.org/" target="_blank" class="resource-link">🧫 Protein Data Bank</a>
+                            <a href="https://go.drugbank.com/" target="_blank" class="resource-link">💊 DrugBank</a>
+                            <a href="https://www.rowansci.com/" target="_blank" class="resource-link">⚛️ RowanSci</a>
+                    </div>
+                
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🧬</div>
+                        <h3>Molecular Biology & Bioinformatics</h3>
+                        <p>Reliable biological databases for genes, proteins, sequences, and structures.</p>
+                        <div class="resource-links">
+                            <a href="https://blast.ncbi.nlm.nih.gov/" target="_blank" class="resource-link">🧬 NCBI BLAST</a>
+                            <a href="https://www.uniprot.org/" target="_blank" class="resource-link">🧪 UniProt</a>
+                            <a href="https://alphafold.ebi.ac.uk/" target="_blank" class="resource-link">🤖 AlphaFold DB</a>
+                            <a href="https://www.genecards.org/" target="_blank" class="resource-link">🧫 GeneCards</a>
+                            <a href="https://www.ebi.ac.uk/" target="_blank" class="resource-link">🔍 EMBL-EBI</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">📚</div>
+                        <h3>Learning Platforms</h3>
+                        <p>High-quality online platforms for structured learning and self-study.</p>
+                        <div class="resource-links">
+                            <a href="https://www.coursera.org/" target="_blank" class="resource-link">🎓 Coursera</a>
+                            <a href="https://www.edx.org/" target="_blank" class="resource-link">🏛️ edX</a>
+                            <a href="https://ocw.mit.edu/" target="_blank" class="resource-link">📖 MIT OpenCourseWare</a>
+                            <a href="https://www.khanacademy.org/" target="_blank" class="resource-link">📘 Khan Academy</a>
+                            <a href="https://www.youtube.com/education" target="_blank" class="resource-link">▶️ YouTube Learning</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🤖</div>
+                        <h3>AI & Scientific Tools</h3>
+                        <p>AI-assisted platforms for learning, writing, coding, and research productivity.</p>
+                        <div class="resource-links">
+                            <a href="https://chat.openai.com/" target="_blank" class="resource-link">💡 ChatGPT</a>
+                            <a href="https://www.perplexity.ai/" target="_blank" class="resource-link">🔎 Perplexity AI</a>
+                            <a href="https://notebooklm.google.com/" target="_blank" class="resource-link">📓 NotebookLM</a>
+                            <a href="https://colab.research.google.com/" target="_blank" class="resource-link">💻 Google Colab</a>
+                            <a href="https://huggingface.co/" target="_blank" class="resource-link">🤗 Hugging Face</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">📄</div>
+                        <h3>Scientific Literature</h3>
+                        <p>Search engines and publication platforms for scientific papers and references.</p>
+                        <div class="resource-links">
+                            <a href="https://scholar.google.com/" target="_blank" class="resource-link">📚 Google Scholar</a>
+                            <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" class="resource-link">🧫 PubMed</a>
+                            <a href="https://pubs.acs.org/" target="_blank" class="resource-link">⚗️ ACS Publications</a>
+                            <a href="https://www.nature.com/" target="_blank" class="resource-link">🌍 Nature</a>
+                            <a href="https://www.science.org/" target="_blank" class="resource-link">🔬 Science</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🚀</div>
+                        <h3>Productivity & Scientific Writing</h3>
+                        <p>Helpful tools for writing, reference management, design, and scientific communication.</p>
+                        <div class="resource-links">
+                            <a href="https://www.overleaf.com/" target="_blank" class="resource-link">📝 Overleaf</a>
+                            <a href="https://www.zotero.org/" target="_blank" class="resource-link">📑 Zotero</a>
+                            <a href="https://www.notion.so/" target="_blank" class="resource-link">📋 Notion</a>
+                            <a href="https://www.canva.com/" target="_blank" class="resource-link">🎨 Canva</a>
+                            <a href="https://www.biorender.com/" target="_blank" class="resource-link">🧫 BioRender</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
 
         <!-- Published Books Section -->
         <section id="books" class="section books-section">
@@ -2838,10 +2956,64 @@
 
                 <h2 class="section-title">Published Books</h2>
                 <p class="book-note">
-                    A collection of my published books written for curious readers, students, teachers, and lifelong learners. These books aim to make science engaging, accessible, and intellectually rewarding.
+                    A collection of published books by Rauful Alam written for curious readers, students, teachers, young learners, and lifelong learners. These books aim to make science, education, national development, and reflective thinking more accessible and engaging.
                 </p>
 
                 <div class="books-grid">
+                    <article class="book-card">
+                        <div class="book-cover-wrap">
+                            <img class="book-cover" src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/ae9210a3cdbc5343b4261480715b1165e9d0af2f/images/Cover_rauful_alam.jpeg" alt="Book cover: একটা দেশ যেভাবে দাঁড়ায়">
+                        </div>
+                        <div class="book-content">
+                            <h3 lang="bn">একটা দেশ যেভাবে দাঁড়ায়</h3>
+                            <div class="book-meta">Author: Rauful Alam • Published: 2019</div>
+                            <p>
+                                Published in 2019, this book examines how a nation can move forward by investing in quality education, a strong research culture, and the development of young people. With Bangladesh as the central focus, it discusses how unproductive university cultures, including excessive student and teacher politics, weak talent discovery systems, and insufficient research training, can limit national progress—and why a more merit-based, research-driven educational ecosystem is essential for the country’s future.
+                            </p>
+                            <div class="book-actions">
+                                <a class="btn-book" href="https://www.rokomari.com/book/author/70785/rouful-alam" target="_blank" rel="noopener">
+                                    <i class="fas fa-shopping-cart"></i> Purchase Book
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="book-card">
+                        <div class="book-cover-wrap">
+                            <img class="book-cover" src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/ae9210a3cdbc5343b4261480715b1165e9d0af2f/images/bangladesher-shopno-chokhe-copy%20%281%29.jpg" alt="Book cover: বাংলাদেশের স্বপ্নচোখ">
+                        </div>
+                        <div class="book-content">
+                            <h3 lang="bn">বাংলাদেশের স্বপ্নচোখ</h3>
+                            <div class="book-meta">Author: Rauful Alam • Published: 2021</div>
+                            <p>
+                                Published in 2021, this book reflects on Bangladesh’s present realities and future possibilities from political, educational, and innovation-driven perspectives. It explores how the country can build a more thoughtful, creative, and forward-looking society by strengthening institutions, improving education, encouraging research, and nurturing a culture that values ideas, integrity, and long-term national development.
+                            </p>
+                            <div class="book-actions">
+                                <a class="btn-book" href="https://www.rokomari.com/book/author/70785/rouful-alam" target="_blank" rel="noopener">
+                                    <i class="fas fa-shopping-cart"></i> Purchase Book
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="book-card">
+                        <div class="book-cover-wrap">
+                            <img class="book-cover" src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/ae9210a3cdbc5343b4261480715b1165e9d0af2f/images/The%20A%20BCs%20of%20Science%20for%20Kids.jpg" alt="Book cover: The ABC's of Science for Kids">
+                        </div>
+                        <div class="book-content">
+                            <h3 lang="en">The ABC's of Science for Kids</h3>
+                            <div class="book-meta">Author: Rauful Alam</div>
+                            <p>
+                                A colorful and interactive science book for children that introduces scientific ideas through the alphabet, from A to Z—for example, “A is for Atom.” Each page combines simple explanations with engaging visuals to support curiosity, cognitive engagement, and early scientific thinking in young readers.
+                            </p>
+                            <div class="book-actions">
+                                <a class="btn-book" href="https://www.rokomari.com/book/author/70785/rouful-alam" target="_blank" rel="noopener">
+                                    <i class="fas fa-shopping-cart"></i> Purchase Book
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
                     <article class="book-card">
                         <div class="book-cover-wrap">
                             <img class="book-cover" src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/7861a315f7c0a046e29d1071b9c296346f5a33e0/images/%E0%A6%A8%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%A4%E0%A7%8D%E0%A6%B0%E0%A6%AC%E0%A7%80%E0%A6%A5%E0%A6%BF%E0%A6%B0-%E0%A6%97%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%87-2.webp" alt="Book cover: নক্ষত্রবীথির গহিনে">
@@ -2881,6 +3053,64 @@
             </div>
         </section>
 
+        <!-- Blog Section -->
+        <section id="blog" class="section blog-section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);">
+                        <span style="font-size: 2.5rem;">📝</span>
+                    </div>
+                </div>
+
+                <h2 class="section-title">Latest Blog Posts</h2>
+
+                <div class="blog-intro">
+                    <p>Short, useful, and research-informed articles on organic chemistry, medicinal chemistry, drug discovery, education, AI-assisted research, and science communication.</p>
+                </div>
+
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-visual"><span>💊</span></div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Drug Discovery</span>
+                                <span class="blog-date">Featured</span>
+                            </div>
+                            <h3>The Future of Drug Discovery: Bridging Chemistry and AI</h3>
+                            <p>A perspective on how artificial intelligence can support medicinal chemistry, from molecular design and virtual screening to better scientific decision-making.</p>
+                            <span class="btn btn-outline" style="cursor: default; opacity: 0.75;">Coming Soon</span>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="blog-visual"><span>🧪</span></div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Chemistry</span>
+                                <span class="blog-date">New Article</span>
+                            </div>
+                            <h3>My First Scientific Blog</h3>
+                            <p>A short introductory article connecting chemistry, education, research culture, and the habit of writing regularly for students and science learners.</p>
+                            <a href="blog/first-blog.html" class="btn btn-primary">Read Article →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="blog-visual"><span>🌱</span></div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Education</span>
+                                <span class="blog-date">Science & Society</span>
+                            </div>
+                            <h3>Building Scientific Curiosity Through Education</h3>
+                            <p>Reflections on teaching, mentorship, and how better science communication can inspire students to think deeply rather than memorize superficially.</p>
+                            <span class="btn btn-outline" style="cursor: default; opacity: 0.75;">Coming Soon</span>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
 
         <!-- Contact Section -->
         <section id="contact" class="section">
