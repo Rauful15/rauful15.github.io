@@ -3,7 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rauful Alam - Medicinal Chemist</title>
+    <title>Rauful Alam, Ph.D. | Drug Discovery Scientist &amp; Medicinal Chemistry Consultant</title>
+    <meta name="description" content="Rauful Alam, Ph.D. — drug discovery scientist and medicinal chemistry consultant. Core contributor to PTC518 (votoplam), now in Phase III trials for Huntington's disease. Available for consulting in API process development, AI-driven virtual screening, and synthetic laboratory establishment.">
+    <meta name="author" content="Rauful Alam">
+    <link rel="canonical" href="https://rauful15.github.io/">
+
+    <!-- Open Graph / LinkedIn / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rauful15.github.io/">
+    <meta property="og:site_name" content="Rauful Alam, Ph.D.">
+    <meta property="og:title" content="Rauful Alam, Ph.D. | Drug Discovery Scientist &amp; Medicinal Chemistry Consultant">
+    <meta property="og:description" content="Drug discovery scientist bridging AI, computational science and experimental chemistry. Core contributor to PTC518 (votoplam), now in Phase III trials for Huntington's disease. Consulting in API development, virtual screening and laboratory establishment.">
+    <meta property="og:image" content="https://rauful15.github.io/images/Photo_RA.jpg">
+    <meta property="og:image:alt" content="Portrait of Rauful Alam, Ph.D.">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rauful Alam, Ph.D. | Drug Discovery Scientist">
+    <meta name="twitter:description" content="Drug discovery scientist and medicinal chemistry consultant. AI-driven screening, API process development, laboratory establishment.">
+    <meta name="twitter:image" content="https://rauful15.github.io/images/Photo_RA.jpg">
+
+    <!-- Favicon (inline SVG, no external file required) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234f46e5'/%3E%3Ctext x='50' y='69' font-family='Helvetica,Arial,sans-serif' font-size='50' font-weight='bold' fill='white' text-anchor='middle'%3ERA%3C/text%3E%3C/svg%3E">
+
+    <!-- Structured data for search engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Rauful Alam",
+      "honorificSuffix": "Ph.D.",
+      "jobTitle": "Staff Scientist, Medicinal Chemistry",
+      "url": "https://rauful15.github.io/",
+      "image": "https://rauful15.github.io/images/Photo_RA.jpg",
+      "email": ["mailto:rauful@uchicago.edu", "mailto:rauful.alam15@gmail.com"],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Center for Chemical Biology and Therapeutics, University of Chicago"
+      },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Stockholm University" },
+        { "@type": "CollegeOrUniversity", "name": "University of Chittagong" }
+      ],
+      "knowsAbout": ["Medicinal Chemistry", "Drug Discovery", "Organic Synthesis", "API Process Development", "Virtual Screening"],
+      "sameAs": [
+        "https://www.linkedin.com/in/rauful-alam-phd-12536365/",
+        "https://scholar.google.com/citations?hl=en&user=PrrE9dQAAAAJ",
+        "https://www.youtube.com/@raufulalam9197"
+      ]
+    }
+    </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -665,6 +714,19 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            min-height: 3.2rem;
+            line-height: 1.3;
+        }
+
+        /* Keep skill cards on an even 3-column rhythm and centre a lone last card */
+        @media (min-width: 1025px) {
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .skills-grid > .skill-category:last-child:nth-child(3n + 1) {
+                grid-column: 2 / 3;
+            }
         }
 
         .skill-tags {
@@ -1210,7 +1272,7 @@
             #about .container > div,
             #professional .container > div,
             #education .container > div,
-            #skills .container > div,
+            #consulting .container > div,
             #publications .container > div,
             #presentations .container > div,
             #courses .container > div,
@@ -1856,7 +1918,7 @@
             gap: 1rem;
             flex-wrap: wrap;
             margin: 1.1rem auto 0;
-            max-width: 620px;
+            max-width: 900px;
             position: relative;
             z-index: 5;
         }
@@ -2000,6 +2062,10 @@
             .home-action-tab .tab-text span {
                 font-size: 0.68rem;
             }
+
+            .home-action-tabs > :nth-child(3) {
+                grid-column: 1 / -1;
+            }
         }
 
         @media (max-width: 380px) {
@@ -2008,59 +2074,378 @@
             }
         }
 
+        /* =========================================================
+           V2 PROFESSIONAL POLISH
+           Real brand logo, credibility-first hero, footer, and
+           navigation refinements for a senior/executive audience.
+           ========================================================= */
+
+        /* Retire the CSS-generated pseudo-logo in favour of a real link */
+        .nav-container::before { content: none !important; display: none !important; }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+            border-radius: 13px;
+            background: linear-gradient(135deg, #4f46e5, #06b6d4);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.05rem;
+            letter-spacing: -0.02em;
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.28);
+            flex-shrink: 0;
+        }
+        .brand-text strong {
+            display: block;
+            font-size: 1.02rem;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+        .brand-text span {
+            display: block;
+            font-size: 0.72rem;
+            color: var(--gray);
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            line-height: 1.2;
+            margin-top: 0.1rem;
+        }
+
+        .nav-link i { font-size: 0.88rem; opacity: 0.85; }
+        .nav-link.nav-active {
+            background: rgba(79, 70, 229, 0.11);
+            color: var(--primary);
+            font-weight: 700;
+        }
+        .mobile-menu .nav-link.nav-active {
+            background: rgba(79, 70, 229, 0.13);
+            border-left-color: var(--primary);
+        }
+        .nav-link:hover i { opacity: 1; }
+
+        /* ---------- Hero: credibility first ---------- */
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.16);
+            border: 1px solid rgba(255, 255, 255, 0.38);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: white;
+            border-radius: 999px;
+            padding: 0.42rem 0.95rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-credential {
+            max-width: 640px;
+            margin: 0 auto 1.25rem;
+            padding: 0.85rem 1.15rem;
+            background: rgba(255, 255, 255, 0.13);
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            border-left: 4px solid #02c39a;
+            border-radius: 14px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: white;
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.55;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.32);
+        }
+
+        .hero-stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            max-width: 660px;
+            margin: 1.35rem auto 1.5rem;
+            position: relative;
+            z-index: 5;
+        }
+        .hero-stat {
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 0.85rem 0.6rem;
+            text-align: center;
+        }
+        .hero-stat-value {
+            font-size: 1.32rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+        }
+        .hero-stat-label {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.88);
+            margin-top: 0.28rem;
+            line-height: 1.3;
+            font-weight: 600;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-cta-row {
+            display: flex;
+            justify-content: center;
+            gap: 0.85rem;
+            flex-wrap: wrap;
+            margin: 0 0 1.1rem;
+            position: relative;
+            z-index: 5;
+        }
+        .btn-hero-primary {
+            background: white;
+            color: var(--primary) !important;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+            padding: 0.9rem 1.6rem;
+        }
+        .btn-hero-primary:hover { transform: translateY(-3px); box-shadow: 0 18px 38px rgba(0, 0, 0, 0.3); }
+        .btn-hero-ghost {
+            background: rgba(255, 255, 255, 0.14);
+            color: white !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 0.9rem 1.6rem;
+        }
+        .btn-hero-ghost:hover { background: rgba(255, 255, 255, 0.24); transform: translateY(-3px); }
+
+        .hero-affiliations {
+            margin: 1.6rem auto 0;
+            max-width: 780px;
+            position: relative;
+            z-index: 5;
+        }
+        .hero-affil-label {
+            font-size: 0.68rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.72);
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+            text-align: center;
+        }
+        .hero-affil-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem 1.35rem;
+        }
+        .hero-affil-list span {
+            color: rgba(255, 255, 255, 0.92);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.01em;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.34);
+            white-space: nowrap;
+        }
+        .hero-affil-list span::before {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #02c39a;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        /* ---------- Site footer ---------- */
+        .site-footer {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 55%, #0e7490 100%);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 3rem 2rem 1.75rem;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.6fr 1fr 1fr;
+            gap: 2.5rem;
+        }
+        .site-footer h4 {
+            font-size: 0.8rem;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+        .footer-brand strong {
+            display: block;
+            font-size: 1.25rem;
+            color: white;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.35rem;
+        }
+        .footer-brand p {
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.76);
+            max-width: 420px;
+            margin: 0 0 1.15rem;
+        }
+        .footer-links { list-style: none; padding: 0; margin: 0; }
+        .footer-links li { margin-bottom: 0.6rem; }
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.82);
+            text-decoration: none;
+            font-size: 0.93rem;
+            transition: color 0.25s ease, padding-left 0.25s ease;
+        }
+        .footer-links a:hover { color: white; padding-left: 5px; }
+        .footer-social { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 11px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.25s ease;
+        }
+        .footer-social a:hover { background: rgba(255, 255, 255, 0.26); transform: translateY(-3px); }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2.5rem auto 0;
+            padding-top: 1.35rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-size: 0.83rem;
+            color: rgba(255, 255, 255, 0.62);
+        }
+
+        @media (max-width: 1024px) {
+            .brand-text span { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                justify-content: space-between !important;
+                padding: 0 4.6rem 0 0.9rem !important;
+            }
+            .brand-mark { width: 40px; height: 40px; font-size: 0.95rem; border-radius: 12px; }
+            .brand-text strong { font-size: 0.95rem; }
+
+            .hero-eyebrow { font-size: 0.68rem; padding: 0.34rem 0.75rem; margin-bottom: 0.7rem; }
+            .hero-credential { font-size: 0.85rem; padding: 0.7rem 0.9rem; margin-bottom: 0.9rem; text-align: left; }
+            .hero-stats-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.55rem;
+                max-width: 94vw;
+                margin: 1rem auto 1.1rem;
+            }
+            .hero-stat { padding: 0.65rem 0.5rem; border-radius: 13px; }
+            .hero-stat-value { font-size: 1.05rem; }
+            .hero-stat-label { font-size: 0.63rem; }
+            .hero-cta-row { gap: 0.6rem; margin-bottom: 0.85rem; }
+            .hero-cta-row .btn { padding: 0.75rem 1.1rem !important; font-size: 0.88rem; flex: 1 1 auto; }
+            .hero-affiliations { margin-top: 1.1rem; }
+            .hero-affil-label { font-size: 0.62rem; margin-bottom: 0.5rem; }
+            .hero-affil-list { gap: 0.4rem 0.9rem; }
+            .hero-affil-list span { font-size: 0.74rem; }
+
+            .site-footer { padding: 2.25rem 1.1rem 1.35rem; }
+            .footer-inner { grid-template-columns: 1fr; gap: 1.75rem; }
+            .footer-bottom { margin-top: 1.75rem; flex-direction: column; text-align: center; gap: 0.5rem; }
+        }
+
 </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div style="width: 50px;"></div> <!-- Empty spacer for layout balance -->
+            <a href="#home" class="brand" onclick="showSection('home')" aria-label="Rauful Alam - home">
+                <span class="brand-mark">RA</span>
+                <span class="brand-text">
+                    <strong>Rauful Alam, Ph.D.</strong>
+                    <span>Drug Discovery Scientist</span>
+                </span>
+            </a>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link" onclick="showSection('home')">
-                    🏠 Home
+                <li><a href="#about" class="nav-link" onclick="showSection('about')">
+                    <i class="fas fa-user"></i> About
                 </a></li>
                 <li class="dropdown">
-                    <a href="#" class="nav-link">
-                        🛣️ My Journey <span style="margin-left: 0.5rem; font-size: 0.8rem;">▼</span>
+                    <a href="#professional" class="nav-link" onclick="showSection('professional')">
+                        <i class="fas fa-briefcase"></i> Experience <span style="margin-left: 0.35rem; font-size: 0.7rem;">▼</span>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="#about" class="nav-link" onclick="showSection('about')">
-                            👤 About Me
-                        </a>
                         <a href="#professional" class="nav-link" onclick="showSection('professional')">
-                            💼 Professional
+                            <i class="fas fa-briefcase"></i> Professional Journey
                         </a>
                         <a href="#education" class="nav-link" onclick="showSection('education')">
-                            🎓 Education
-                        </a>
-                        <a href="#skills" class="nav-link" onclick="showSection('skills')">
-                            ⚙️ Skills
-                        </a>
-                        <a href="#publications" class="nav-link" onclick="showSection('publications')">
-                            📄 Publications
+                            <i class="fas fa-graduation-cap"></i> Education
                         </a>
                         <a href="#presentations" class="nav-link" onclick="showSection('presentations')">
-                            📊 Presentations
+                            <i class="fas fa-chart-column"></i> Presentations
                         </a>
                     </div>
                 </li>
-                <li>                        <a href="#courses" class="nav-link" onclick="showSection('courses')">
-                    📚 Courses
+                <li><a href="#publications" class="nav-link" onclick="showSection('publications')">
+                    <i class="fas fa-file-lines"></i> Publications
                 </a></li>
-                <li><a href="#educational" class="nav-link" onclick="showSection('educational')">
-                    🌐 Educational
+                <li><a href="#consulting" class="nav-link" onclick="showSection('consulting')">
+                    <i class="fas fa-handshake"></i> Consulting
                 </a></li>
-                <li><a href="#books" class="nav-link" onclick="showSection('books')">
-                    📖 Books
-                </a></li>
-                <li><a href="#blog" class="nav-link" onclick="showSection('blog')">
-                    📝 Blog
-                </a></li>
+                <li class="dropdown">
+                    <a href="#courses" class="nav-link" onclick="showSection('courses')">
+                        <i class="fas fa-chalkboard-user"></i> Teaching <span style="margin-left: 0.35rem; font-size: 0.7rem;">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#courses" class="nav-link" onclick="showSection('courses')">
+                            <i class="fas fa-chalkboard-user"></i> Courses
+                        </a>
+                        <a href="#books" class="nav-link" onclick="showSection('books')">
+                            <i class="fas fa-book"></i> Published Books
+                        </a>
+                        <a href="#blog" class="nav-link" onclick="showSection('blog')">
+                            <i class="fas fa-pen-nib"></i> Blog
+                        </a>
+                        <a href="#educational" class="nav-link" onclick="showSection('educational')">
+                            <i class="fas fa-globe"></i> Resources
+                        </a>
+                    </div>
+                </li>
                 <li><a href="#contact" class="nav-link" onclick="showSection('contact')">
-                    ✉️ Contact
+                    <i class="fas fa-envelope"></i> Contact
                 </a></li>
             </ul>
-            <div class="mobile-toggle" onclick="toggleMobile()">
+            <div class="mobile-toggle" onclick="toggleMobile()" role="button" aria-label="Open menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -2072,7 +2457,16 @@
     <div class="mobile-menu" id="mobileMenu">
         <ul>
             <li><a href="#home" class="nav-link" onclick="showSection('home'); closeMobile()">
-                🏠 Home
+                <i class="fas fa-house"></i> Home
+            </a></li>
+            <li><a href="#about" class="nav-link" onclick="showSection('about'); closeMobile()">
+                <i class="fas fa-user"></i> About
+            </a></li>
+            <li><a href="#consulting" class="nav-link" onclick="showSection('consulting'); closeMobile()">
+                <i class="fas fa-handshake"></i> Consulting
+            </a></li>
+            <li><a href="#publications" class="nav-link" onclick="showSection('publications'); closeMobile()">
+                <i class="fas fa-file-lines"></i> Publications
             </a></li>
             <li style="
                 color: var(--primary);
@@ -2083,39 +2477,40 @@
                 padding: 0.5rem 1.5rem;
                 margin: 1rem 0 0.5rem 0;
                 border-bottom: 2px solid var(--primary);
-            ">My Journey</li>
-            <li><a href="#about" class="nav-link" onclick="showSection('about'); closeMobile()" style="margin-left: 1rem;">
-                👤 About Me
-            </a></li>
+            ">Experience</li>
             <li><a href="#professional" class="nav-link" onclick="showSection('professional'); closeMobile()" style="margin-left: 1rem;">
-                💼 Professional
+                <i class="fas fa-briefcase"></i> Professional Journey
             </a></li>
             <li><a href="#education" class="nav-link" onclick="showSection('education'); closeMobile()" style="margin-left: 1rem;">
-                🎓 Education
-            </a></li>
-            <li><a href="#skills" class="nav-link" onclick="showSection('skills'); closeMobile()" style="margin-left: 1rem;">
-                ⚙️ Skills
-            </a></li>
-            <li><a href="#publications" class="nav-link" onclick="showSection('publications'); closeMobile()" style="margin-left: 1rem;">
-                📄 Publications
+                <i class="fas fa-graduation-cap"></i> Education
             </a></li>
             <li><a href="#presentations" class="nav-link" onclick="showSection('presentations'); closeMobile()" style="margin-left: 1rem;">
-                📊 Presentations
+                <i class="fas fa-chart-column"></i> Presentations
             </a></li>
-            <li><a href="#courses" class="nav-link" onclick="showSection('courses'); closeMobile()">
-                📚 Courses
+            <li style="
+                color: var(--primary);
+                font-weight: 600;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                padding: 0.5rem 1.5rem;
+                margin: 1rem 0 0.5rem 0;
+                border-bottom: 2px solid var(--primary);
+            ">Teaching &amp; Outreach</li>
+            <li><a href="#courses" class="nav-link" onclick="showSection('courses'); closeMobile()" style="margin-left: 1rem;">
+                <i class="fas fa-chalkboard-user"></i> Courses
             </a></li>
-            <li><a href="#educational" class="nav-link" onclick="showSection('educational'); closeMobile()">
-                🌐 Educational
+            <li><a href="#books" class="nav-link" onclick="showSection('books'); closeMobile()" style="margin-left: 1rem;">
+                <i class="fas fa-book"></i> Published Books
             </a></li>
-            <li><a href="#books" class="nav-link" onclick="showSection('books'); closeMobile()">
-                📖 Books
+            <li><a href="#blog" class="nav-link" onclick="showSection('blog'); closeMobile()" style="margin-left: 1rem;">
+                <i class="fas fa-pen-nib"></i> Blog
             </a></li>
-            <li><a href="#blog" class="nav-link" onclick="showSection('blog'); closeMobile()">
-                📝 Blog
+            <li><a href="#educational" class="nav-link" onclick="showSection('educational'); closeMobile()" style="margin-left: 1rem;">
+                <i class="fas fa-globe"></i> Resources
             </a></li>
-            <li><a href="#contact" class="nav-link" onclick="showSection('contact'); closeMobile()">
-                ✉️ Contact
+            <li style="margin-top: 1rem;"><a href="#contact" class="nav-link" onclick="showSection('contact'); closeMobile()">
+                <i class="fas fa-envelope"></i> Contact
             </a></li>
         </ul>
     </div>
@@ -2137,7 +2532,7 @@
                 z-index: 0;
                 opacity: 0.3;
             ">
-                <source src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/main/video/Methane%20video.mp4" type="video/mp4">
+                <source src="https://rauful15.github.io/video/Methane%20video.mp4" type="video/mp4">
             </video>
             
             <!-- Video Overlay -->
@@ -2156,44 +2551,87 @@
                     <div class="hero-content">
                         <!-- Profile Image -->
                         <div class="hero-profile">
-                            <img src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/main/images/Photo_RA.jpg" alt="Rauful Alam" class="hero-profile-img" style="
+                            <img src="https://rauful15.github.io/images/Photo_RA.jpg" alt="Rauful Alam, Ph.D." class="hero-profile-img" style="
                                 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
                                 border: 4px solid rgba(255, 255, 255, 0.8);
-                                width: 250px;
-                                height: 250px;
+                                width: 210px;
+                                height: 210px;
                                 border-radius: 50%;
                                 object-fit: cover;
                             ">
                         </div>
-                        
+
                         <h1 style="
     color: white !important;
     -webkit-text-fill-color: white !important;
     background: none !important;
     text-shadow: 0 2px 10px rgba(0,0,0,0.35);
-">Rauful Alam</h1>
+">Rauful Alam, Ph.D.</h1>
                         <div class="subtitle" style="
                             color: rgba(248, 250, 252, 0.98);
                             text-shadow: 0 2px 5px rgba(15, 23, 42, 0.38);
-                        ">Scientist | Teacher | Author</div>
+                        ">Drug Discovery Scientist &nbsp;|&nbsp; Synthetic Chemist &nbsp;|&nbsp; Consultant &nbsp;|&nbsp; Author</div>
+
+                        <div class="hero-credential">
+                            Staff Scientist, Center for Chemical Biology &amp; Therapeutics, University of Chicago — and core contributor to <strong>PTC518 (votoplam)</strong>, now in <strong>Phase III</strong> trials for Huntington's disease.
+                        </div>
+
                         <p class="description" style="
                             color: rgba(255, 255, 255, 0.94);
                             text-shadow: 0 2px 5px rgba(15, 23, 42, 0.34);
-                        ">An expert medicinal chemist with a Ph.D. in Organic Chemistry, driving pre-clinical drug discovery research. Passionately advocating for the advancement of education and research culture in Bangladesh.</p>
+                            text-align: justify;
+                            text-justify: inter-word;
+                            hyphens: auto;
+                        ">I am a drug discovery scientist with a Ph.D. in Organic Chemistry, working at the intersection of AI, computational science, and experimental chemistry to advance preclinical drug discovery. My work spans synthetic and medicinal chemistry, API development, R&amp;D strategy, and scientific consulting. Beyond the laboratory, I am passionate about teaching, scientific writing, research integrity, and building a stronger culture of education and research in Bangladesh.</p>
+
+                        <div class="hero-stats-row" aria-label="Key credentials">
+                            <div class="hero-stat">
+                                <div class="hero-stat-value">Phase III</div>
+                                <div class="hero-stat-label">PTC518 (votoplam) in trials</div>
+                            </div>
+                            <div class="hero-stat">
+                                <div class="hero-stat-value">13</div>
+                                <div class="hero-stat-label">Publications, 7 as lead author</div>
+                            </div>
+                            <div class="hero-stat">
+                                <div class="hero-stat-value">4</div>
+                                <div class="hero-stat-label">Patent families</div>
+                            </div>
+                            <div class="hero-stat">
+                                <div class="hero-stat-value">8 yrs</div>
+                                <div class="hero-stat-label">Drug discovery experience</div>
+                            </div>
+                        </div>
+
+                        <div class="hero-cta-row">
+                            <a href="#consulting" onclick="showSection('consulting')" class="btn btn-hero-primary">
+                                <i class="fas fa-handshake"></i> Work With Me
+                            </a>
+                            <a href="https://rauful15.github.io/images/CV_Rauful%20Alam.pdf" target="_blank" rel="noopener" class="btn btn-hero-ghost">
+                                <i class="fas fa-file-arrow-down"></i> Download CV
+                            </a>
+                        </div>
 
                         <div class="home-social-row" aria-label="Social links">
-                            <a class="home-social-icon facebook" href="https://www.facebook.com/share/1BxCrHwnoJ/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a class="home-social-icon linkedin" href="https://www.linkedin.com/in/rauful-alam-phd-12536365/" target="_blank" aria-label="LinkedIn">
+                            <a class="home-social-icon linkedin" href="https://www.linkedin.com/in/rauful-alam-phd-12536365/" target="_blank" rel="noopener" aria-label="LinkedIn">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a class="home-social-icon gmail" href="mailto:rauful.alam15@gmail.com" aria-label="Email">
+                            <a class="home-social-icon gmail" href="mailto:rauful@uchicago.edu" aria-label="Email">
                                 <i class="fas fa-envelope"></i>
+                            </a>
+                            <a class="home-social-icon facebook" href="https://www.facebook.com/share/1BxCrHwnoJ/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
                             </a>
                         </div>
 
                         <div class="home-action-tabs" aria-label="Homepage quick links">
+                            <a href="#publications" onclick="showSection('publications')" class="home-action-tab">
+                                <span class="tab-icon">📄</span>
+                                <span class="tab-text">
+                                    <strong>Scientific Publications</strong>
+                                    <span>Articles and patents</span>
+                                </span>
+                            </a>
                             <a href="#books" onclick="showSection('books')" class="home-action-tab">
                                 <span class="tab-icon">📖</span>
                                 <span class="tab-text">
@@ -2209,10 +2647,21 @@
                                 </span>
                             </a>
                         </div>
+
+                        <div class="hero-affiliations">
+                            <div class="hero-affil-label">Trained and worked at</div>
+                            <div class="hero-affil-list">
+                                <span>University of Chicago</span>
+                                <span>PTC Therapeutics</span>
+                                <span>University of Pennsylvania</span>
+                                <span>Stockholm University</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
         <!-- About Section -->
         <section id="about" class="section" style="
@@ -2331,6 +2780,16 @@
                         <h3>Building Research Culture</h3>
                         <p>Working to strengthen research culture in Bangladesh and beyond, lighting the way for others through science, teaching, and mentorship.</p>
                     </div>
+                    <div class="card">
+                        <div class="card-icon">🏭</div>
+                        <h3>API Synthesis & Lab Building</h3>
+                        <p>As API manufacturing expands in Bangladesh, the shortage of trained synthetic chemists is the bottleneck. I consult on establishing synthetic laboratories and leading API route design, scale-up, and process development.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🤝</div>
+                        <h3>Regulatory & Global Partnerships</h3>
+                        <p>Advising on FDA and ICH guideline compliance, quality documentation, and technology transfer—while building international research and industry partnerships that connect Bangladeshi pharma to global standards.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -2339,32 +2798,6 @@
         <section id="professional" class="section">
             <div class="container">
                 <div style="text-align: center; margin-bottom: 2rem;">
-                    <div style="
-                        background: white;
-                        padding: 2rem;
-                        border-radius: 15px;
-                        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-                        max-width: 700px;
-                        margin: 0 auto 2rem;
-                        border-left: 4px solid var(--primary);
-                    ">
-                        <div style="
-                            font-style: italic; 
-                            color: var(--dark); 
-                            font-size: 1.3rem; 
-                            line-height: 1.6;
-                            margin-bottom: 0.5rem;
-                        ">
-                            "A ship in harbor is safe, but that is not what ships are built for."
-                        </div>
-                        <div style="
-                            color: var(--gray);
-                            font-size: 1rem;
-                            font-weight: 600;
-                        ">
-                            — Unknown
-                        </div>
-                    </div>
                     <div style="
                         width: 80px; 
                         height: 80px; 
@@ -2390,6 +2823,22 @@
                             <div class="timeline-description">
                                 <div style="text-align: center; margin-top: 1.5rem;">
                                     <button class="btn btn-primary" onclick="openModal('professional1Modal')" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">
+                                        Key Contributions
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">May 2024 - August 2025</div>
+                            <h3 class="timeline-title">Voluntary Career Break — Independent Research &amp; Professional Development</h3>
+                            <p class="timeline-company">Resigned by choice to support family relocation · Self-directed work in AI-driven chemistry and intellectual property</p>
+                            <div class="timeline-description">
+                                <div style="text-align: center; margin-top: 1.5rem;">
+                                    <button class="btn btn-primary" onclick="openModal('professional6Modal')" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">
                                         Key Contributions
                                     </button>
                                 </div>
@@ -2488,10 +2937,28 @@
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
+                            <div class="timeline-date">Ongoing Professional Development</div>
+                            <h3 class="timeline-title">Specialist Courses &amp; Training</h3>
+                            <p class="timeline-company">American Chemical Society · Schrödinger · Drew University</p>
+                            <div class="timeline-description">
+                                <ul>
+                                    <li>Pharmacokinetics for Chemists in Drug Discovery and Development (ACS)</li>
+                                    <li>Introduction to Molecular Modeling in Drug Discovery (Schrödinger)</li>
+                                    <li>Drew University Medicinal Chemistry Course (one-week intensive)</li>
+                                    <li>19th Drug Discovery Chemistry Conference, April 2024</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
                             <div class="timeline-date">January 2012 - March 2016</div>
                             <h3 class="timeline-title">PhD in Organic Chemistry</h3>
                             <p class="timeline-company"><a href="https://www.su.se/" target="_blank" style="color: var(--gray); text-decoration: none;">Stockholm University</a>, Sweden</p>
                             <p class="timeline-company" style="margin-top: 0.5rem;">Advisor: <a href="https://www.organ.su.se/ks/" target="_blank" style="color: var(--gray); text-decoration: none;">Prof. Kálmán J Szabó</a></p>
+                            <p class="timeline-company" style="margin-top: 0.35rem;">Examiner: Prof. Varinder K. Aggarwal, University of Bristol</p>
                             <div class="timeline-description">
                                 <div style="text-align: center; margin-top: 1.5rem;">
                                     <button class="btn btn-primary" onclick="openModal('education1Modal')" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">
@@ -2553,8 +3020,226 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section">
+        <!-- Consulting / Expertise Section -->
+        <section id="consulting" class="section">
+            <style>
+                /* ---- Skills / capability layout (scoped) ---- */
+                #consulting .skills-lede {
+                    max-width: 820px;
+                    margin: -1.5rem auto 2.5rem;
+                    text-align: center;
+                    font-size: 1.12rem;
+                    line-height: 1.8;
+                    color: var(--gray);
+                }
+
+                #consulting .skills-proof {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+                    gap: 1rem;
+                    max-width: 1000px;
+                    margin: 0 auto 3.5rem;
+                }
+                #consulting .proof-item {
+                    background: white;
+                    border: 1px solid rgba(79, 70, 229, 0.14);
+                    border-radius: 16px;
+                    padding: 1.25rem 1rem;
+                    text-align: center;
+                    box-shadow: 0 8px 22px rgba(31, 41, 55, 0.06);
+                }
+                #consulting .proof-value {
+                    font-size: 1.55rem;
+                    font-weight: 800;
+                    line-height: 1.15;
+                    background: var(--gradient);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                #consulting .proof-label {
+                    margin-top: 0.4rem;
+                    font-size: 0.85rem;
+                    color: var(--gray);
+                    line-height: 1.45;
+                }
+
+                #consulting .band-title {
+                    text-align: center;
+                    font-size: 0.86rem;
+                    font-weight: 800;
+                    letter-spacing: 0.14em;
+                    text-transform: uppercase;
+                    color: var(--primary);
+                    margin: 0 0 0.6rem;
+                }
+                #consulting .band-sub {
+                    text-align: center;
+                    color: var(--gray);
+                    font-size: 1rem;
+                    margin: 0 auto 2.5rem;
+                    max-width: 700px;
+                    line-height: 1.7;
+                }
+                #consulting .band-divider {
+                    width: 70px;
+                    height: 4px;
+                    border-radius: 999px;
+                    background: var(--gradient);
+                    margin: 0 auto 1.2rem;
+                }
+
+                #consulting .capability-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+                    gap: 1.75rem;
+                    margin-bottom: 4.5rem;
+                }
+
+                #consulting .capability {
+                    background: white;
+                    border: 1px solid rgba(79, 70, 229, 0.12);
+                    border-radius: 20px;
+                    padding: 2rem 1.85rem;
+                    box-shadow: 0 12px 30px rgba(31, 41, 55, 0.07);
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    overflow: hidden;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+                #consulting .capability::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    width: 5px;
+                    background: var(--gradient);
+                }
+                #consulting .capability:hover {
+                    transform: translateY(-6px);
+                    box-shadow: 0 22px 46px rgba(79, 70, 229, 0.16);
+                }
+
+                #consulting .cap-head {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.9rem;
+                    margin-bottom: 0.75rem;
+                }
+                #consulting .cap-icon {
+                    flex: 0 0 50px;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 15px;
+                    background: linear-gradient(135deg, rgba(79, 70, 229, 0.12), rgba(6, 182, 212, 0.12));
+                    border: 1px solid rgba(79, 70, 229, 0.16);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.5rem;
+                }
+                #consulting .cap-head h3 {
+                    margin: 0;
+                    font-size: 1.22rem;
+                    font-weight: 700;
+                    color: var(--dark);
+                    line-height: 1.3;
+                }
+
+                #consulting .cap-tagline {
+                    color: var(--primary);
+                    font-weight: 600;
+                    font-size: 0.93rem;
+                    margin: 0 0 1.15rem;
+                    line-height: 1.55;
+                }
+
+                #consulting .cap-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0 0 1.35rem;
+                    flex: 1;
+                }
+                #consulting .cap-list li {
+                    position: relative;
+                    padding-left: 1.6rem;
+                    margin-bottom: 0.6rem;
+                    color: var(--gray);
+                    font-size: 0.95rem;
+                    line-height: 1.6;
+                }
+                #consulting .cap-list li::before {
+                    content: '✓';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    color: var(--secondary);
+                    font-weight: 800;
+                    font-size: 0.9rem;
+                }
+
+                #consulting .cap-tools {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.4rem;
+                    padding-top: 1.1rem;
+                    border-top: 1px solid rgba(79, 70, 229, 0.10);
+                    margin-top: auto;
+                }
+                #consulting .cap-tool {
+                    background: rgba(79, 70, 229, 0.07);
+                    color: var(--primary);
+                    border: 1px solid rgba(79, 70, 229, 0.13);
+                    border-radius: 999px;
+                    padding: 0.32rem 0.7rem;
+                    font-size: 0.78rem;
+                    font-weight: 600;
+                }
+
+                #consulting .skills-cta {
+                    max-width: 780px;
+                    margin: 0 auto;
+                    text-align: center;
+                    background: linear-gradient(135deg, rgba(79, 70, 229, 0.07), rgba(6, 182, 212, 0.06));
+                    border: 1px solid rgba(79, 70, 229, 0.14);
+                    border-radius: 20px;
+                    padding: 2.25rem 1.75rem;
+                }
+                #consulting .skills-cta h3 {
+                    margin: 0 0 0.75rem;
+                    font-size: 1.4rem;
+                    color: var(--dark);
+                }
+                #consulting .skills-cta p {
+                    margin: 0 0 1.6rem;
+                    color: var(--gray);
+                    line-height: 1.7;
+                }
+
+                @media (max-width: 768px) {
+                    #consulting .skills-lede { font-size: 1rem; margin-bottom: 2rem; }
+                    #consulting .skills-proof { gap: 0.75rem; margin-bottom: 2.5rem; }
+                    #consulting .proof-item { padding: 1rem 0.75rem; border-radius: 14px; }
+                    #consulting .proof-value { font-size: 1.3rem; }
+                    #consulting .proof-label { font-size: 0.78rem; }
+                    #consulting .capability-grid {
+                        grid-template-columns: 1fr !important;
+                        gap: 1.25rem;
+                        margin-bottom: 3rem;
+                    }
+                    #consulting .capability { padding: 1.4rem 1.25rem; border-radius: 18px; }
+                    #consulting .capability:hover { transform: translateY(-3px); }
+                    #consulting .cap-head h3 { font-size: 1.08rem; }
+                    #consulting .cap-icon { flex-basis: 42px; width: 42px; height: 42px; font-size: 1.25rem; border-radius: 13px; }
+                    #consulting .cap-list li { font-size: 0.92rem; }
+                    #consulting .band-sub { font-size: 0.95rem; margin-bottom: 1.75rem; }
+                    #consulting .skills-cta { padding: 1.5rem 1.15rem; }
+                    #consulting .skills-cta h3 { font-size: 1.15rem; }
+                }
+            </style>
+
             <div class="container">
                 <div style="text-align: center; margin-bottom: 2rem;">
                     <div style="
@@ -2571,63 +3256,231 @@
                         <span style="font-size: 2.5rem;">⚙️</span>
                     </div>
                 </div>
-                <h2 class="section-title">Skills & Expertise</h2>
+                <h2 class="section-title">Expertise &amp; Consulting</h2>
+
+                <p class="skills-lede">
+Eight years of small-molecule drug discovery across industry and academia, built on doctoral and postdoctoral synthetic methodology research — from Stockholm University and the University of Pennsylvania, to a Phase III programme at PTC Therapeutics, to AI-driven screening at the University of Chicago. Below is what that experience lets me deliver for a partner organisation.
+                </p>
+
+                <div class="skills-proof">
+                    <div class="proof-item">
+                        <div class="proof-value">Phase III</div>
+                        <div class="proof-label">Core contributor to PTC518 (votoplam) for Huntington's disease</div>
+                    </div>
+                    <div class="proof-item">
+                        <div class="proof-value">13</div>
+                        <div class="proof-label">Peer-reviewed publications, 7 as lead author</div>
+                    </div>
+                    <div class="proof-item">
+                        <div class="proof-value">4</div>
+                        <div class="proof-label">Patent families, all highlighted in ACS Med. Chem. Lett.</div>
+                    </div>
+                    <div class="proof-item">
+                        <div class="proof-value">Ph.D.</div>
+                        <div class="proof-label">Organic Chemistry, Stockholm University</div>
+                    </div>
+                </div>
+
+                <div class="band-divider"></div>
+                <p class="band-title">What I Can Do For You</p>
+                <p class="band-sub">
+                    Six areas where I take on consulting, scientific leadership, and collaborative engagements with pharmaceutical companies, universities, and research institutions.
+                </p>
+
+                <div class="capability-grid">
+
+                    <div class="capability">
+                        <div class="cap-head">
+                            <span class="cap-icon">🎯</span>
+                            <h3>Drug Discovery Program Leadership</h3>
+                        </div>
+                        <p class="cap-tagline">Taking a target from initial assessment through to an optimised lead series.</p>
+                        <ul class="cap-list">
+                            <li>Target assessment with patent and literature landscape analysis</li>
+                            <li>Hit identification, triage, and prioritisation strategy</li>
+                            <li>SAR-driven lead optimisation and design cycles</li>
+                            <li>DMPK and ADME property optimisation planning</li>
+                            <li>CRO selection, briefing, and day-to-day scientific management</li>
+                        </ul>
+                        <div class="cap-tools">
+                            <span class="cap-tool">Medicinal Chemistry</span>
+                            <span class="cap-tool">SAR Analysis</span>
+                            <span class="cap-tool">DMPK / ADME</span>
+                            <span class="cap-tool">Patent Landscaping</span>
+                            <span class="cap-tool">CRO Management</span>
+                        </div>
+                    </div>
+
+                    <div class="capability">
+                        <div class="cap-head">
+                            <span class="cap-icon">🤖</span>
+                            <h3>AI &amp; Computational Screening</h3>
+                        </div>
+                        <p class="cap-tagline">Screening millions of compounds computationally before committing to synthesis.</p>
+                        <ul class="cap-list">
+                            <li>Structure-based virtual screening campaigns at library scale</li>
+                            <li>Binding-affinity prediction and computational hit triage</li>
+                            <li>Protein structure preparation and molecular docking</li>
+                            <li>GPU and HPC pipeline setup, including cost-per-campaign modelling</li>
+                            <li>Chemist-reviewed shortlists ready for purchase or synthesis</li>
+                        </ul>
+                        <div class="cap-tools">
+                            <span class="cap-tool">Boltz-2</span>
+                            <span class="cap-tool">DrugCLIP</span>
+                            <span class="cap-tool">Chemistry42</span>
+                            <span class="cap-tool">RowanSci</span>
+                            <span class="cap-tool">Schrödinger Maestro</span>
+                            <span class="cap-tool">HPC / Slurm</span>
+                        </div>
+                    </div>
+
+                    <div class="capability">
+                        <div class="cap-head">
+                            <span class="cap-icon">🏭</span>
+                            <h3>API Process Development &amp; Scale-Up</h3>
+                        </div>
+                        <p class="cap-tagline">Turning a published or lab-scale route into something a plant can actually run.</p>
+                        <ul class="cap-list">
+                            <li>Synthetic route scouting, selection, and cost analysis</li>
+                            <li>Scale-up planning and process optimisation</li>
+                            <li>Impurity profiling and reference standard strategy</li>
+                            <li>Raw material sourcing and vendor technical assessment</li>
+                            <li>Technology transfer packages and process documentation</li>
+                        </ul>
+                        <div class="cap-tools">
+                            <span class="cap-tool">Process Chemistry</span>
+                            <span class="cap-tool">Route Scouting</span>
+                            <span class="cap-tool">Impurity Profiling</span>
+                            <span class="cap-tool">Scale-Up</span>
+                            <span class="cap-tool">Tech Transfer</span>
+                        </div>
+                    </div>
+
+                    <div class="capability">
+                        <div class="cap-head">
+                            <span class="cap-icon">🏗️</span>
+                            <h3>Laboratory Establishment &amp; Capacity Building</h3>
+                        </div>
+                        <p class="cap-tagline">Building a working synthetic laboratory, and the team that can run it.</p>
+                        <ul class="cap-list">
+                            <li>Laboratory layout, workflow design, and equipment specification</li>
+                            <li>Instrument procurement guidance and commissioning support</li>
+                            <li>Safety, solvent handling, and waste management protocols</li>
+                            <li>SOP development and analytical method setup</li>
+                            <li>Recruitment support and hands-on training of synthetic chemists</li>
+                        </ul>
+                        <div class="cap-tools">
+                            <span class="cap-tool">Lab Design</span>
+                            <span class="cap-tool">Equipment Specification</span>
+                            <span class="cap-tool">SOPs &amp; Safety</span>
+                            <span class="cap-tool">Team Training</span>
+                            <span class="cap-tool">Mentorship</span>
+                        </div>
+                    </div>
+
+                    <div class="capability">
+                        <div class="cap-head">
+                            <span class="cap-icon">📋</span>
+                            <h3>Regulatory Guidance &amp; Global Partnerships</h3>
+                        </div>
+                        <p class="cap-tagline">Aligning local capability with international regulatory expectations.</p>
+                        <ul class="cap-list">
+                            <li>FDA and ICH guideline interpretation for chemistry teams</li>
+                            <li>GMP-ready documentation review and gap analysis</li>
+                            <li>CMC data package preparation support</li>
+                            <li>Academic and industry partnership development across borders</li>
+                            <li>Grant, proposal, and technical dossier writing support</li>
+                        </ul>
+                        <div class="cap-tools">
+                            <span class="cap-tool">FDA &amp; ICH Guidelines</span>
+                            <span class="cap-tool">GMP Documentation</span>
+                            <span class="cap-tool">CMC Support</span>
+                            <span class="cap-tool">Partnership Building</span>
+                            <span class="cap-tool">Proposal Writing</span>
+                        </div>
+                    </div>
+
+                    <div class="capability">
+                        <div class="cap-head">
+                            <span class="cap-icon">🎓</span>
+                            <h3>Training, Teaching &amp; Scientific Writing</h3>
+                        </div>
+                        <p class="cap-tagline">Raising the technical baseline of a team, a department, or a readership.</p>
+                        <ul class="cap-list">
+                            <li>Custom workshops in organic, medicinal, and process chemistry</li>
+                            <li>Curriculum design for university and industry training programmes</li>
+                            <li>Manuscript, thesis, and technical report editing</li>
+                            <li>Research integrity and scientific communication coaching</li>
+                            <li>Public science writing and outreach content</li>
+                        </ul>
+                        <div class="cap-tools">
+                            <span class="cap-tool">Workshop Delivery</span>
+                            <span class="cap-tool">Curriculum Design</span>
+                            <span class="cap-tool">Scientific Editing</span>
+                            <span class="cap-tool">Research Integrity</span>
+                            <span class="cap-tool">Science Communication</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="band-divider"></div>
+                <p class="band-title">Technical Toolkit</p>
+                <p class="band-sub">
+                    The bench techniques, instrumentation, and software behind the capabilities above.
+                </p>
+
                 <div class="skills-grid">
                     <div class="skill-category">
-                        <h3>👥 Leadership & Management</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Project Management</span>
-                            <span class="skill-tag">Team Leadership</span>
-                            <span class="skill-tag">Cross-functional Collaboration</span>
-                            <span class="skill-tag">CRO Management</span>
-                            <span class="skill-tag">Mentoring</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>🧪 Chemistry & Synthesis</h3>
+                        <h3>🧪 Synthesis &amp; Chemistry</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Multistep Synthesis</span>
-                            <span class="skill-tag">Medicinal Chemistry</span>
                             <span class="skill-tag">Asymmetric Synthesis</span>
                             <span class="skill-tag">Photoredox Catalysis</span>
-                            <span class="skill-tag">Structure-Activity Relationships</span>
+                            <span class="skill-tag">Heterocyclic Chemistry</span>
+                            <span class="skill-tag">Route Optimisation</span>
+                            <span class="skill-tag">Purification &amp; Chromatography</span>
                         </div>
                     </div>
 
                     <div class="skill-category">
-                        <h3>🔬 Analytical Techniques</h3>
+                        <h3>🔬 Analysis &amp; Characterisation</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">NMR Spectroscopy</span>
                             <span class="skill-tag">HPLC</span>
+                            <span class="skill-tag">Chiral HPLC &amp; SFC</span>
                             <span class="skill-tag">GC-MS</span>
                             <span class="skill-tag">HRMS</span>
-                            <span class="skill-tag">SFC</span>
-                            <span class="skill-tag">Chiral HPLC</span>
+                            <span class="skill-tag">FT-IR</span>
+                            <span class="skill-tag">Structure Elucidation</span>
                         </div>
                     </div>
 
                     <div class="skill-category">
-                        <h3>💻 Technical Software</h3>
+                        <h3>💻 Software &amp; Platforms</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">ChemDraw</span>
+                            <span class="skill-tag">MNova</span>
+                            <span class="skill-tag">TopSpin</span>
+                            <span class="skill-tag">ACD/Spectrus</span>
                             <span class="skill-tag">D360 (Dotmatics)</span>
-                            <span class="skill-tag">Schrödinger Maestro</span>
-                            <span class="skill-tag">GraphPad Prism</span>
                             <span class="skill-tag">BIOVIA Insight</span>
+                            <span class="skill-tag">DataWarrior</span>
+                            <span class="skill-tag">GraphPad Prism</span>
+                            <span class="skill-tag">BioRender</span>
+                            <span class="skill-tag">ELN &amp; EndNote</span>
                         </div>
                     </div>
+                </div>
 
-                    <div class="skill-category">
-                        <h3>💊 Drug Discovery</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Hit Identification</span>
-                            <span class="skill-tag">Lead Optimization</span>
-                            <span class="skill-tag">DMPK Properties</span>
-                            <span class="skill-tag">Patent Searching</span>
-                            <span class="skill-tag">Rare Disease Programs</span>
-                        </div>
-                    </div>
+                <div class="skills-cta">
+                    <h3>Looking for a consultant or scientific collaborator?</h3>
+                    <p>
+                        I take on advisory engagements, project-based consulting, and long-term scientific leadership roles with pharmaceutical companies, universities, and research institutions. Tell me what you are trying to build and I will tell you honestly whether I am the right person for it.
+                    </p>
+                    <a href="#contact" onclick="showSection('contact')" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Start a Conversation
+                    </a>
                 </div>
             </div>
         </section>
@@ -2652,7 +3505,7 @@
                 </div>
                 <h2 class="section-title">Publications</h2>
                 <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: var(--gray);">
-                    <strong>Peer reviewed articles: 13 | Lead authorship articles: 7 | 10+ patent applications</strong>
+                    <strong>Peer-reviewed articles: 13 &nbsp;|&nbsp; Lead authorship: 7 &nbsp;|&nbsp; 4 patent families</strong>
                 </p>
                 
                 <div class="cards-grid">
@@ -2696,10 +3549,13 @@
                     </div>
                 </div>
 
-                <div style="text-align: center; margin-top: 3rem;">
+                <div style="text-align: center; margin-top: 3rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                     <button class="btn btn-primary" onclick="openModal('publicationsModal')">
-                        <i class="fas fa-list"></i> View Complete List
+                        <i class="fas fa-list"></i> All Publications &amp; Patents
                     </button>
+                    <a href="#presentations" onclick="showSection('presentations')" class="btn btn-outline">
+                        <i class="fas fa-chart-column"></i> Research Presentations
+                    </a>
                 </div>
             </div>
         </section>
@@ -2771,7 +3627,7 @@
                 z-index: 0;
                 opacity: 0.4;
             ">
-                <source src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/main/video/education%20background.mp4" type="video/mp4">
+                <source src="https://rauful15.github.io/video/education%20background.mp4" type="video/mp4">
             </video>
             
             <!-- Video Overlay -->
@@ -3090,6 +3946,8 @@
                             <a href="https://www.rcsb.org/" target="_blank" class="resource-link">🧫 Protein Data Bank</a>
                             <a href="https://go.drugbank.com/" target="_blank" class="resource-link">💊 DrugBank</a>
                             <a href="https://www.rowansci.com/" target="_blank" class="resource-link">⚛️ RowanSci</a>
+                            <a href="https://openmolecules.org/datawarrior/" target="_blank" class="resource-link">📊 DataWarrior</a>
+                            <a href="https://molview.com/tutorials/" target="_blank" class="resource-link">📘 MolView Tutorials</a>
                     </div>
                 
                     </div>
@@ -3103,6 +3961,7 @@
                             <a href="https://alphafold.ebi.ac.uk/" target="_blank" class="resource-link">🤖 AlphaFold DB</a>
                             <a href="https://www.genecards.org/" target="_blank" class="resource-link">🧫 GeneCards</a>
                             <a href="https://www.ebi.ac.uk/" target="_blank" class="resource-link">🔍 EMBL-EBI</a>
+                            <a href="https://molstar.org/" target="_blank" class="resource-link">🔭 Mol* (Molstar) Viewer</a>
                         </div>
                     </div>
 
@@ -3129,6 +3988,7 @@
                             <a href="https://notebooklm.google.com/" target="_blank" class="resource-link">📓 NotebookLM</a>
                             <a href="https://colab.research.google.com/" target="_blank" class="resource-link">💻 Google Colab</a>
                             <a href="https://huggingface.co/" target="_blank" class="resource-link">🤗 Hugging Face</a>
+                            <a href="https://pharma.ai/chemistry42" target="_blank" class="resource-link">🧠 Chemistry42</a>
                         </div>
                     </div>
 
@@ -3142,6 +4002,8 @@
                             <a href="https://pubs.acs.org/" target="_blank" class="resource-link">⚗️ ACS Publications</a>
                             <a href="https://www.nature.com/" target="_blank" class="resource-link">🌍 Nature</a>
                             <a href="https://www.science.org/" target="_blank" class="resource-link">🔬 Science</a>
+                            <a href="https://pubs.acs.org/jmcmar" target="_blank" class="resource-link">💊 J. Med. Chem.</a>
+                            <a href="https://www.nejm.org/" target="_blank" class="resource-link">🩺 NEJM</a>
                         </div>
                     </div>
 
@@ -3155,6 +4017,19 @@
                             <a href="https://www.notion.so/" target="_blank" class="resource-link">📋 Notion</a>
                             <a href="https://www.canva.com/" target="_blank" class="resource-link">🎨 Canva</a>
                             <a href="https://www.biorender.com/" target="_blank" class="resource-link">🧫 BioRender</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">💊</div>
+                        <h3>Medicinal Chemistry & Drug Development</h3>
+                        <p>Practical resources for hit finding, compound sourcing, regulatory look-ups, and staying current with drug discovery.</p>
+                        <div class="resource-links">
+                            <a href="https://drughunter.com/" target="_blank" class="resource-link">🎯 DrugHunter</a>
+                            <a href="https://search.emolecules.com/" target="_blank" class="resource-link">🧾 eMolecules</a>
+                            <a href="https://www.accessdata.fda.gov/scripts/cder/daf/" target="_blank" class="resource-link">🏛️ Drugs@FDA (Approved Drugs)</a>
+                            <a href="https://www.medchemexpress.com/" target="_blank" class="resource-link">⚗️ MedChemExpress</a>
+                            <a href="https://pubs.acs.org/jmcmar" target="_blank" class="resource-link">📕 Journal of Medicinal Chemistry</a>
                         </div>
                     </div>
                 </div>
@@ -3190,10 +4065,10 @@
                 <div class="books-grid">
                     <article class="book-card">
                         <div class="book-cover-wrap">
-                            <img class="book-cover" src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/ae9210a3cdbc5343b4261480715b1165e9d0af2f/images/Cover_rauful_alam.jpeg" alt="Book cover: একটা দেশ যেভাবে দাঁড়ায়">
+                            <img class="book-cover" src="https://rauful15.github.io/images/Cover_rauful_alam.jpeg" alt="Book cover: একটা দেশ যেভাবে দাঁড়ায়">
                         </div>
                         <div class="book-content">
-                            <h3 lang="bn">একটা দেশ যেভাবে দাঁড়ায়</h3>
+                            <h3 lang="bn">একটা দেশ যেভাবে দাঁড়ায়</h3>
                             <div class="book-meta">Author: Rauful Alam • Published: 2019</div>
                             <p>
                                 Published in 2019, this book examines how a nation can move forward by investing in quality education, a strong research culture, and the development of young people. With Bangladesh as the central focus, it discusses how unproductive university cultures, including excessive student and teacher politics, weak talent discovery systems, and insufficient research training, can limit national progress—and why a more merit-based, research-driven educational ecosystem is essential for the country’s future.
@@ -3208,7 +4083,7 @@
 
                     <article class="book-card">
                         <div class="book-cover-wrap">
-                            <img class="book-cover" src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/ae9210a3cdbc5343b4261480715b1165e9d0af2f/images/bangladesher-shopno-chokhe-copy%20%281%29.jpg" alt="Book cover: বাংলাদেশের স্বপ্নচোখ">
+                            <img class="book-cover" src="https://rauful15.github.io/images/bangladesher-shopno-chokhe-copy%20%281%29.jpg" alt="Book cover: বাংলাদেশের স্বপ্নচোখ">
                         </div>
                         <div class="book-content">
                             <h3 lang="bn">বাংলাদেশের স্বপ্নচোখ</h3>
@@ -3226,7 +4101,7 @@
 
                     <article class="book-card">
                         <div class="book-cover-wrap">
-                            <img class="book-cover" src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/ae9210a3cdbc5343b4261480715b1165e9d0af2f/images/The%20A%20BCs%20of%20Science%20for%20Kids.jpg" alt="Book cover: The ABC's of Science for Kids">
+                            <img class="book-cover" src="https://rauful15.github.io/images/The%20A%20BCs%20of%20Science%20for%20Kids.jpg" alt="Book cover: The ABC's of Science for Kids">
                         </div>
                         <div class="book-content">
                             <h3 lang="en">The ABC's of Science for Kids</h3>
@@ -3244,7 +4119,7 @@
 
                     <article class="book-card">
                         <div class="book-cover-wrap">
-                            <img class="book-cover" src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/7861a315f7c0a046e29d1071b9c296346f5a33e0/images/%E0%A6%A8%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%A4%E0%A7%8D%E0%A6%B0%E0%A6%AC%E0%A7%80%E0%A6%A5%E0%A6%BF%E0%A6%B0-%E0%A6%97%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%87-2.webp" alt="Book cover: নক্ষত্রবীথির গহিনে">
+                            <img class="book-cover" src="https://rauful15.github.io/images/%E0%A6%A8%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%A4%E0%A7%8D%E0%A6%B0%E0%A6%AC%E0%A7%80%E0%A6%A5%E0%A6%BF%E0%A6%B0-%E0%A6%97%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%87-2.webp" alt="Book cover: নক্ষত্রবীথির গহিনে">
                         </div>
                         <div class="book-content">
                             <h3 lang="bn">নক্ষত্রবীথির গহিনে</h3>
@@ -3262,7 +4137,7 @@
 
                     <article class="book-card">
                         <div class="book-cover-wrap">
-                            <img class="book-cover" src="https://raw.githubusercontent.com/Rauful15/rauful15.github.io/7861a315f7c0a046e29d1071b9c296346f5a33e0/images/%E0%A6%B8%E0%A6%AB%E0%A6%B2%20%E0%A6%AE%E0%A6%A8%E0%A7%8D%E0%A6%A4%E0%A7%8D%E0%A6%B0.jpg" alt="Book cover: সফল মন্ত্র">
+                            <img class="book-cover" src="https://rauful15.github.io/images/%E0%A6%B8%E0%A6%AB%E0%A6%B2%20%E0%A6%AE%E0%A6%A8%E0%A7%8D%E0%A6%A4%E0%A7%8D%E0%A6%B0.jpg" alt="Book cover: সফল মন্ত্র">
                         </div>
                         <div class="book-content">
                             <h3 lang="bn">সফল মন্ত্র</h3>
@@ -3298,24 +4173,11 @@
 
                 <div class="blog-grid">
                     <article class="blog-card">
-                        <div class="blog-visual"><span>💊</span></div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span class="blog-category">Drug Discovery</span>
-                                <span class="blog-date">Featured</span>
-                            </div>
-                            <h3>The Future of Drug Discovery: Bridging Chemistry and AI</h3>
-                            <p>A perspective on how artificial intelligence can support medicinal chemistry, from molecular design and virtual screening to better scientific decision-making.</p>
-                            <span class="btn btn-outline" style="cursor: default; opacity: 0.75;">Coming Soon</span>
-                        </div>
-                    </article>
-
-                    <article class="blog-card">
                         <div class="blog-visual"><span>🧪</span></div>
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <span class="blog-category">Chemistry</span>
-                                <span class="blog-date">New Article</span>
+                                <span class="blog-date">Latest</span>
                             </div>
                             <h3>My First Scientific Blog</h3>
                             <p>A short introductory article connecting chemistry, education, research culture, and the habit of writing regularly for students and science learners.</p>
@@ -3324,15 +4186,28 @@
                     </article>
 
                     <article class="blog-card">
-                        <div class="blog-visual"><span>🌱</span></div>
+                        <div class="blog-visual"><span>📰</span></div>
                         <div class="blog-content">
                             <div class="blog-meta">
-                                <span class="blog-category">Education</span>
-                                <span class="blog-date">Science & Society</span>
+                                <span class="blog-category">Archive</span>
+                                <span class="blog-date">Ongoing</span>
                             </div>
-                            <h3>Building Scientific Curiosity Through Education</h3>
-                            <p>Reflections on teaching, mentorship, and how better science communication can inspire students to think deeply rather than memorize superficially.</p>
-                            <span class="btn btn-outline" style="cursor: default; opacity: 0.75;">Coming Soon</span>
+                            <h3>Essays on Science, Education &amp; Research Culture</h3>
+                            <p>A longer-running collection of my writing on scientific research, higher education, and building research capacity — including pieces published in national newspapers.</p>
+                            <a href="https://rauful-alam.blogspot.com/" target="_blank" rel="noopener" class="btn btn-primary">Visit Archive →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="blog-visual"><span>📺</span></div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Video</span>
+                                <span class="blog-date">YouTube</span>
+                            </div>
+                            <h3>Science Talks &amp; Explainers</h3>
+                            <p>Recorded lectures, chemistry explainers, and conversations on research careers, aimed at students and early-career scientists.</p>
+                            <a href="https://www.youtube.com/@raufulalam9197" target="_blank" rel="noopener" class="btn btn-primary">Watch →</a>
                         </div>
                     </article>
                 </div>
@@ -3385,23 +4260,39 @@
                     " onclick="openEmailModal()" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow)'">
                         <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--dark); font-weight: 700;">Email Me</h3>
                         <p style="color: var(--gray); margin-bottom: 1.5rem; line-height: 1.6;">
-                            Drop me a line for research collaborations, opportunities, or professional inquiries.
+                            Drop me a line for research collaborations, consulting engagements, or professional inquiries.
                         </p>
                         <div style="
-                            display: inline-block;
-                            background: var(--gradient);
-                            color: white;
-                            padding: 1rem 2rem;
-                            border-radius: 50px;
-                            font-weight: 600;
-                            transition: all 0.3s ease;
-                            box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
-                            pointer-events: none;
+                            background: linear-gradient(135deg, rgba(79, 70, 229, 0.07), rgba(6, 182, 212, 0.06));
+                            border: 1px solid rgba(79, 70, 229, 0.16);
+                            border-radius: 14px;
+                            padding: 1rem;
+                            margin-bottom: 0.85rem;
+                            text-align: left;
                         ">
-                            rauful.alam15@gmail.com
+                            <div style="font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary); margin-bottom: 0.3rem;">
+                                Academic &amp; Research
+                            </div>
+                            <div style="font-weight: 700; color: var(--dark); font-size: 1.02rem; word-break: break-all;">
+                                rauful@uchicago.edu
+                            </div>
+                        </div>
+                        <div style="
+                            background: linear-gradient(135deg, rgba(79, 70, 229, 0.07), rgba(6, 182, 212, 0.06));
+                            border: 1px solid rgba(79, 70, 229, 0.16);
+                            border-radius: 14px;
+                            padding: 1rem;
+                            text-align: left;
+                        ">
+                            <div style="font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary); margin-bottom: 0.3rem;">
+                                Consulting &amp; General
+                            </div>
+                            <div style="font-weight: 700; color: var(--dark); font-size: 1.02rem; word-break: break-all;">
+                                rauful.alam15@gmail.com
+                            </div>
                         </div>
                         <p style="color: var(--primary); font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
-                            Click to view email address
+                            Click to open your email client
                         </p>
                     </div>
 
@@ -3512,38 +4403,510 @@
         </section>
     </main>
 
-    <!-- Publications Modal -->
-    <div id="publicationsModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('publicationsModal')">&times;</span>
-            <h2 style="margin-bottom: 2rem; color: var(--primary);">Complete Publications List</h2>
-            
-            <div style="margin-bottom: 2rem;">
-                <h3>Lead Authorship Articles (7)</h3>
-                <ul style="line-height: 1.8; margin-left: 1rem; margin-top: 1rem;">
-                    <li><strong>Alam, R.</strong>; Molander, A. G. "Photoredox-catalyzed Direct Reductive Amination of Aldehydes without an External Hydrogen/Hydride Source." <em>Org. Lett.</em> <strong>2018</strong>, <em>20</em>, 2680-2684.</li>
-                    <li><strong>Alam, R.</strong>; Diner, C.; Jonker, S.; Eriksson, L.; Szabó, J. K. "Catalytic Asymmetric Allylboration of Indoles and Dihydroisoquinolines." <em>Angew. Chem. Int. Ed.</em> <strong>2016</strong>, <em>55</em>, 14417-14421.</li>
-                    <li><strong>Alam, R.</strong>; Vollgraff, T.; Eriksson, L.; Szabó, J. K. "Synthesis of Adjacent Quaternary Stereocenters by Catalytic Asymmetric Allylboration." <em>J. Am. Chem. Soc.</em> <strong>2015</strong>, <em>137</em>, 11262-11265.</li>
-                    <li><strong>Alam, R.</strong>; Pilarski, T. L.; Pershagen, E.; Szabó, J. K. "Stereoselective Intermolecular Allylic C-H Trifluoroacetoxylation." <em>J. Am. Chem. Soc.</em> <strong>2012</strong>, <em>134</em>, 8778-8781.</li>
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <strong>Rauful Alam, Ph.D.</strong>
+                <p>
+                    Drug discovery scientist and medicinal chemistry consultant. Staff Scientist at the Center for Chemical Biology &amp; Therapeutics, University of Chicago. Available for consulting in API process development, AI-driven virtual screening, and synthetic laboratory establishment.
+                </p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/rauful-alam-phd-12536365/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://scholar.google.com/citations?hl=en&amp;user=PrrE9dQAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://www.youtube.com/@raufulalam9197" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/share/1BxCrHwnoJ/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="mailto:rauful@uchicago.edu" aria-label="Email Rauful at UChicago"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4>Professional</h4>
+                <ul class="footer-links">
+                    <li><a href="#about" onclick="showSection('about')">About</a></li>
+                    <li><a href="#professional" onclick="showSection('professional')">Professional Journey</a></li>
+                    <li><a href="#publications" onclick="showSection('publications')">Publications &amp; Patents</a></li>
+                    <li><a href="#consulting" onclick="showSection('consulting')">Expertise &amp; Consulting</a></li>
+                    <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
                 </ul>
             </div>
 
-            <div style="margin-bottom: 2rem;">
-                <h3>Selected Patent Applications</h3>
-                <ul style="line-height: 1.8; margin-left: 1rem; margin-top: 1rem;">
-                    <li>WO/2019/191229 - Highlighted in <em>ACS Med. Chem. Lett.</em></li>
-                    <li>WO/2020/005873 - Highlighted in <em>ACS Med. Chem. Lett.</em></li>
-                    <li>WO/2021/207453 - Highlighted in <em>ACS Med. Chem. Lett.</em></li>
-                    <li>WO/2023/028536 - Highlighted in <em>ACS Med. Chem. Lett.</em></li>
+            <div>
+                <h4>Teaching &amp; Outreach</h4>
+                <ul class="footer-links">
+                    <li><a href="#courses" onclick="showSection('courses')">Chemistry Courses</a></li>
+                    <li><a href="#books" onclick="showSection('books')">Published Books</a></li>
+                    <li><a href="#blog" onclick="showSection('blog')">Writing</a></li>
+                    <li><a href="#educational" onclick="showSection('educational')">Learning Resources</a></li>
                 </ul>
-            </div>
-
-            <div style="text-align: center;">
-                <a href="https://rauful-alam.blogspot.com/" target="_blank" class="btn btn-primary">
-                    <i class="fas fa-external-link-alt"></i> View Full List Online
-                </a>
             </div>
         </div>
+
+        <div class="footer-bottom">
+            <span>&copy; 2026 Rauful Alam. All rights reserved.</span>
+            <span>Chicago, IL, USA &nbsp;·&nbsp; rauful@uchicago.edu &nbsp;·&nbsp; rauful.alam15@gmail.com</span>
+        </div>
+    </footer>
+
+
+    <!-- Publications Modal -->
+    <div id="publicationsModal" class="modal">
+        <style>
+            /* ---- Publications modal styling (scoped) ---- */
+            #publicationsModal .modal-content { max-width: 940px; }
+
+            #publicationsModal .pub-header {
+                background: var(--gradient);
+                margin: -2rem -2rem 1.5rem -2rem;
+                padding: 2rem;
+                border-radius: 16px 16px 0 0;
+                color: white;
+                text-align: center;
+            }
+            #publicationsModal .pub-header-icon {
+                width: 60px; height: 60px; border-radius: 50%;
+                background: rgba(255,255,255,0.2);
+                backdrop-filter: blur(10px);
+                display: flex; align-items: center; justify-content: center;
+                margin: 0 auto 1rem;
+                border: 2px solid rgba(255,255,255,0.3);
+                font-size: 1.8rem;
+            }
+            #publicationsModal .pub-header h2 { margin: 0; font-size: 1.8rem; font-weight: 700; }
+            #publicationsModal .pub-header p { margin: 0.5rem 0 0; opacity: 0.9; font-size: 0.98rem; }
+
+            #publicationsModal .pub-stats {
+                display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem;
+                margin: 1.25rem 0 0;
+            }
+            #publicationsModal .pub-stat {
+                background: rgba(255,255,255,0.18);
+                border: 1px solid rgba(255,255,255,0.32);
+                border-radius: 999px;
+                padding: 0.4rem 0.9rem;
+                font-size: 0.82rem;
+                font-weight: 700;
+                white-space: nowrap;
+            }
+
+            #publicationsModal .pub-tabs {
+                display: flex; gap: 0.5rem; flex-wrap: wrap;
+                justify-content: center; margin-bottom: 1.5rem;
+            }
+            #publicationsModal .pub-tab {
+                border: 1px solid rgba(79,70,229,0.22);
+                background: rgba(79,70,229,0.06);
+                color: var(--primary);
+                font-weight: 700;
+                font-size: 0.9rem;
+                padding: 0.6rem 1.15rem;
+                border-radius: 999px;
+                cursor: pointer;
+                transition: all 0.25s ease;
+                font-family: inherit;
+            }
+            #publicationsModal .pub-tab:hover { background: rgba(79,70,229,0.13); }
+            #publicationsModal .pub-tab.active {
+                background: var(--gradient);
+                color: white;
+                border-color: transparent;
+                box-shadow: 0 6px 16px rgba(79,70,229,0.28);
+            }
+
+            #publicationsModal .pub-panel { display: none; }
+            #publicationsModal .pub-panel.active { display: block; }
+
+            #publicationsModal .pub-item {
+                display: flex;
+                gap: 1rem;
+                align-items: flex-start;
+                text-decoration: none;
+                color: inherit;
+                background: white;
+                border: 1px solid rgba(79,70,229,0.12);
+                border-left: 4px solid var(--primary);
+                border-radius: 12px;
+                padding: 1.1rem 1.15rem;
+                margin-bottom: 0.85rem;
+                transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+            }
+            #publicationsModal .pub-item:hover {
+                transform: translateX(5px);
+                background: linear-gradient(135deg, rgba(79,70,229,0.05), rgba(6,182,212,0.04));
+                box-shadow: 0 10px 24px rgba(79,70,229,0.14);
+            }
+            #publicationsModal .pub-num {
+                flex: 0 0 34px;
+                width: 34px; height: 34px;
+                border-radius: 10px;
+                background: var(--gradient);
+                color: white;
+                display: flex; align-items: center; justify-content: center;
+                font-weight: 700; font-size: 0.88rem;
+            }
+            #publicationsModal .pub-body { flex: 1; min-width: 0; }
+            #publicationsModal .pub-title {
+                margin: 0 0 0.4rem;
+                font-size: 1.02rem;
+                font-weight: 700;
+                color: var(--dark);
+                line-height: 1.4;
+            }
+            #publicationsModal .pub-authors {
+                margin: 0 0 0.3rem;
+                font-size: 0.88rem;
+                color: var(--gray);
+                line-height: 1.5;
+            }
+            #publicationsModal .pub-authors strong { color: var(--primary); }
+            #publicationsModal .pub-journal {
+                margin: 0;
+                font-size: 0.88rem;
+                color: var(--dark);
+                font-weight: 600;
+            }
+            #publicationsModal .pub-note {
+                margin: 0.35rem 0 0;
+                font-size: 0.8rem;
+                color: var(--gray);
+                font-style: italic;
+            }
+            #publicationsModal .pub-tags { margin-top: 0.55rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+            #publicationsModal .pub-badge {
+                display: inline-block;
+                font-size: 0.7rem;
+                font-weight: 700;
+                letter-spacing: 0.03em;
+                text-transform: uppercase;
+                padding: 0.25rem 0.6rem;
+                border-radius: 999px;
+                background: rgba(6,182,212,0.14);
+                color: #0e7490;
+            }
+            #publicationsModal .pub-badge.lead { background: rgba(236,72,153,0.14); color: #be1f6f; }
+            #publicationsModal .pub-badge.open { background: rgba(16,185,129,0.15); color: #047857; }
+            #publicationsModal .pub-link {
+                flex: 0 0 auto;
+                align-self: center;
+                color: var(--primary);
+                font-size: 1.1rem;
+                font-weight: 700;
+            }
+
+            #publicationsModal .pub-group-title {
+                font-size: 0.85rem;
+                font-weight: 800;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: var(--primary);
+                margin: 1.6rem 0 0.8rem;
+                padding-bottom: 0.45rem;
+                border-bottom: 2px solid rgba(79,70,229,0.16);
+            }
+            #publicationsModal .pub-group-title:first-child { margin-top: 0; }
+
+            #publicationsModal .pub-footer {
+                text-align: center;
+                padding: 1.4rem 1rem;
+                background: var(--light);
+                border-radius: 12px;
+                margin-top: 1.5rem;
+            }
+            #publicationsModal .pub-footer p {
+                margin: 0 0 1rem;
+                color: var(--gray);
+                font-size: 0.92rem;
+                line-height: 1.6;
+            }
+            #publicationsModal .pub-footer .btn { margin: 0.3rem; }
+
+            @media (max-width: 768px) {
+                #publicationsModal .pub-header { padding: 1.5rem 1rem; margin: -1.25rem -1.25rem 1.25rem; }
+                #publicationsModal .pub-header h2 { font-size: 1.35rem; }
+                #publicationsModal .pub-item { padding: 0.9rem; gap: 0.7rem; }
+                #publicationsModal .pub-item:hover { transform: none; }
+                #publicationsModal .pub-num { flex-basis: 28px; width: 28px; height: 28px; font-size: 0.78rem; border-radius: 8px; }
+                #publicationsModal .pub-title { font-size: 0.94rem; }
+                #publicationsModal .pub-authors, #publicationsModal .pub-journal { font-size: 0.82rem; }
+                #publicationsModal .pub-link { display: none; }
+                #publicationsModal .pub-tab { font-size: 0.8rem; padding: 0.5rem 0.85rem; }
+            }
+        </style>
+
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('publicationsModal')">&times;</span>
+
+            <!-- Header -->
+            <div class="pub-header">
+                <div class="pub-header-icon"><span>📄</span></div>
+                <h2>Publications &amp; Patents</h2>
+                <p>Complete list — click any entry to open the original source</p>
+                <div class="pub-stats">
+                    <span class="pub-stat">13 Peer-Reviewed Articles</span>
+                    <span class="pub-stat">7 Lead-Author Papers</span>
+                    <span class="pub-stat">4 Patent Families</span>
+                    <span class="pub-stat">Phase III Programme Contributor</span>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="pub-tabs">
+                <button class="pub-tab active" onclick="showPubTab('articles', this)">📚 Research Articles</button>
+                <button class="pub-tab" onclick="showPubTab('patents', this)">⚖️ Patents</button>
+            </div>
+
+            <!-- ============ RESEARCH ARTICLES ============ -->
+            <div id="pubPanelArticles" class="pub-panel active">
+
+                <div class="pub-group-title">Postdoctoral Research · University of Pennsylvania (2016–2018)</div>
+
+                <a class="pub-item" href="https://doi.org/10.1021/acs.orglett.9b01747" target="_blank" rel="noopener">
+                    <span class="pub-num">13</span>
+                    <div class="pub-body">
+                        <h4 class="pub-title">Photoredox-Catalyzed Multicomponent Petasis Reaction with Alkyltrifluoroborates</h4>
+                        <p class="pub-authors">Yi, J.; Badir, S. O.; <strong>Alam, R.</strong>; Molander, G. A.</p>
+                        <p class="pub-journal"><em>Org. Lett.</em> <strong>2019</strong>, <em>21</em>, 4853–4858</p>
+                    </div>
+                    <span class="pub-link">↗</span>
+                </a>
+
+                <a class="pub-item" href="https://doi.org/10.1002/anie.201809919" target="_blank" rel="noopener">
+                    <span class="pub-num">12</span>
+                    <div class="pub-body">
+                        <h4 class="pub-title">Photoredox/Nickel-Catalyzed Single-Electron Tsuji–Trost Reaction: Development and Mechanistic Insights</h4>
+                        <p class="pub-authors">Matsui, J. K.; Gutiérrez-Bonet, Á.; Rotella, M.; <strong>Alam, R.</strong>; Gutierrez, O.; Molander, G. A.</p>
+                        <p class="pub-journal"><em>Angew. Chem. Int. Ed.</em> <strong>2018</strong>, <em>57</em>, 15847–15851</p>
+                    </div>
+                    <span class="pub-link">↗</span>
+                </a>
+
+                <a class="pub-item" href="https://doi.org/10.1021/acs.orglett.8b00895" target="_blank" rel="noopener">
+                    <span class="pub-num">11</span>
+                    <div class="pub-body">
+                        <h4 class="pub-title">Photoredox-Catalyzed Direct Reductive Amination of Aldehydes without an External Hydrogen/Hydride Source</h4>
+                        <p class="pub-authors"><strong>Alam, R.</strong>; Molander, G. A.</p>
+                        <p class="pub-journal"><em>Org. Lett.</em> <strong>2018</strong>, <em>20</em>, 2680–2684</p>
+                        <div class="pub-tags"><span class="pub-badge lead">Lead Author</span></div>
+                    </div>
+                    <span class="pub-link">↗</span>
+                </a>
+
+                <a class="pub-item" href="https://doi.org/10.1021/acs.joc.7b02589" target="_blank" rel="noopener">
+                    <span class="pub-num">10</span>
+                    <div class="pub-body">
+                        <h4 class="pub-title">Direct Synthesis of Secondary Benzylic Alcohols Enabled by Photoredox/Ni Dual-Catalyzed Cross-Coupling</h4>
+                        <p class="pub-authors"><strong>Alam, R.</strong>; Molander, G. A.</p>
+                        <p class="pub-journal"><em>J. Org. Chem.</em> <strong>2017</strong>, <em>82</em>, 13728–13734</p>
+                        <p class="pub-note">Highlighted in <em>Synfacts</em> 2018, 14, 0188</p>
+                        <div class="pub-tags"><span class="pub-badge lead">Lead Author</span><span class="pub-badge">Highlighted</span></div>
+                    </div>
+                    <span class="pub-link">↗</span>
+                </a>
+
+                <a class="pub-item" href="https://doi.org/10.1021/acs.orglett.7b00989" target="_blank" rel="noopener">
+                    <span class="pub-num">09</span>
+                    <div class="pub-body">
+                        <h4 class="pub-title">Synergistic Visible-Light Photoredox/Nickel-Catalyzed Synthesis of Aliphatic Ketones via N–C Cleavage of Imides</h4>
+                        <p class="pub-authors">Amani, J.; <strong>Alam, R.</strong>; Badir, S.; Molander, G. A.</p>
+                        <p class="pub-journal"><em>Org. Lett.</em> <strong>2017</strong>, <em>19</em>, 2426–2429</p>
+                        <p class="pub-note">Highlighted in <em>Synfacts</em> 2017, 13, 0742 and <em>Org. Process Res. Dev.</em> 2017, 21, 897–910</p>
+                        <div class="pub-tags"><span class="pub-badge">Highlighted</span></div>
+                    </div>
+                    <span class="pub-link">↗</span>
+                </a>
+
+                <div class="pub-group-title">Doctoral Research · Stockholm University (2012–2016)</div>
+
+                <a class="pub-item" href="https://doi.org/10.1002/anie.201608605" target="_blank" rel="noopener">
+                    <span class="pub-num">08</span>
+                    <div class="pub-body">
+                        <h4 class="pub-title">Catalytic Asymmetric Allylboration of Indoles and Dihydroisoquinolines with Allylboronic Acids: Stereodivergent Synthesis of up to Three Contiguous Stereocenters</h4>
+                        <p class="pub-authors"><strong>Alam, R.</strong>; Diner, C.; Jonker, S.; Eriksson, L.; Szabó, K. J.</p>
+                        <p class="pub-journal"><em>Angew. Chem. Int. Ed.</em> <strong>2016</strong>, <em>55</em>, 14417–14421</p>
+                        <div class="pub-tags"><span class="pub-badge lead">Lead Author</span></div>
+                    </div>
+                    <span class="pub-link">↗</span>
+                </a>
+
+                <a class="pub-item" href="https://doi.org/10.1002/anie.201511255" target="_blank" rel="noopener">
+                    <span class="pub-num">07</span>
+                    <div class="pub-body">
+                        <h4 class="pub-title">Transition-Metal-Free Borylation of Allylic and Propargylic Alcohols</h4>
+                        <p class="pub-authors">Miralles, N.; <strong>Alam, R.</strong>; Szabó, K. J.; Fernández, E.</p>
+                        <p class="pub-journal"><em>Angew. Chem. Int. Ed.</em> <strong>2016</strong>, <em>55</em>, 4303–4307</p>
+                    </div>
+                    <span class="pub-link">↗</span>
+                </a>
+
+                <a class="pub-item" href="https://doi.org/10.1021/jacs.5b07498" target="_blank" rel="noopener">
+                    <span class="pub-num">06</span>
+                    <div class="pub-body">
+                        <h4 class="pub-title">Synthesis of Adjacent Quaternary Stereocenters by Catalytic Asymmetric Allylboration</h4>
+                        <p class="pub-authors"><strong>Alam, R.</strong>; Vollgraff, T.; Eriksson, L.; Szabó, K. J.</p>
+                        <p class="pub-journal"><em>J. Am. Chem. Soc.</em> <strong>2015</strong>, <em>137</em>, 11262–11265</p>
+                        <div class="pub-tags"><span class="pub-badge lead">Lead Author</span></div>
+                    </div>
+                    <span class="pub-link">↗</span>
+                </a>
+
+                <a class="pub-item" href="https://doi.org/10.1021/ol501699x" target="_blank" rel="noopener">
+                    <span class="pub-num">05</span>
+                    <div class="pub-body">
+                        <h4 class="pub-title">Stereocontrol in Synthesis of Homoallylic Amines: Syn-Selective Direct Allylation of Hydrazones with Allylboronic Acids</h4>
+                        <p class="pub-authors">Das, A.; <strong>Alam, R.</strong>; Eriksson, L.; Szabó, K. J.</p>
+                        <p class="pub-journal"><em>Org. Lett.</em> <strong>2014</strong>, <em>16</em>, 3808–3811</p>
+                        <div class="pub-tags"><span class="pub-badge open">Open Access</span></div>
+                    </div>
+                    <span class="pub-link">↗</span>
+                </a>
+
+                <a class="pub-item" href="https://doi.org/10.1039/C4SC00415A" target="_blank" rel="noopener">
+                    <span class="pub-num">04</span>
+                    <div class="pub-body">
+                        <h4 class="pub-title">Stereoselective Allylboration of Imines and Indoles under Mild Conditions: An in Situ E/Z Isomerization of Imines by Allylboroxines</h4>
+                        <p class="pub-authors"><strong>Alam, R.</strong>; Das, A.; Huang, G.; Eriksson, L.; Himo, F.; Szabó, K. J.</p>
+                        <p class="pub-journal"><em>Chem. Sci.</em> <strong>2014</strong>, <em>5</em>, 2732–2738</p>
+                        <div class="pub-tags"><span class="pub-badge lead">Lead Author</span></div>
+                    </div>
+                    <span class="pub-link">↗</span>
+                </a>
+
+                <a class="pub-item" href="https://doi.org/10.1021/ol401055m" target="_blank" rel="noopener">
+                    <span class="pub-num">03</span>
+                    <div class="pub-body">
+                        <h4 class="pub-title">Selective Formation of Adjacent Stereocenters by Allylboration of Ketones under Mild Neutral Conditions</h4>
+                        <p class="pub-authors"><strong>Alam, R.</strong>; Raducan, M.; Eriksson, L.; Szabó, K. J.</p>
+                        <p class="pub-journal"><em>Org. Lett.</em> <strong>2013</strong>, <em>15</em>, 2546–2549</p>
+                        <div class="pub-tags"><span class="pub-badge lead">Lead Author</span></div>
+                    </div>
+                    <span class="pub-link">↗</span>
+                </a>
+
+                <a class="pub-item" href="https://doi.org/10.1002/anie.201207951" target="_blank" rel="noopener">
+                    <span class="pub-num">02</span>
+                    <div class="pub-body">
+                        <h4 class="pub-title">Palladium-Catalyzed Synthesis and Isolation of Functionalized Allylboronic Acids: Selective, Direct Allylboration of Ketones</h4>
+                        <p class="pub-authors">Raducan, M.; <strong>Alam, R.</strong>; Szabó, K. J.</p>
+                        <p class="pub-journal"><em>Angew. Chem. Int. Ed.</em> <strong>2012</strong>, <em>51</em>, 13050–13053</p>
+                        <p class="pub-note">Highlighted in <em>Synfacts</em> 2013, 9, 314</p>
+                        <div class="pub-tags"><span class="pub-badge">Highlighted</span></div>
+                    </div>
+                    <span class="pub-link">↗</span>
+                </a>
+
+                <a class="pub-item" href="https://doi.org/10.1021/ja302457p" target="_blank" rel="noopener">
+                    <span class="pub-num">01</span>
+                    <div class="pub-body">
+                        <h4 class="pub-title">Stereoselective Intermolecular Allylic C–H Trifluoroacetoxylation of Functionalized Alkenes</h4>
+                        <p class="pub-authors"><strong>Alam, R.</strong>; Pilarski, L. T.; Pershagen, E.; Szabó, K. J.</p>
+                        <p class="pub-journal"><em>J. Am. Chem. Soc.</em> <strong>2012</strong>, <em>134</em>, 8778–8781</p>
+                        <div class="pub-tags"><span class="pub-badge lead">Lead Author</span><span class="pub-badge open">Open Access</span></div>
+                    </div>
+                    <span class="pub-link">↗</span>
+                </a>
+
+                <div class="pub-group-title">Doctoral Thesis</div>
+
+                <a class="pub-item" href="http://urn.kb.se/resolve?urn=urn:nbn:se:su:diva-121757" target="_blank" rel="noopener">
+                    <span class="pub-num">🎓</span>
+                    <div class="pub-body">
+                        <h4 class="pub-title">Catalytic Regio- and Stereoselective Reactions for the Synthesis of Allylic and Homoallylic Compounds</h4>
+                        <p class="pub-authors"><strong>Alam, R.</strong> — Doctoral Thesis, Department of Organic Chemistry, Stockholm University</p>
+                        <p class="pub-journal">Stockholm University, <strong>2015</strong> · Advisor: Prof. Kálmán J. Szabó</p>
+                        <p class="pub-note">Full text available via DiVA (Stockholm University repository)</p>
+                    </div>
+                    <span class="pub-link">↗</span>
+                </a>
+
+                <div class="pub-footer">
+                    <p>Explore citation metrics, co-authors and the most recent additions on Google Scholar and ResearchGate.</p>
+                    <a href="https://scholar.google.com/citations?hl=en&user=PrrE9dQAAAAJ" target="_blank" rel="noopener" class="btn btn-primary">
+                        <i class="fas fa-graduation-cap"></i> Google Scholar
+                    </a>
+                    <a href="https://www.researchgate.net/profile/Rauful-Alam" target="_blank" rel="noopener" class="btn btn-outline">
+                        <i class="fas fa-flask"></i> ResearchGate
+                    </a>
+                </div>
+            </div>
+
+            <!-- ============ PATENTS ============ -->
+            <div id="pubPanelPatents" class="pub-panel">
+
+                <div class="pub-group-title">Patent Applications · PTC Therapeutics</div>
+
+                <a class="pub-item" href="https://patentscope.wipo.int/search/en/WO2023028536" target="_blank" rel="noopener">
+                    <span class="pub-num">04</span>
+                    <div class="pub-body">
+                        <h4 class="pub-title">WO/2023/028536</h4>
+                        <p class="pub-authors">Small-molecule modulators discovered through pre-clinical drug discovery programs at PTC Therapeutics.</p>
+                        <p class="pub-journal">Published <strong>2023</strong> · WIPO PATENTSCOPE</p>
+                        <p class="pub-note">Highlighted in <em>ACS Med. Chem. Lett.</em></p>
+                        <div class="pub-tags"><span class="pub-badge">Highlighted</span></div>
+                    </div>
+                    <span class="pub-link">↗</span>
+                </a>
+
+                <a class="pub-item" href="https://patentscope.wipo.int/search/en/WO2021207453" target="_blank" rel="noopener">
+                    <span class="pub-num">03</span>
+                    <div class="pub-body">
+                        <h4 class="pub-title">WO/2021/207453</h4>
+                        <p class="pub-authors">Small-molecule modulators discovered through pre-clinical drug discovery programs at PTC Therapeutics.</p>
+                        <p class="pub-journal">Published <strong>2021</strong> · WIPO PATENTSCOPE</p>
+                        <p class="pub-note">Highlighted in <em>ACS Med. Chem. Lett.</em></p>
+                        <div class="pub-tags"><span class="pub-badge">Highlighted</span></div>
+                    </div>
+                    <span class="pub-link">↗</span>
+                </a>
+
+                <a class="pub-item" href="https://patentscope.wipo.int/search/en/WO2020005873" target="_blank" rel="noopener">
+                    <span class="pub-num">02</span>
+                    <div class="pub-body">
+                        <h4 class="pub-title">WO/2020/005873</h4>
+                        <p class="pub-authors">Small-molecule modulators discovered through pre-clinical drug discovery programs at PTC Therapeutics.</p>
+                        <p class="pub-journal">Published <strong>2020</strong> · WIPO PATENTSCOPE</p>
+                        <p class="pub-note">Highlighted in <em>ACS Med. Chem. Lett.</em></p>
+                        <div class="pub-tags"><span class="pub-badge">Highlighted</span></div>
+                    </div>
+                    <span class="pub-link">↗</span>
+                </a>
+
+                <a class="pub-item" href="https://patentscope.wipo.int/search/en/WO2019191229" target="_blank" rel="noopener">
+                    <span class="pub-num">01</span>
+                    <div class="pub-body">
+                        <h4 class="pub-title">WO/2019/191229</h4>
+                        <p class="pub-authors">Small-molecule modulators discovered through pre-clinical drug discovery programs at PTC Therapeutics.</p>
+                        <p class="pub-journal">Published <strong>2019</strong> · WIPO PATENTSCOPE</p>
+                        <p class="pub-note">Highlighted in <em>ACS Med. Chem. Lett.</em></p>
+                        <div class="pub-tags"><span class="pub-badge">Highlighted</span></div>
+                    </div>
+                    <span class="pub-link">↗</span>
+                </a>
+
+                <div class="pub-footer">
+                    <p>Four patent families covering RNA-splicing modifiers, NLRP3 inflammasome inhibitors and related small-molecule therapeutics — each highlighted in <em>ACS Med. Chem. Lett.</em> Browse the full portfolio by inventor search.</p>
+                    <a href="https://patents.google.com/?inventor=Rauful+Alam" target="_blank" rel="noopener" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Google Patents
+                    </a>
+                    <a href="https://rauful-alam.blogspot.com/2016/12/publications.html" target="_blank" rel="noopener" class="btn btn-outline">
+                        <i class="fas fa-external-link-alt"></i> Full List Online
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function showPubTab(name, btn) {
+                var modal = document.getElementById('publicationsModal');
+                if (!modal) return;
+                modal.querySelectorAll('.pub-panel').forEach(function (p) { p.classList.remove('active'); });
+                modal.querySelectorAll('.pub-tab').forEach(function (t) { t.classList.remove('active'); });
+                var target = document.getElementById(name === 'patents' ? 'pubPanelPatents' : 'pubPanelArticles');
+                if (target) target.classList.add('active');
+                if (btn) btn.classList.add('active');
+                var content = modal.querySelector('.modal-content');
+                if (content) content.scrollTop = 0;
+            }
+        </script>
     </div>
 
     <!-- Presentations Modal -->
@@ -3806,7 +5169,7 @@
                                 background: var(--gradient);
                                 border-radius: 50%;
                             "></span>
-                            Leading medicinal chemistry efforts in multiple drug discovery programs
+                            Lead medicinal chemistry across multiple therapeutic targets, including oncology programmes, from hit identification through lead optimisation
                         </li>
                         <li style="margin-bottom: 0.8rem; position: relative; padding-left: 2rem;">
                             <span style="
@@ -3818,7 +5181,7 @@
                                 background: var(--gradient);
                                 border-radius: 50%;
                             "></span>
-                            Developing innovative therapeutic targets for rare diseases
+                            Screen millions of compounds with Boltz-2 for structure-based virtual screening and binding-affinity prediction
                         </li>
                         <li style="margin-bottom: 0.8rem; position: relative; padding-left: 2rem;">
                             <span style="
@@ -3830,7 +5193,7 @@
                                 background: var(--gradient);
                                 border-radius: 50%;
                             "></span>
-                            Collaborating with interdisciplinary teams across chemistry and biology
+                            Apply DrugCLIP, RowanSci, and Chemistry42 for hit identification, candidate and metabolite evaluation
                         </li>
                         <li style="margin-bottom: 0.8rem; position: relative; padding-left: 2rem;">
                             <span style="
@@ -3842,7 +5205,31 @@
                                 background: var(--gradient);
                                 border-radius: 50%;
                             "></span>
-                            Advancing novel chemical methodologies for drug discovery
+                            Assess key drug-like properties computationally, including permeability and toxicity, ahead of synthesis
+                        </li>
+                        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 2rem;">
+                            <span style="
+                                position: absolute;
+                                left: 0;
+                                top: 0.2rem;
+                                width: 8px;
+                                height: 8px;
+                                background: var(--gradient);
+                                border-radius: 50%;
+                            "></span>
+                            Analyse and communicate experimental data to guide lead-compound selection
+                        </li>
+                        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 2rem;">
+                            <span style="
+                                position: absolute;
+                                left: 0;
+                                top: 0.2rem;
+                                width: 8px;
+                                height: 8px;
+                                background: var(--gradient);
+                                border-radius: 50%;
+                            "></span>
+                            Support scientific publications, grant submissions, patent applications, and R&amp;D decision-making
                         </li>
                     </ul>
                 </div>
@@ -4172,7 +5559,7 @@
                                 background: var(--gradient);
                                 border-radius: 50%;
                             "></span>
-                            Contributed to synthetic route design for PTC518 (Phase-II ongoing)
+                            Contributed to synthetic route design and optimisation for PTC518 (votoplam), now in Phase III trials
                         </li>
                         <li style="margin-bottom: 0.8rem; position: relative; padding-left: 2rem;">
                             <span style="
@@ -4318,6 +5705,135 @@
                         font-size: 0.95rem;
                     ">
                         Advanced research in synthetic methodology at leading academic institution
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="professional6Modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('professional6Modal')">&times;</span>
+
+            <!-- Header with gradient background -->
+            <div style="
+                background: var(--gradient);
+                margin: -2rem -2rem 2rem -2rem;
+                padding: 2rem;
+                border-radius: 16px 16px 0 0;
+                color: white;
+                text-align: center;
+            ">
+                <div style="
+                    width: 60px; 
+                    height: 60px; 
+                    border-radius: 50%; 
+                    background: rgba(255, 255, 255, 0.2);
+                    backdrop-filter: blur(10px);
+                    display: flex; 
+                    align-items: center; 
+                    justify-content: center; 
+                    margin: 0 auto 1rem; 
+                    border: 2px solid rgba(255, 255, 255, 0.3);
+                ">
+                    <span style="font-size: 1.8rem;">🎯</span>
+                </div>
+                <h2 style="margin: 0; font-size: 1.8rem; font-weight: 700;">Key Contributions</h2>
+                <p style="margin: 0.5rem 0 0 0; opacity: 0.9; font-size: 1rem;">Voluntary Career Break — Independent Research (2024-2025)</p>
+            </div>
+
+            <!-- Content with enhanced styling -->
+            <div style="line-height: 1.8; padding: 0 1rem;">
+                <div style="
+                    background: linear-gradient(135deg, rgba(79, 70, 229, 0.08), rgba(6, 182, 212, 0.05));
+                    padding: 1.5rem;
+                    border-radius: 12px;
+                    border-left: 4px solid var(--primary);
+                    margin-bottom: 1.5rem;
+                ">
+                    <p style="margin: 0 0 1.25rem 0; color: var(--dark);">
+                        I resigned voluntarily from PTC Therapeutics to support my family's relocation and take on full parenting responsibilities. I used the period deliberately to move my technical skill set toward AI-driven and computational drug discovery — the capability I now apply daily at the University of Chicago.
+                    </p>
+                    <h4 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem;">Self-Directed Work:</h4>
+                    <ul style="margin-left: 0; padding-left: 0; list-style: none;">
+                        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 2rem;">
+                            <span style="
+                                position: absolute;
+                                left: 0;
+                                top: 0.2rem;
+                                width: 8px;
+                                height: 8px;
+                                background: var(--gradient);
+                                border-radius: 50%;
+                            "></span>
+                            Trained on Boltz-2 for structure and binding-affinity prediction, building end-to-end virtual screening workflows
+                        </li>
+                        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 2rem;">
+                            <span style="
+                                position: absolute;
+                                left: 0;
+                                top: 0.2rem;
+                                width: 8px;
+                                height: 8px;
+                                background: var(--gradient);
+                                border-radius: 50%;
+                            "></span>
+                            Applied the Rowan (RowanSci) platform for quantum-chemistry and molecular property calculations
+                        </li>
+                        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 2rem;">
+                            <span style="
+                                position: absolute;
+                                left: 0;
+                                top: 0.2rem;
+                                width: 8px;
+                                height: 8px;
+                                background: var(--gradient);
+                                border-radius: 50%;
+                            "></span>
+                            Developed working knowledge of GPU and HPC infrastructure for large-scale computational screening
+                        </li>
+                        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 2rem;">
+                            <span style="
+                                position: absolute;
+                                left: 0;
+                                top: 0.2rem;
+                                width: 8px;
+                                height: 8px;
+                                background: var(--gradient);
+                                border-radius: 50%;
+                            "></span>
+                            Studied patent prosecution and intellectual property procedure, including claim structure and freedom-to-operate analysis
+                        </li>
+                        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 2rem;">
+                            <span style="
+                                position: absolute;
+                                left: 0;
+                                top: 0.2rem;
+                                width: 8px;
+                                height: 8px;
+                                background: var(--gradient);
+                                border-radius: 50%;
+                            "></span>
+                            Continued scientific writing and education outreach on research culture and STEM capacity building
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Footer with emphasis -->
+                <div style="
+                    text-align: center;
+                    padding: 1rem;
+                    background: var(--light);
+                    border-radius: 8px;
+                    margin-top: 1.5rem;
+                ">
+                    <p style="
+                        margin: 0;
+                        color: var(--gray);
+                        font-style: italic;
+                        font-size: 0.95rem;
+                    ">
+                        A deliberate transition period that added computational and IP capability to a synthetic chemistry career
                     </p>
                 </div>
             </div>
@@ -5210,56 +6726,134 @@
                     border-left: 4px solid var(--primary);
                     margin-bottom: 1.5rem;
                 ">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem;">Email Address</h3>
-                    <div style="
-                        background: white;
-                        padding: 1rem;
-                        border-radius: 8px;
-                        border: 2px solid var(--primary);
-                        font-size: 1.1rem;
-                        font-weight: 600;
-                        color: var(--dark);
-                        margin-bottom: 1rem;
-                        word-break: break-all;
-                    ">
-                        rauful.alam15@gmail.com
+                    <h3 style="color: var(--primary); margin-bottom: 1.25rem; font-size: 1.2rem;">Email Addresses</h3>
+
+                    <div style="text-align: left; margin-bottom: 1.1rem;">
+                        <div style="font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-bottom: 0.4rem;">
+                            Academic &amp; Research
+                        </div>
+                        <div style="
+                            background: white;
+                            padding: 0.9rem 1rem;
+                            border-radius: 10px;
+                            border: 2px solid var(--primary);
+                            font-size: 1.02rem;
+                            font-weight: 700;
+                            color: var(--dark);
+                            word-break: break-all;
+                            margin-bottom: 0.6rem;
+                        ">
+                            rauful@uchicago.edu
+                        </div>
+                        <a href="mailto:rauful@uchicago.edu" style="
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                            background: var(--gradient);
+                            color: white;
+                            padding: 0.62rem 1.2rem;
+                            border-radius: 50px;
+                            text-decoration: none;
+                            font-weight: 600;
+                            font-size: 0.9rem;
+                            box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+                        ">
+                            <i class="fas fa-envelope"></i> Email UChicago Address
+                        </a>
                     </div>
-                    <a href="mailto:rauful.alam15@gmail.com" style="
-                        display: inline-block;
-                        background: var(--gradient);
-                        color: white;
-                        padding: 0.8rem 1.5rem;
-                        border-radius: 50px;
-                        text-decoration: none;
-                        font-weight: 600;
-                        transition: all 0.3s ease;
-                        box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
-                    " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(79, 70, 229, 0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(79, 70, 229, 0.4)'">
-                        Open Email Client
-                    </a>
+
+                    <div style="text-align: left;">
+                        <div style="font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-bottom: 0.4rem;">
+                            Consulting &amp; General
+                        </div>
+                        <div style="
+                            background: white;
+                            padding: 0.9rem 1rem;
+                            border-radius: 10px;
+                            border: 2px solid rgba(79, 70, 229, 0.35);
+                            font-size: 1.02rem;
+                            font-weight: 700;
+                            color: var(--dark);
+                            word-break: break-all;
+                            margin-bottom: 0.6rem;
+                        ">
+                            rauful.alam15@gmail.com
+                        </div>
+                        <a href="mailto:rauful.alam15@gmail.com" style="
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                            background: transparent;
+                            color: var(--primary);
+                            border: 2px solid var(--primary);
+                            padding: 0.6rem 1.2rem;
+                            border-radius: 50px;
+                            text-decoration: none;
+                            font-weight: 600;
+                            font-size: 0.9rem;
+                        ">
+                            <i class="fas fa-envelope"></i> Email Personal Address
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Simple and reliable navigation (fixed for Claude environment)
-        function showSection(sectionId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
+        // Sections that exist as routes on this page
+        const SECTION_IDS = ['home', 'about', 'professional', 'education', 'consulting',
+                             'publications', 'presentations', 'courses', 'educational',
+                             'books', 'blog', 'contact'];
+
+        // Legacy hash aliases so older shared links keep working
+        const SECTION_ALIASES = { skills: 'consulting', resources: 'educational' };
+
+        function resolveSection(id) {
+            if (!id) return null;
+            id = String(id).replace(/^#/, '');
+            if (SECTION_ALIASES[id]) id = SECTION_ALIASES[id];
+            return SECTION_IDS.indexOf(id) !== -1 ? id : null;
+        }
+
+        // Show a section. Updates the URL hash so every section is linkable
+        // and the browser back/forward buttons move between sections.
+        function showSection(sectionId, options) {
+            const opts = options || {};
+            const target = resolveSection(sectionId);
+            if (!target) return;
+
+            document.querySelectorAll('.section').forEach(function (section) {
                 section.classList.remove('active');
             });
 
-            // Show target section
-            const targetSection = document.getElementById(sectionId);
-            if (targetSection) {
-                targetSection.classList.add('active');
-                
-                // Scroll to top smoothly
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+            const el = document.getElementById(target);
+            if (!el) return;
+            el.classList.add('active');
+
+            // Keep the address bar in sync without stacking duplicate history entries
+            if (!opts.fromHistory && window.location.hash.replace(/^#/, '') !== target) {
+                history.pushState({ section: target }, '', '#' + target);
             }
+
+            // Reflect the active route in the navigation
+            document.querySelectorAll('.nav-link').forEach(function (link) {
+                const href = link.getAttribute('href') || '';
+                link.classList.toggle('nav-active', href === '#' + target);
+            });
+
+            window.scrollTo({ top: 0, behavior: opts.instant ? 'auto' : 'smooth' });
         }
+
+        // Open the section named in the URL on first load, defaulting to home
+        function routeFromHash(instant) {
+            const target = resolveSection(window.location.hash) || 'home';
+            showSection(target, { fromHistory: true, instant: instant });
+        }
+
+        // Back / forward buttons and manual hash edits
+        window.addEventListener('popstate', function () { routeFromHash(true); });
+        window.addEventListener('hashchange', function () { routeFromHash(true); });
 
         // Mobile menu toggle
         function toggleMobile() {
@@ -5310,25 +6904,20 @@
             const navbar = document.querySelector('.navbar');
             if (navbar) navbar.classList.add('visible');
 
-            // Contact form
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const formData = new FormData(contactForm);
-                    const name = formData.get('name');
-                    const email = formData.get('email');
-                    const subject = formData.get('subject');
-                    const message = formData.get('message');
-                    
-                    const mailtoLink = `mailto:rauful.alam15@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-                    
-                    window.location.href = mailtoLink;
-                    alert('Thank you! Your email client should open now.');
-                    contactForm.reset();
+            // Open whichever section the URL points at (deep linking)
+            routeFromHash(true);
+
+            // Close the mobile drawer on Escape, and any open modal too
+            document.addEventListener('keydown', function (e) {
+                if (e.key !== 'Escape') return;
+                closeMobile();
+                document.querySelectorAll('.modal').forEach(function (m) {
+                    if (m.style.display === 'block') {
+                        m.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
                 });
-            }
+            });
 
             // Close mobile menu when clicking outside
             document.addEventListener('click', function(e) {
