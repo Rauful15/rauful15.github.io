@@ -6,6 +6,7 @@
     <title>Rauful Alam, Ph.D. | Drug Discovery Scientist &amp; Medicinal Chemistry Consultant</title>
     <meta name="description" content="Rauful Alam, Ph.D. — drug discovery scientist and medicinal chemistry consultant. Core contributor to PTC518 (votoplam), now in Phase III trials for Huntington's disease. Available for consulting in API process development, AI-driven virtual screening, and synthetic laboratory establishment.">
     <meta name="author" content="Rauful Alam">
+    <meta name="theme-color" content="#1e1b4b">
     <link rel="canonical" href="https://rauful15.github.io/">
 
     <!-- Open Graph / LinkedIn / Facebook -->
@@ -68,10 +69,10 @@
             --primary: #4f46e5;
             --secondary: #06b6d4;
             --accent: #ec4899;
-            --dark: #1f2937;
+            --dark: #111827;
             --light: #f8fafc;
             --white: #ffffff;
-            --gray: #6b7280;
+            --gray: #44506b;
             --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
             --shadow: 0 10px 25px rgba(79, 70, 229, 0.1);
         }
@@ -2382,8 +2383,698 @@
             .footer-bottom { margin-top: 1.75rem; flex-direction: column; text-align: center; gap: 0.5rem; }
         }
 
+        /* =========================================================
+           V3 HERO GEOMETRY + MOBILE LEGIBILITY
+           Fixes: (a) hero was still a 2-column grid from the old
+           photo-beside-text layout, squeezing the name onto two
+           lines; (b) the mobile hero background was overridden to a
+           near-white gradient, leaving white text with almost no
+           contrast. Also tightens the phone layout generally.
+           ========================================================= */
+
+        /* ---- (a) Hero is now a single centred column ---- */
+        .hero {
+            grid-template-columns: 1fr !important;
+            justify-items: center;
+            gap: 0 !important;
+        }
+        .hero-content {
+            width: 100%;
+            max-width: 880px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .hero-content h1 {
+            font-size: clamp(2.1rem, 5vw, 3.5rem) !important;
+            white-space: nowrap;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.6rem;
+        }
+        .hero-content .subtitle {
+            font-size: clamp(0.9rem, 1.75vw, 1.22rem) !important;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 1.1rem;
+        }
+        .hero-content p.description {
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ---- (b) Mobile: restore a dark hero so white text reads ---- */
+        @media (max-width: 768px) {
+            #home {
+                background: linear-gradient(165deg, #17153d 0%, #2b2a76 45%, #0c5f74 100%) !important;
+                min-height: auto !important;
+            }
+
+            /* Darken the tint layer sitting over the video */
+            #home > div[style*="background: linear-gradient"] {
+                background: linear-gradient(180deg, rgba(10, 12, 35, 0.60), rgba(23, 21, 61, 0.68)) !important;
+            }
+
+            /* Video stays visible but no longer washes out the text */
+            #home video {
+                opacity: 0.16 !important;
+            }
+
+            /* Soften the decorative light blooms that reduced contrast */
+            #home::after {
+                opacity: 0.45 !important;
+            }
+
+            #home .hero {
+                min-height: auto !important;
+                padding: 1.5rem 0 2rem !important;
+            }
+
+            #home .hero-content h1 {
+                white-space: normal !important;
+                font-size: clamp(1.85rem, 8.2vw, 2.5rem) !important;
+                line-height: 1.1 !important;
+                text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65) !important;
+            }
+
+            #home .hero-content .subtitle {
+                font-size: 0.9rem !important;
+                line-height: 1.65 !important;
+                color: #ffffff !important;
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important;
+                max-width: 20rem;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            /* Justified text creates ugly gaps in a narrow column */
+            #home .hero-content p.description {
+                text-align: left !important;
+                color: rgba(255, 255, 255, 0.95) !important;
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55) !important;
+                font-size: 0.93rem !important;
+            }
+
+            #home .hero-credential {
+                background: rgba(255, 255, 255, 0.10) !important;
+                border-color: rgba(255, 255, 255, 0.28) !important;
+                color: #ffffff !important;
+                text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+            }
+
+            .hero-stat { background: rgba(255, 255, 255, 0.11) !important; }
+            .hero-stat-value { text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important; }
+            .hero-stat-label { color: #ffffff !important; text-shadow: 0 1px 7px rgba(0, 0, 0, 0.55) !important; }
+
+            .hero-affil-label { color: rgba(255, 255, 255, 0.8) !important; }
+            .hero-affil-list span { color: #ffffff !important; }
+
+            /* Full-width, thumb-sized primary actions */
+            .hero-cta-row {
+                flex-direction: column;
+                gap: 0.6rem;
+                width: min(94vw, 380px);
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-cta-row .btn {
+                width: 100%;
+                min-height: 50px;
+                font-size: 0.95rem !important;
+            }
+
+            /* Comfortable tap targets everywhere */
+            .home-social-icon { width: 48px !important; height: 48px !important; }
+            .nav-link, .resource-link, .btn, .btn-book { -webkit-tap-highlight-color: rgba(79, 70, 229, 0.15); }
+            .mobile-menu .nav-link { min-height: 48px; }
+
+            /* Easier-to-hit modal close control */
+            .close {
+                font-size: 2.1rem !important;
+                line-height: 1 !important;
+                padding: 0.15rem 0.55rem;
+                border-radius: 10px;
+                background: rgba(0, 0, 0, 0.06);
+            }
+
+            /* Section titles were oversized relative to body copy */
+            .section-title { font-size: clamp(1.6rem, 7vw, 2rem) !important; }
+        }
+
+        @media (max-width: 420px) {
+            #home .hero-content .subtitle { font-size: 0.84rem !important; max-width: 17rem; }
+            .hero-stat-value { font-size: 0.98rem !important; }
+            .hero-stat-label { font-size: 0.6rem !important; }
+            .hero-affil-list { gap: 0.35rem 0.75rem !important; }
+            .hero-affil-list span { font-size: 0.7rem !important; }
+        }
+
+        /* Respect reduced-motion and save mobile data */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
+            }
+            video { display: none !important; }
+        }
+
+        /* =========================================================
+           V3 LEGIBILITY & MOBILE-FIRST REFINEMENT
+           Fixes: washed-out mobile hero (light background under
+           white text), wrapping desktop headline, cramped phone
+           rhythm, and adds a persistent mobile contact bar.
+           Appended last so it wins the cascade.
+           ========================================================= */
+
+        html { -webkit-text-size-adjust: 100%; }
+
+        /* ---- Headline: fits one line on desktop, wraps safely below ---- */
+        #home .hero-content h1 {
+            font-size: clamp(2.05rem, 4.2vw, 3.5rem) !important;
+            letter-spacing: -0.025em;
+            line-height: 1.08 !important;
+            margin-bottom: 0.6rem !important;
+        }
+        @media (min-width: 769px) {
+            #home .hero-content h1 { white-space: nowrap !important; }
+        }
+
+        /* ---- Subtitle: wraps gracefully instead of breaking mid-role ---- */
+        #home .hero-content .subtitle {
+            font-size: clamp(0.92rem, 1.9vw, 1.22rem) !important;
+            font-weight: 600;
+            letter-spacing: 0.005em;
+            line-height: 1.5 !important;
+            max-width: 720px;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            text-wrap: balance;
+        }
+
+        /* =====================  PHONE  ===================== */
+        @media (max-width: 768px) {
+
+            /* 1. Dark base so white text has real contrast (was a pale
+                  #eef2ff gradient, which washed the whole hero out) */
+            #home {
+                background: linear-gradient(150deg, #171449 0%, #2b2a7a 42%, #0b5f75 100%) !important;
+            }
+
+            /* 2. Vertical scrim: darkest where the text actually sits */
+            #home > div[style*="background: linear-gradient"] {
+                background: linear-gradient(
+                    180deg,
+                    rgba(10, 12, 40, 0.62) 0%,
+                    rgba(12, 16, 48, 0.70) 45%,
+                    rgba(8, 40, 62, 0.76) 100%
+                ) !important;
+            }
+
+            /* 3. Video stays visible but no longer competes with copy */
+            #home video { opacity: 0.30 !important; }
+
+            /* 4. Type: full white, tighter shadows, no justification
+                  (justified text on a ~340px column creates ugly rivers) */
+            #home .hero-content h1 {
+                color: #ffffff !important;
+                text-shadow: 0 2px 16px rgba(0, 0, 0, 0.72) !important;
+                margin-top: 0.85rem !important;
+            }
+            #home .hero-content .subtitle {
+                color: #ffffff !important;
+                font-size: 0.95rem !important;
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.66) !important;
+                margin-bottom: 0.85rem !important;
+            }
+            #home .hero-content p.description {
+                color: rgba(255, 255, 255, 0.96) !important;
+                text-align: left !important;
+                hyphens: none !important;
+                font-size: 0.94rem !important;
+                line-height: 1.62 !important;
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important;
+                max-width: 100% !important;
+            }
+
+            /* 5. Credential band: stronger card so it reads first */
+            .hero-credential {
+                background: rgba(8, 12, 40, 0.5) !important;
+                border-color: rgba(255, 255, 255, 0.28) !important;
+                color: #ffffff !important;
+                font-size: 0.87rem !important;
+                line-height: 1.5 !important;
+                text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55) !important;
+            }
+
+            /* 6. Stat tiles: opaque enough to hold their numbers */
+            .hero-stat {
+                background: rgba(255, 255, 255, 0.17) !important;
+                border-color: rgba(255, 255, 255, 0.36) !important;
+            }
+            .hero-stat-value { text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important; }
+            .hero-stat-label { color: #ffffff !important; opacity: 0.94; }
+
+            .hero-eyebrow { background: rgba(8, 12, 40, 0.45) !important; }
+
+            /* 7. Comfortable tap targets (44px is the accessible minimum) */
+            .mobile-menu .nav-link { min-height: 48px; align-items: center; }
+            .home-social-icon { width: 46px !important; height: 46px !important; }
+            .resource-link { min-height: 46px; }
+            .btn { min-height: 46px; }
+
+            /* 8. Tighter hero rhythm so more fits without scrolling */
+            #home .hero-profile-img { width: 124px !important; height: 124px !important; }
+            .hero-cta-row { margin-bottom: 0.9rem !important; }
+            .home-social-row { margin: 0.75rem 0 0.85rem !important; }
+            .home-action-tabs { margin-top: 0.75rem !important; }
+            .hero-affiliations { margin-top: 1rem !important; }
+            .hero-affil-list span { color: #ffffff !important; }
+
+            /* 9. Section headings sit closer to their content */
+            .section-title { margin-bottom: 1.5rem !important; }
+
+            /* 10. Room for the fixed contact bar */
+            body { padding-bottom: 68px; }
+        }
+
+        /* ---- Persistent mobile contact bar: the single highest-value
+               mobile addition. Contact is always one tap away. ---- */
+        .mobile-action-bar { display: none; }
+
+        @media (max-width: 768px) {
+            .mobile-action-bar {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 1500;
+                gap: 0.5rem;
+                padding: 0.55rem 0.7rem;
+                padding-bottom: calc(0.55rem + env(safe-area-inset-bottom, 0px));
+                background: rgba(255, 255, 255, 0.97);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                border-top: 1px solid rgba(79, 70, 229, 0.16);
+                box-shadow: 0 -6px 22px rgba(31, 41, 55, 0.12);
+            }
+            .mobile-action-bar a {
+                flex: 1;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.45rem;
+                min-height: 46px;
+                border-radius: 13px;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 0.86rem;
+                letter-spacing: 0.01em;
+            }
+            .mobile-action-bar .mab-primary {
+                background: var(--gradient);
+                color: white;
+                box-shadow: 0 6px 16px rgba(79, 70, 229, 0.3);
+            }
+            .mobile-action-bar .mab-secondary {
+                background: rgba(79, 70, 229, 0.08);
+                color: var(--primary);
+                border: 1px solid rgba(79, 70, 229, 0.22);
+            }
+            .mobile-action-bar i { font-size: 0.9rem; }
+        }
+
+        @media (max-width: 380px) {
+            .mobile-action-bar a { font-size: 0.78rem; gap: 0.3rem; }
+        }
+
+        /* =========================================================
+           V4 GUARANTEED HERO CONTRAST
+           Root cause of the washed-out phone hero: #home::after
+           paints white/pink radial glows as the LAST child of
+           #home, so it renders on top of any darkening applied
+           beneath it. Neutralised below, and the hero copy now sits
+           on a real translucent dark panel rather than depending on
+           text-shadows for legibility.
+           ========================================================= */
+
+        /* Desktop headline: one line, comfortably */
+        #home .hero-content h1 {
+            font-size: clamp(1.95rem, 3.5vw, 3.05rem) !important;
+            letter-spacing: -0.03em !important;
+        }
+        #home .hero-content .subtitle {
+            font-size: clamp(0.88rem, 1.55vw, 1.08rem) !important;
+            font-weight: 600 !important;
+        }
+
+        @media (max-width: 768px) {
+
+            /* 1. Kill the light glow layer that was defeating the scrim */
+            #home::after {
+                display: none !important;
+                opacity: 0 !important;
+            }
+
+            /* 2. Push the video further back so nothing paints over the scrim */
+            #home video { opacity: 0.22 !important; z-index: 0 !important; }
+
+            /* 3. Deep, flat base — no pastel anywhere in the stack */
+            #home {
+                background: #141238 !important;
+            }
+            #home > div[style*="background: linear-gradient"] {
+                background: linear-gradient(
+                    180deg,
+                    rgba(10, 12, 38, 0.72) 0%,
+                    rgba(12, 16, 46, 0.80) 50%,
+                    rgba(8, 34, 56, 0.86) 100%
+                ) !important;
+                z-index: 1 !important;
+            }
+
+            /* 4. The real fix: a solid-enough panel behind the copy.
+                  Contrast no longer depends on text-shadow tricks. */
+            #home .hero-content {
+                background: rgba(9, 12, 36, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.14);
+                border-radius: 22px;
+                padding: 1.5rem 1.15rem 1.35rem !important;
+                backdrop-filter: blur(3px);
+                -webkit-backdrop-filter: blur(3px);
+                box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+            }
+
+            /* 5. Pure white type, lighter shadows (panel does the work) */
+            #home .hero-content h1 {
+                color: #ffffff !important;
+                -webkit-text-fill-color: #ffffff !important;
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+                font-size: clamp(1.75rem, 7.6vw, 2.45rem) !important;
+            }
+            #home .hero-content .subtitle {
+                color: #ffffff !important;
+                font-size: 0.9rem !important;
+                line-height: 1.55 !important;
+                text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5) !important;
+            }
+            #home .hero-content p.description {
+                color: #ffffff !important;
+                opacity: 0.97;
+                text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45) !important;
+            }
+            .hero-credential {
+                background: rgba(4, 8, 28, 0.6) !important;
+                color: #ffffff !important;
+            }
+            .hero-stat { background: rgba(255, 255, 255, 0.2) !important; }
+            .home-action-tab { background: rgba(255, 255, 255, 0.19) !important; }
+        }
+
+
+        /* =========================================================
+           V6 CONTRAST PASS
+           Site-wide: body text darkened via --gray / --dark (see
+           :root above) and the remaining hard-coded light greys
+           brought up to an accessible weight.
+           Phone hero: returned to white-on-dark, but with a genuinely
+           dark backdrop instead of a glassy panel.
+           ========================================================= */
+
+        /* --- Replace lingering hard-coded light greys --- */
+        .blog-date,
+        .book-content p,
+        .blog-card p,
+        .blog-intro p,
+        #consulting .skills-lede,
+        #consulting .band-sub,
+        #consulting .cap-list li,
+        #consulting .proof-label,
+        .book-note,
+        .footer-brand p {
+            color: #44506b;
+        }
+        #consulting .cap-list li { font-weight: 500; }
+
+        /* Muted metadata: still secondary, no longer faint */
+        .timeline-company,
+        #publications .pub-authors {
+            color: #55617d !important;
+        }
+
+        /* Footer text on the dark panel */
+        .footer-brand p,
+        .footer-links a { color: rgba(255, 255, 255, 0.88) !important; }
+        .site-footer h4 { color: rgba(255, 255, 255, 0.72) !important; }
+        .footer-bottom { color: rgba(255, 255, 255, 0.78) !important; }
+
+        /* Body copy gains a touch of weight for small screens */
+        .card p,
+        .book-content p,
+        .blog-card p { font-weight: 450; }
+
+        /* =====================  PHONE HERO — WHITE ON TRUE DARK  ===================== */
+        @media (max-width: 768px) {
+
+            /* Solid dark gradient; no pastel, no light glow layer */
+            #home {
+                background: linear-gradient(165deg, #0d0b26 0%, #1c1a52 45%, #0a4257 100%) !important;
+            }
+            #home::after { display: none !important; }
+
+            /* Video present but very subtle, as chosen */
+            #home video { opacity: 0.17 !important; }
+
+            /* Strong scrim so type never fights the footage */
+            #home > div[style*="background: linear-gradient"] {
+                background: linear-gradient(
+                    180deg,
+                    rgba(5, 6, 22, 0.74) 0%,
+                    rgba(8, 10, 34, 0.82) 50%,
+                    rgba(5, 28, 46, 0.88) 100%
+                ) !important;
+            }
+
+            /* No card, no glass — copy sits directly on the dark field */
+            #home .hero-content {
+                background: transparent !important;
+                border: none !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                padding: 0 !important;
+            }
+
+            #home .hero-profile-img {
+                border: 3px solid rgba(255, 255, 255, 0.85) !important;
+                box-shadow: 0 16px 38px rgba(0, 0, 0, 0.5) !important;
+            }
+
+            /* Pure white type at full strength */
+            #home .hero-content h1 {
+                color: #ffffff !important;
+                -webkit-text-fill-color: #ffffff !important;
+                background: none !important;
+                text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6) !important;
+                font-size: clamp(1.8rem, 7.6vw, 2.45rem) !important;
+            }
+            #home .hero-content .subtitle {
+                color: #ffffff !important;
+                font-weight: 700 !important;
+                font-size: 0.9rem !important;
+                text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6) !important;
+            }
+            #home .hero-content p.description {
+                color: #ffffff !important;
+                opacity: 1 !important;
+                text-align: left !important;
+                text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55) !important;
+            }
+
+            /* Credential band: dark tinted, teal accent, white text */
+            .hero-credential {
+                background: rgba(2, 6, 24, 0.55) !important;
+                border: 1px solid rgba(255, 255, 255, 0.22) !important;
+                border-left: 4px solid #02c39a !important;
+                color: #ffffff !important;
+                text-shadow: none !important;
+                backdrop-filter: blur(6px) !important;
+                -webkit-backdrop-filter: blur(6px) !important;
+            }
+            .hero-credential strong { color: #6ee7d0 !important; }
+
+            /* Stat tiles */
+            .hero-stat {
+                background: rgba(255, 255, 255, 0.13) !important;
+                border: 1px solid rgba(255, 255, 255, 0.3) !important;
+                backdrop-filter: blur(6px) !important;
+                -webkit-backdrop-filter: blur(6px) !important;
+            }
+            .hero-stat-value { color: #ffffff !important; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55) !important; }
+            .hero-stat-label { color: rgba(255, 255, 255, 0.95) !important; opacity: 1 !important; }
+
+            /* Buttons back to the on-dark treatment */
+            .btn-hero-primary {
+                background: #ffffff !important;
+                color: #312e81 !important;
+                border: none !important;
+                box-shadow: 0 12px 26px rgba(0, 0, 0, 0.3) !important;
+            }
+            .btn-hero-ghost {
+                background: rgba(255, 255, 255, 0.12) !important;
+                color: #ffffff !important;
+                border: 1.5px solid rgba(255, 255, 255, 0.7) !important;
+                backdrop-filter: blur(8px) !important;
+                -webkit-backdrop-filter: blur(8px) !important;
+            }
+
+            /* Quick-link tabs */
+            .home-action-tab {
+                background: rgba(255, 255, 255, 0.13) !important;
+                border: 1px solid rgba(255, 255, 255, 0.3) !important;
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.26) !important;
+            }
+            .home-action-tab .tab-icon { background: rgba(255, 255, 255, 0.2) !important; }
+            .home-action-tab .tab-text strong { color: #ffffff !important; }
+            .home-action-tab .tab-text span { color: rgba(255, 255, 255, 0.85) !important; }
+
+            /* Affiliations */
+            .hero-affiliations { border-top: 1px solid rgba(255, 255, 255, 0.18); padding-top: 1rem; }
+            .hero-affil-label { color: rgba(255, 255, 255, 0.75) !important; }
+            .hero-affil-list span { color: #ffffff !important; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5) !important; }
+
+            .home-social-icon {
+                border: 1px solid rgba(255, 255, 255, 0.45) !important;
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32) !important;
+            }
+
+            /* Section body copy: darker and slightly larger on phones */
+            .card p, .blog-card p, .book-content p, #consulting .cap-list li {
+                color: #3a4560 !important;
+                font-size: 0.96rem !important;
+                line-height: 1.68 !important;
+            }
+            #about p { color: #3a4560 !important; }
+        }
+
+
+        /* =========================================================
+           V7 HERO TYPOGRAPHY & PHONE VIDEO PLACEMENT
+           - "Trained and worked at" was accidentally styled dark on
+             the dark hero in the V6 contrast pass; restored to light.
+           - Weight reduced in favour of size (bold reads heavy at
+             these sizes; larger type reads more confident).
+           - Phone intro justified as requested.
+           - Phone video revealed in the lower half via a mask.
+           ========================================================= */
+
+        /* --- Affiliations row: visible again, slightly larger --- */
+        .hero-affil-label {
+            color: rgba(255, 255, 255, 0.88) !important;
+            font-size: 0.78rem !important;
+            letter-spacing: 0.14em !important;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+        }
+        .hero-affil-list span {
+            color: #ffffff !important;
+            font-size: 0.95rem !important;
+            font-weight: 600 !important;
+            text-shadow: 0 1px 7px rgba(0, 0, 0, 0.5);
+        }
+
+        /* --- Size over weight: lighter strokes, bigger type --- */
+        #home .hero-content .subtitle {
+            font-size: clamp(1rem, 1.75vw, 1.22rem) !important;
+            font-weight: 500 !important;
+            letter-spacing: 0.01em !important;
+        }
+        .hero-credential {
+            font-size: clamp(0.98rem, 1.4vw, 1.1rem) !important;
+            font-weight: 400 !important;
+            line-height: 1.65 !important;
+            max-width: 700px !important;
+        }
+        .hero-credential strong {
+            font-weight: 600 !important;
+        }
+        #home .hero-content p.description {
+            font-size: clamp(1rem, 1.35vw, 1.14rem) !important;
+            line-height: 1.8 !important;
+        }
+        .hero-stat-value { font-size: 1.45rem !important; font-weight: 700 !important; }
+        .hero-stat-label { font-size: 0.76rem !important; font-weight: 500 !important; }
+
+        /* =====================  PHONE  ===================== */
+        @media (max-width: 768px) {
+
+            /* Justified intro, as requested */
+            #home .hero-content p.description {
+                text-align: justify !important;
+                text-justify: inter-word !important;
+                hyphens: auto !important;
+                -webkit-hyphens: auto !important;
+                font-size: 0.96rem !important;
+                line-height: 1.7 !important;
+            }
+
+            /* --- Video revealed in the LOWER half only ---
+               Masked so it is fully transparent behind the headline
+               and intro, then fades in from mid-screen down. */
+            #home video {
+                opacity: 0.55 !important;
+                -webkit-mask-image: linear-gradient(
+                    to bottom,
+                    transparent 0%,
+                    transparent 42%,
+                    rgba(0, 0, 0, 0.35) 56%,
+                    rgba(0, 0, 0, 0.8) 72%,
+                    #000 88%
+                ) !important;
+                mask-image: linear-gradient(
+                    to bottom,
+                    transparent 0%,
+                    transparent 42%,
+                    rgba(0, 0, 0, 0.35) 56%,
+                    rgba(0, 0, 0, 0.8) 72%,
+                    #000 88%
+                ) !important;
+            }
+
+            /* Scrim: heaviest at the top where the copy sits, easing
+               off lower down so the footage stays readable */
+            #home > div[style*="background: linear-gradient"] {
+                background: linear-gradient(
+                    180deg,
+                    rgba(5, 6, 22, 0.80) 0%,
+                    rgba(8, 10, 34, 0.74) 45%,
+                    rgba(6, 26, 44, 0.52) 72%,
+                    rgba(5, 28, 46, 0.46) 100%
+                ) !important;
+            }
+
+            /* Lower-half elements sit over live video, so firm them up */
+            .home-action-tab {
+                background: rgba(6, 10, 32, 0.52) !important;
+                border: 1px solid rgba(255, 255, 255, 0.32) !important;
+                backdrop-filter: blur(10px) !important;
+                -webkit-backdrop-filter: blur(10px) !important;
+            }
+            .hero-affil-list span { text-shadow: 0 2px 9px rgba(0, 0, 0, 0.7) !important; }
+            .hero-affil-label { text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7) !important; }
+
+            #home .hero-content .subtitle { font-size: 0.98rem !important; font-weight: 500 !important; }
+            .hero-credential { font-size: 0.92rem !important; font-weight: 400 !important; }
+            .hero-stat-value { font-size: 1.12rem !important; }
+            .hero-stat-label { font-size: 0.68rem !important; }
+        }
+
+
 </style>
 </head>
+
+
 
 <body>
     <!-- Navigation -->
@@ -2423,21 +3114,21 @@
                     <i class="fas fa-handshake"></i> Consulting
                 </a></li>
                 <li class="dropdown">
-                    <a href="#courses" class="nav-link" onclick="showSection('courses')">
-                        <i class="fas fa-chalkboard-user"></i> Teaching <span style="margin-left: 0.35rem; font-size: 0.7rem;">▼</span>
+                    <a href="#books" class="nav-link" onclick="showSection('books')">
+                        <i class="fas fa-feather"></i> Writing &amp; Teaching <span style="margin-left: 0.35rem; font-size: 0.7rem;">▼</span>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="#courses" class="nav-link" onclick="showSection('courses')">
-                            <i class="fas fa-chalkboard-user"></i> Courses
-                        </a>
                         <a href="#books" class="nav-link" onclick="showSection('books')">
                             <i class="fas fa-book"></i> Published Books
                         </a>
                         <a href="#blog" class="nav-link" onclick="showSection('blog')">
-                            <i class="fas fa-pen-nib"></i> Blog
+                            <i class="fas fa-pen-nib"></i> Articles &amp; Essays
+                        </a>
+                        <a href="#courses" class="nav-link" onclick="showSection('courses')">
+                            <i class="fas fa-chalkboard-user"></i> Courses
                         </a>
                         <a href="#educational" class="nav-link" onclick="showSection('educational')">
-                            <i class="fas fa-globe"></i> Resources
+                            <i class="fas fa-globe"></i> Learning Resources
                         </a>
                     </div>
                 </li>
@@ -2496,15 +3187,15 @@
                 padding: 0.5rem 1.5rem;
                 margin: 1rem 0 0.5rem 0;
                 border-bottom: 2px solid var(--primary);
-            ">Teaching &amp; Outreach</li>
-            <li><a href="#courses" class="nav-link" onclick="showSection('courses'); closeMobile()" style="margin-left: 1rem;">
-                <i class="fas fa-chalkboard-user"></i> Courses
-            </a></li>
+            ">Writing &amp; Teaching</li>
             <li><a href="#books" class="nav-link" onclick="showSection('books'); closeMobile()" style="margin-left: 1rem;">
                 <i class="fas fa-book"></i> Published Books
             </a></li>
             <li><a href="#blog" class="nav-link" onclick="showSection('blog'); closeMobile()" style="margin-left: 1rem;">
-                <i class="fas fa-pen-nib"></i> Blog
+                <i class="fas fa-pen-nib"></i> Articles &amp; Essays
+            </a></li>
+            <li><a href="#courses" class="nav-link" onclick="showSection('courses'); closeMobile()" style="margin-left: 1rem;">
+                <i class="fas fa-chalkboard-user"></i> Courses
             </a></li>
             <li><a href="#educational" class="nav-link" onclick="showSection('educational'); closeMobile()" style="margin-left: 1rem;">
                 <i class="fas fa-globe"></i> Resources
@@ -2522,7 +3213,7 @@
             overflow: hidden;
         ">
             <!-- Video Background -->
-            <video autoplay muted loop playsinline style="
+            <video autoplay muted loop playsinline preload="metadata" style="
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -2551,7 +3242,7 @@
                     <div class="hero-content">
                         <!-- Profile Image -->
                         <div class="hero-profile">
-                            <img src="https://rauful15.github.io/images/Photo_RA.jpg" alt="Rauful Alam, Ph.D." class="hero-profile-img" style="
+                            <img src="https://rauful15.github.io/images/Photo_RA.jpg" alt="Rauful Alam, Ph.D." fetchpriority="high" class="hero-profile-img" style="
                                 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
                                 border: 4px solid rgba(255, 255, 255, 0.8);
                                 width: 210px;
@@ -3617,7 +4308,7 @@ Eight years of small-molecule drug discovery across industry and academia, built
             overflow: hidden;
         ">
             <!-- Video Background -->
-            <video autoplay muted loop playsinline style="
+            <video autoplay muted loop playsinline preload="metadata" style="
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -4065,7 +4756,7 @@ Eight years of small-molecule drug discovery across industry and academia, built
                 <div class="books-grid">
                     <article class="book-card">
                         <div class="book-cover-wrap">
-                            <img class="book-cover" src="https://rauful15.github.io/images/Cover_rauful_alam.jpeg" alt="Book cover: একটা দেশ যেভাবে দাঁড়ায়">
+                            <img loading="lazy" decoding="async" class="book-cover" src="https://rauful15.github.io/images/Cover_rauful_alam.jpeg" alt="Book cover: একটা দেশ যেভাবে দাঁড়ায়">
                         </div>
                         <div class="book-content">
                             <h3 lang="bn">একটা দেশ যেভাবে দাঁড়ায়</h3>
@@ -4083,7 +4774,7 @@ Eight years of small-molecule drug discovery across industry and academia, built
 
                     <article class="book-card">
                         <div class="book-cover-wrap">
-                            <img class="book-cover" src="https://rauful15.github.io/images/bangladesher-shopno-chokhe-copy%20%281%29.jpg" alt="Book cover: বাংলাদেশের স্বপ্নচোখ">
+                            <img loading="lazy" decoding="async" class="book-cover" src="https://rauful15.github.io/images/bangladesher-shopno-chokhe-copy%20%281%29.jpg" alt="Book cover: বাংলাদেশের স্বপ্নচোখ">
                         </div>
                         <div class="book-content">
                             <h3 lang="bn">বাংলাদেশের স্বপ্নচোখ</h3>
@@ -4101,7 +4792,7 @@ Eight years of small-molecule drug discovery across industry and academia, built
 
                     <article class="book-card">
                         <div class="book-cover-wrap">
-                            <img class="book-cover" src="https://rauful15.github.io/images/The%20A%20BCs%20of%20Science%20for%20Kids.jpg" alt="Book cover: The ABC's of Science for Kids">
+                            <img loading="lazy" decoding="async" class="book-cover" src="https://rauful15.github.io/images/The%20A%20BCs%20of%20Science%20for%20Kids.jpg" alt="Book cover: The ABC's of Science for Kids">
                         </div>
                         <div class="book-content">
                             <h3 lang="en">The ABC's of Science for Kids</h3>
@@ -4119,7 +4810,7 @@ Eight years of small-molecule drug discovery across industry and academia, built
 
                     <article class="book-card">
                         <div class="book-cover-wrap">
-                            <img class="book-cover" src="https://rauful15.github.io/images/%E0%A6%A8%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%A4%E0%A7%8D%E0%A6%B0%E0%A6%AC%E0%A7%80%E0%A6%A5%E0%A6%BF%E0%A6%B0-%E0%A6%97%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%87-2.webp" alt="Book cover: নক্ষত্রবীথির গহিনে">
+                            <img loading="lazy" decoding="async" class="book-cover" src="https://rauful15.github.io/images/%E0%A6%A8%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%A4%E0%A7%8D%E0%A6%B0%E0%A6%AC%E0%A7%80%E0%A6%A5%E0%A6%BF%E0%A6%B0-%E0%A6%97%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%87-2.webp" alt="Book cover: নক্ষত্রবীথির গহিনে">
                         </div>
                         <div class="book-content">
                             <h3 lang="bn">নক্ষত্রবীথির গহিনে</h3>
@@ -4137,7 +4828,7 @@ Eight years of small-molecule drug discovery across industry and academia, built
 
                     <article class="book-card">
                         <div class="book-cover-wrap">
-                            <img class="book-cover" src="https://rauful15.github.io/images/%E0%A6%B8%E0%A6%AB%E0%A6%B2%20%E0%A6%AE%E0%A6%A8%E0%A7%8D%E0%A6%A4%E0%A7%8D%E0%A6%B0.jpg" alt="Book cover: সফল মন্ত্র">
+                            <img loading="lazy" decoding="async" class="book-cover" src="https://rauful15.github.io/images/%E0%A6%B8%E0%A6%AB%E0%A6%B2%20%E0%A6%AE%E0%A6%A8%E0%A7%8D%E0%A6%A4%E0%A7%8D%E0%A6%B0.jpg" alt="Book cover: সফল মন্ত্র">
                         </div>
                         <div class="book-content">
                             <h3 lang="bn">সফল মন্ত্র</h3>
@@ -4432,7 +5123,7 @@ Eight years of small-molecule drug discovery across industry and academia, built
             </div>
 
             <div>
-                <h4>Teaching &amp; Outreach</h4>
+                <h4>Writing &amp; Teaching</h4>
                 <ul class="footer-links">
                     <li><a href="#courses" onclick="showSection('courses')">Chemistry Courses</a></li>
                     <li><a href="#books" onclick="showSection('books')">Published Books</a></li>
@@ -6798,6 +7489,16 @@ Eight years of small-molecule drug discovery across industry and academia, built
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Persistent mobile contact bar (phones only) -->
+    <div class="mobile-action-bar" aria-label="Quick contact">
+        <a class="mab-primary" href="mailto:rauful@uchicago.edu">
+            <i class="fas fa-envelope"></i> Email Me
+        </a>
+        <a class="mab-secondary" href="https://rauful15.github.io/images/CV_Rauful%20Alam.pdf" target="_blank" rel="noopener">
+            <i class="fas fa-file-arrow-down"></i> Download CV
+        </a>
     </div>
 
     <script>
